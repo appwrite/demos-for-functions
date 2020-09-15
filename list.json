@@ -1,0 +1,26 @@
+[
+    {
+        "env": "node-14",
+        "name": "Hello World (Node.js)",
+        "path": "./nodejs/hello-world/function.tar.gz",
+        "expectedOutput": "Hello World, I'm a Node.js cloud function."
+    },
+    {
+        "env": "php-7.4",
+        "name": "Hello World (PHP)",
+        "path": "./php/hello-world/function.tar.gz",
+        "expectedOutput": "Hello World, I'm a PHP cloud function."
+    },
+    {
+        "env": "pyhton-3.8",
+        "name": "Hello World (Python)",
+        "path": "./python/hello-world/function.tar.gz",
+        "expectedOutput": "Hello World, I'm a Python cloud function."
+    },
+    {
+        "env": "php-7.4",
+        "name": "Welcome Email",
+        "path": "./php/welcome-email/function.tar.gz",
+        "expectedOutput": "mail sent succefully"
+    }
+]
