@@ -20,7 +20,7 @@ install:
         --volume /var/run/docker.sock:/var/run/docker.sock \
         --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
         --entrypoint="install" \
-    appwrite/appwrite:dev
+        appwrite/appwrite:dev
 - sleep 10
 
 script:
