@@ -19,7 +19,7 @@ install:
     echo "80\n443\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" | docker run --rm \
         --volume /var/run/docker.sock:/var/run/docker.sock \
         --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
-        --entrypoint="install" \
+        --entrypoint="install --version=dev" \
         appwrite/appwrite:dev
 - sleep 90
 
