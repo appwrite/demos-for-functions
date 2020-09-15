@@ -16,12 +16,12 @@ services:
 
 install:
 - >
-    docker run -it --rm \
+    echo "80\n443\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" | docker run -it --rm \
         --volume /var/run/docker.sock:/var/run/docker.sock \
         --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
         --entrypoint="install" \
         appwrite/appwrite:dev
-- sleep 12
+- sleep 10
 
 script:
 - docker ps
