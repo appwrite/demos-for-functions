@@ -21,7 +21,7 @@ install:
         --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
         --entrypoint="install" \
         appwrite/appwrite:dev
-- sleep 10
+- sleep 12
 
 script:
 - docker ps
