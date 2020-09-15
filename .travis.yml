@@ -1,0 +1,26 @@
+language: php
+
+php:
+  - '7.4'
+
+addons:
+  hosts:
+    - appwrite.test
+
+notifications:
+  email:
+  - team@appwrite.io
+  
+services:
+- docker
+
+install:
+- >
+    docker run -it --rm \
+        --volume /var/run/docker.sock:/var/run/docker.sock \
+        --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
+    appwrite/appwrite:canary
+- sleep 10
+
+script:
+- docker ps
