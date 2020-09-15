@@ -21,7 +21,6 @@ install:
         --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
         --entrypoint="install" \
         appwrite/appwrite:dev --version=dev
-- cat appwrite/docker-compose.yml
 - sleep 10
 
 script:
