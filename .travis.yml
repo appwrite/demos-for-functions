@@ -22,7 +22,7 @@ install:
         --entrypoint="install" \
         appwrite/appwrite:dev --version=dev
 - cat appwrite/docker-compose.yml
-- sleep 90
+- sleep 10
 
 script:
 - docker ps
