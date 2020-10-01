@@ -20,10 +20,12 @@ We truly ❤️ pull requests! If you wish to help, you can learn more about how
 
 For security issues, kindly email us [security@appwrite.io](mailto:security@appwrite.io) instead of posting a public issue in GitHub.
 
+## License
+
+This repository is available under the [BSD 3-Clause License](./LICENSE).
+
 ## Follow Us
 
 Join our growing community around the world! Follow us on [Twitter](https://twitter.com/appwrite_io), [Facebook Page](https://www.facebook.com/appwrite.io), [Facebook Group](https://www.facebook.com/groups/appwrite.developers/) or join our live [Discord server](https://discord.gg/GSeTUeA) for more help, ideas, and discussions.
 
-## License
-
-This repository is available under the [BSD 3-Clause License](./LICENSE).
+## HAPPY CODING!!!
