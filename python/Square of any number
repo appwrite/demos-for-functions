@@ -1,0 +1,9 @@
+# Python function which gives Square of a Number
+
+def square(num):
+    return num * num
+
+number = float(input())
+
+square = square(number)
+print("The Square of {0}  = {1}".format(number, square))
