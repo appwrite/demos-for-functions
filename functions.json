@@ -12,6 +12,13 @@
         "expectedOutput": "Hello World, I'm an Appwrite cloud function written in PHP."
     },
     {
+        "env": "C++14",
+        "name": "Hello World (C)",
+        "path": "./C/hello-world/function.tar.gz",
+        "expectedOutput": "Hello World, I'm an Appwrite cloud function written in C."
+    },    
+    
+    {
         "env": "pyhton-3.8",
         "name": "Hello World (Python)",
         "path": "./python/hello-world/function.tar.gz",
