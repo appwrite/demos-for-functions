@@ -8,7 +8,7 @@
     {
         "env": "php-7.4",
         "name": "Hello World (PHP)",
-        "path": "./php/hello-world/function.tar.gz",
+        "path": "./php/function.tar.gz",
         "expectedOutput": "Hello World, I'm an Appwrite cloud function written in PHP."
     },
     {
