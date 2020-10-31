@@ -15,7 +15,7 @@
         }
     },
     "autoload-dev": {
-        "psr-4": {"Tests\\E2E\\": "tests/e2e"}
+        "psr-4": {"Tests\\E2E\\": "tests/E2E"}
     },
     "require": {
         "php": ">=7.4.0",
