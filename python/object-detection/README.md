@@ -38,6 +38,6 @@ $ tar -zcvf code.tar.gz object-detection
 python main.py
 ```
 
-## Trigger
+## 🎯 Trigger
 
 Head over to your function in the Appwrite console and under the Settings Tab, enable the `storage.files.create` event.
