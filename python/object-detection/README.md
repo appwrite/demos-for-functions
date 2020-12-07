@@ -4,7 +4,7 @@ A sample Python Cloud Function for object detection on an image file uploaded by
 ## 📝 Environment Variables
 Add the following environment variables in your Cloud Functions settings.
 
-* **APPWRITE_KEY** - Create a key from the Appwrite console with the following scopes (`files.read` and `files.write`)
+* **APPWRITE_KEY** - Create a key from the Appwrite console with the following scope (`files.read`)
 * **API_KEY** - API Key for Cloudmersive 
 
 ## 🚀 Building and Packaging
@@ -37,3 +37,7 @@ $ tar -zcvf code.tar.gz object-detection
 ```bash
 python main.py
 ```
+
+## Trigger
+
+Head over to your function in the Appwrite console and under the Settings Tab, enable the `storage.files.create` event.
