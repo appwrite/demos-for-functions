@@ -20,8 +20,8 @@ fileID = payload["$id"]
 
 # Setup appwrite client
 client = Client()
-client.set_endpoint('http://192.168.1.6/v1')
-client.set_project('5fca866c65afc')
+client.set_endpoint('http://192.168.1.6/v1') # PRIVATE IP OF YOUR APPWRITE CONTAINER
+client.set_project('5fca866c65afc') # YOUR PROJECT ID
 client.set_key(os.environ["APPWRITE_KEY"])
 
 # Get the image file 
