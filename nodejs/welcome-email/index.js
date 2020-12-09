@@ -13,7 +13,7 @@ const payload = JSON.parse(process.env.APPWRITE_FUNCTION_EVENT_PAYLOAD)
 const name = payload['name']
 const email = payload['email']
 
-// Define the email 
+// Create your email 
 const data = {
 	from: 'Welcome to Appwrite <welcome@appwrite.io>',
 	to: email,
