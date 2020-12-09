@@ -15,7 +15,7 @@ const email = payload['email']
 
 // Create your email 
 const data = {
-	from: 'Welcome to Appwrite <welcome@appwrite.io>',
+	from: 'Welcome to My Awesome App <welcome@my-awesome-app.io>',
 	to: email,
 	subject: `Welcome on board ${name}!`,
 	text: `Hi ${name}\nGreat to have you with us. ! 😍`
