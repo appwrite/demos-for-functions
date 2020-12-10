@@ -41,4 +41,4 @@ node index.js
 
 ## 🎯 Trigger
 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` event.
+Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
