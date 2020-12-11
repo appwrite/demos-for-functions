@@ -1,4 +1,4 @@
-# 🗂 File Backup using the dropbox API
+# 🗂 File Backup using the Dropbox API
 A sample Python Cloud Function that leverages Dropbox to create backups of important files uploaded to Appwrite.
 
 ## 📝 Environment Variables
