@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mariadb:
+    image: appwrite/mariadb:1.0.3 # fix issues when upgrading using: mysql_upgrade -u root -p
+    container_name: db-mariadb
+    restart: unless-stopped
+    networks:
+      - db
+    volumes:
+      - db-mariadb:/var/lib/mysql:rw
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootsecretpassword
+      - MYSQL_DATABASE=${_APP_DB_SCHEMA}
+      - MYSQL_USER=${_APP_DB_USER}
+      - MYSQL_PASSWORD=${_APP_DB_PASS}
+    command: 'mysqld --innodb-flush-method=fsync'
+
+networks:
+  gateway:
+  db:
+
+volumes:
+  db-mariadb:
