@@ -21,9 +21,10 @@ install:
         --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
         --entrypoint="install" \
         appwrite/appwrite:dev --version=dev
-- sleep 20
+- sleep 60
 
 script:
 - docker ps
+- cd appwrite && docker-compose exec appwrite doctor && cd ..
 - composer update --ignore-platform-reqs --optimize-autoloader --no-plugins --no-scripts --prefer-dist
 - vendor/bin/phpunit --configuration ./phpunit.xml ./tests
