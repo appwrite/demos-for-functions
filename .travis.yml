@@ -25,6 +25,6 @@ install:
 
 script:
 - docker ps
-- cd appwrite && docker-compose exec appwrite doctor && docker-compose logs mariadb && cd ..
+- cd appwrite && docker-compose exec appwrite doctor && docker-compose logs mariadb && docker-compose exec mariadb mysqldump --user root --password=password appwrite && cd ..
 - composer update --ignore-platform-reqs --optimize-autoloader --no-plugins --no-scripts --prefer-dist
 - vendor/bin/phpunit --configuration ./phpunit.xml ./tests
