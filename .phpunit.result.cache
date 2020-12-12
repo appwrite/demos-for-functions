@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":157:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:2:{s:42:"Tests\E2E\FunctionsTest::testCreateProject";d:0.569;s:38:"Tests\E2E\FunctionsTest::testFunctions";d:16.477;}}}

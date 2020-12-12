@@ -26,4 +26,4 @@ install:
 script:
 - docker ps
 - composer update --ignore-platform-reqs --optimize-autoloader --no-plugins --no-scripts --prefer-dist
-- phpunit --configuration ./phpunit.xml
+- vendor/bin/phpunit --configuration ./phpunit.xml ./tests

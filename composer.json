@@ -25,7 +25,7 @@
     },
     "require-dev": {
         "utopia-php/cli": "0.7.3",
-        "phpunit/phpunit": "8.5.8"
+        "phpunit/phpunit": "9.4.2"
     },
     "provide": {
         "ext-phpiredis": "*"
