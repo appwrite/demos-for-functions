@@ -10,12 +10,11 @@ addons:
 notifications:
   email:
   - team@appwrite.io
-
+  
 services:
 - docker
 
 install:
-- composer install --prefer-dist
 - >
     echo "80\n443\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" | docker run --rm \
         --volume /var/run/docker.sock:/var/run/docker.sock \
@@ -26,3 +25,4 @@ install:
 
 script:
 - docker ps
+- phpunit --configuration ./phpunit.xml
