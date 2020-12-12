@@ -21,10 +21,10 @@ install:
         --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
         --entrypoint="install" \
         appwrite/appwrite:dev --version=dev
-- sleep 60
+- sleep 90
 
 script:
 - docker ps
-- cd appwrite && docker-compose exec appwrite doctor && cd ..
+- cd appwrite && docker-compose exec appwrite doctor && docker-compose logs mariadb && cd ..
 - composer update --ignore-platform-reqs --optimize-autoloader --no-plugins --no-scripts --prefer-dist
 - vendor/bin/phpunit --configuration ./phpunit.xml ./tests
