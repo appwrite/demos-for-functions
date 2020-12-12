@@ -26,4 +26,3 @@ install:
 
 script:
 - docker ps
-- phpunit --configuration ./phpunit.xml
