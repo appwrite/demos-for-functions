@@ -47,6 +47,8 @@ class FunctionsTest extends TestCase
             'name' => 'User Name',
         ]);
 
+        var_dump($root);
+
         $this->assertEquals(201, $root['headers']['status-code']);
 
         $session = $this->client->call(Client::METHOD_POST, '/account/sessions', [
