@@ -33,5 +33,8 @@ script:
 - docker-compose exec mariadb cat /docker-entrypoint-initdb.d/all.sql
 - cat .env
 - cat docker-compose.yml
+- docker-compose restart mariadb
+- sleep 10
+- docker-compose exec appwrite doctor
 # - composer update --ignore-platform-reqs --optimize-autoloader --no-plugins --no-scripts --prefer-dist
 # - vendor/bin/phpunit --configuration ./phpunit.xml ./tests
