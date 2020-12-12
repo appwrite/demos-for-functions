@@ -19,7 +19,6 @@ services:
     command: 'mysqld --innodb-flush-method=fsync'
 
 networks:
-  gateway:
   db:
 
 volumes:

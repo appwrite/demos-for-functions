@@ -23,6 +23,8 @@ install:
 #         appwrite/appwrite:dev --version=dev
 # - sleep 90
 - docker-compose up -d
+- sleep 10
+- docker-compose logs mariadb
 - docker-compose exec mariadb ls /docker-entrypoint-initdb.d
 - docker-compose exec mariadb cat /docker-entrypoint-initdb.d/all.sql
 - docker-compose exec mariadb mysqldump --user root --password=rootsecretpassword appwrite
