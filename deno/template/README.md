@@ -12,8 +12,12 @@ $ git clone https://github.com/appwrite/demos-for-functions
 $ cd demos-for-functions/deno/template
 ```
 
-* Write you code and create a tarfile
+* Write you code and install the dependencies locally using 
+```bash
+$ DENO_DIR=./.appwrite deno cache index.js
+```
 
+* Create a tarfile
 ```bash
 $ cd ..
 $ tar -zcvf code.tar.gz template
