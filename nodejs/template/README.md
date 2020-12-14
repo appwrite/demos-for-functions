@@ -13,7 +13,7 @@ Highlight the steps required to build and deploy this cloud function.
 
 Take a look at this example (https://github.com/appwrite/demos-for-functions/blob/master/nodejs/welcome-email/README.md) for more information.  
 
-Make sure you mention the instruvtions clearly and also mention the entrypoint command for the function 
+Make sure you mention the instructions clearly and also mention the entrypoint command for the function 
 -->
 ## 🎯 Trigger
 <!-- Clearly explain the triggers that this cloud function relies on to work correctly. Take a look at the below example: 
