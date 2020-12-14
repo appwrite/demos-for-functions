@@ -1,30 +1,15 @@
-# Template
-This template is meant to allow developers to quickly get started with Appwrite's Cloud Functions. Just follow along 
+# 📧  Your Function Name
+<!--  A brief descripption about your Cloud Function  -->
 
-* Clone the repo
-```bash
-$ git clone https://github.com/appwrite/demos-for-functions
-```
+## 📝 Environment Variables
+<!-- Tell the users of your Cloud function, what Environment Variables your function uses. Use the following format -->
 
-* Navigate to the templates folder for the language you require
+* **VARIABLE 1** - <!-- Short Description --> 
+* **VARIABLE 2** - <!-- Short Description -->
 
-```bash
-$ cd demos-for-functions/ruby/template
-```
-
-* Write you code and install the dependencies locally using 
-```bash
-$ <??>
-```
-
-* Create a tarfile
-```bash
-$ cd ..
-$ tar -zcvf code.tar.gz template
-```
-
-* Upload the tarfile to your Appwrite Console and use the following entrypoint command
-
-```bash
-ruby main.rb
-```
+## 🚀 Building and Packaging
+<!-- Highlight the steps required to build and deploy this cloud function. Take a look at this example (https://github.com/appwrite/demos-for-functions/blob/master/nodejs/welcome-email/README.md) for more information -->
+## 🎯 Trigger
+<!-- Clearly explain the triggers that this cloud function relies on to work correctly. Take a look at the below example: 
+Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
+ --> 
