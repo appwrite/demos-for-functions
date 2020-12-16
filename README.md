@@ -10,6 +10,15 @@ Demos for Appwrite Cloud Functions API in multiple coding langauges. Feel free t
 4. Trigger your new Cloud Function manually from the Appwrite dashboard using the execute button, listen to system events, or use the Appwrite API to execute your new function.
 5. Read Appwrite Cloud Functions docs to learn more about the different capabilities you can use.
 
+## Templates 
+To quickly get started , you can always refer to our language templates
+
+1. [Deno](deno/template/README.md)
+2. [Node.js](nodejs/template/README.md) 
+3. [PHP](php/template/README.md)
+4. [Python](python/template/README.md) 
+5. [Ruby](ruby/template/README.md)
+
 ## Contributing
 
 All code contributions - including those of people having commit access - must go through a pull request and approved by a core developer before being merged. This is to ensure proper review of all the code.
