@@ -1,8 +1,13 @@
 # 📧 Sending Welcome Emails using Mailgun's Email API
-A sample Nodejs Cloud Function for sending a welcome email to a newly registered user.
+A sample Node.js Cloud Function for sending a welcome email to a newly registered user.
+*Note: You will have to set up a [Mailgun account](https://www.mailgun.com/)*
+
+## ☁️ Make a New Cloud Function
+Navigate to 'Functions' and 'Add Function.'
+Use 'Node.js 14.5' environment.
 
 ## 📝 Environment Variables
-Add the following environment variables in your Cloud Functions settings.
+Go to Settings tab of your Cloud Function. Add the following environment variables.
 
 * **MAILGUN_API_KEY** - API Key for Mailgun 
 * **MAILGUN_DOMAIN** - Domain Name from Mailgun
@@ -33,11 +38,11 @@ $ cd ..
 $ tar -zcvf code.tar.gz welcome-email
 ```
 
-* Upload the tarfile to your Appwrite Console and use the following entrypoint command
-
-```bash
-node index.js
-```
+* Navigate to Overview Tab of your Cloud Function
+* Deploy Tag
+* Input the command that will run your function (in this case "node index.js") as your entrypoint command
+* Upload your tarfile 
+* Click 'Activate'
 
 ## 🎯 Trigger
 
