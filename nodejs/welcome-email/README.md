@@ -39,7 +39,6 @@ $ tar -zcvf code.tar.gz welcome-email
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-* Deploy Tag
 * Input the command that will run your function (in this case "node index.js") as your entrypoint command
 * Upload your tarfile 
 * Click 'Activate'
