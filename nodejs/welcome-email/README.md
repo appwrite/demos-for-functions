@@ -1,10 +1,5 @@
 # 📧 Sending Welcome Emails using Mailgun's Email API
 A sample Node.js Cloud Function for sending a welcome email to a newly registered user.
-*Note: You will have to set up a [Mailgun account](https://www.mailgun.com/)*
-
-## ☁️ Make a New Cloud Function
-Navigate to 'Functions' and 'Add Function.'
-Use 'Node.js 14.5' environment.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
