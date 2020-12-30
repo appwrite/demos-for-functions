@@ -1,1 +1,5 @@
 vendor
+
+nodejs/**/package-lock.json
+nodejs/**/node_modules
+nodejs/code.tar.gz
