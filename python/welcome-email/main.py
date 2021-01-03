@@ -13,15 +13,12 @@ load_dotenv()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 key = os.environ.get('MAILGUN_API_KEY')
-recipient = os.environ.get('EMAIL')
-name = recipient.split('@')
-name = name[0]
 Domain = os.environ.get('MAILGUN_DOMAIN')
 
 request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(Domain)
 request = requests.post(request_url, auth=('api', key), data={
     'from': 'Welcome to My Awesome App <welcome@my-awesome-app.io>',
-    'to': recipient,
+    'to': email,
     'subject': 'Welcome on board {0}!'.format(name),
     'text': 'Hi {0}\nGreat to have you with us. ! 😍'.format(name)
 })
