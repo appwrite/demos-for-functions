@@ -1,3 +1,4 @@
+
 // Import the mailgun sdk
 const mailgun = require("mailgun-js");
 
@@ -9,10 +10,7 @@ const emailConfig = {
 const mg = mailgun(emailConfig);
 
 // Get the name and email of the newly created user from Appwrite's environment variable
-// const payload = JSON.parse(process.env.APPWRITE_FUNCTION_EVENT_PAYLOAD)
-const payload= {}
-payload['name']="LOL"
-payload['email']="g.s.sahagian@gmail.com"
+const payload = JSON.parse(process.env.APPWRITE_FUNCTION_EVENT_PAYLOAD)
 const name = payload['name']
 const email = payload['email']
 
