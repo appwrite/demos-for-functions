@@ -23,7 +23,7 @@ To quickly get started , you can always refer to our language templates
 
 All code contributions - including those of people having commit access - must go through a pull request and approved by a core developer before being merged. This is to ensure proper review of all the code.
 
-We truly ❤️ pull requests! If you wish to help, you can learn more about how you can contribute to this project in the [contribution guide](CONTRIBUTING.md).
+We truly ❤️ pull requests! If you wish to help, you can use the templates inside each language directory to submit pull-requests. Please open a new issue or comment on an existing one before sending a pull-request. If this is your first time contributing to Appwrite, you can learn more on our [contribution guide](https://github.com/appwrite/appwrite/blob/master/CONTRIBUTING.md).
 
 ## Security
 
