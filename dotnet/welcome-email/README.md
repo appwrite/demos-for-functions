@@ -26,7 +26,6 @@ $ dotnet publish --runtime linux-x64 --framework net5.0 --no-self-contained
 * Create a tarfile
 
 ```bash
-$ cd ..
 $ tar -C bin/Debug/net5.0/linux-x64 -zcvf code.tar.gz publish
 ```
 
