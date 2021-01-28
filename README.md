@@ -18,6 +18,7 @@ To quickly get started , you can always refer to our language templates
 3. [PHP](php/template/README.md)
 4. [Python](python/template/README.md) 
 5. [Ruby](ruby/template/README.md)
+6. [.NET](dotnet//template/README.md)
 
 ## Contributing
 
