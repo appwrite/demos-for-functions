@@ -3,3 +3,7 @@ vendor
 nodejs/**/package-lock.json
 nodejs/**/node_modules
 nodejs/code.tar.gz
+
+dart/**/.dart_tool
+dart/**/.packages
+dart/**/pubspec.lock
