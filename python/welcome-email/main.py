@@ -13,7 +13,7 @@ load_dotenv()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 key = os.environ.get('MAILGUN_API_KEY')
-Domain = os.environ.get('MAILGUN_DOMAIN')
+domain = os.environ.get('MAILGUN_DOMAIN')
 
 request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(Domain)
 request = requests.post(request_url, auth=('api', key), data={
