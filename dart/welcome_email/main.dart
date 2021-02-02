@@ -4,9 +4,10 @@ import 'package:http/http.dart' as http;
 
 main(List<String> args) async {
   Map<String, String> envVars = Platform.environment;
+  final domain = envVars['MAILGUN_DOMAIN'];
   final mailgun = MailgunMailer(
     apiKey: envVars['MAILGUN_API_KEY'],
-    domain: envVars['MAILGUN_DOMAIN'],
+    domain: domain,
   );
 
   // Get the name and email of the newly created user from Appwrite's environment variable
@@ -16,8 +17,8 @@ main(List<String> args) async {
 
 // Create your email
   final sent = await mailgun.send(
-      from: 'Welcome to My Awesome App <welcome@my-awesome-app.io>',
-      to: email,
+      from: 'Welcome to My Awesome App <mailgun@$domain>',
+      to: [email],
       subject: 'Welcome on board ${name}!',
       text: 'Hi ${name}\nGreat to have you with us. ! 😍');
   if (sent) {
