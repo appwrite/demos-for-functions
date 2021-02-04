@@ -35,14 +35,15 @@ For security issues, kindly email us [security@appwrite.io](mailto:security@appw
 
 ✅ = Done - You can still submit PRs with fixes or improvements. <br>
 ⚒  = In progress - This function is currently being worked on by a community member.  <br>
-❌ = Missing - This funcion is missing and we are looking for contributors. <br>
+❌ = Missing - This funcion is missing and we are looking for contributors.
 
-| Function / Language  | Deno    | NodeJS    | PHP     | Python  | Ruby   | 
-| -------------        | --------| --------- | --------|-------- |------- |
-|hello-world           | ⚒       | ⚒        | ⚒       | ✅     | ⚒      |
-|welcome-email         | ⚒       | ✅       | ❌      | ❌     | ❌     |
-|file-backup           | ❌      | ❌       | ❌      | ✅     | ❌     |
-|object-orientation    | ❌      | ❌       | ❌      | ✅     | ❌     |
+| Function / Language  | Deno    | NodeJS    | PHP     | Python  | Ruby   | Dart | Dotnet    |
+| -------------        | --------| --------- | --------|-------- |------- |------|---------- |
+|hello-world           | ⚒       | ⚒        | ⚒       | ✅     | ⚒      |  ✅ |    ❌     |
+|welcome-email         | ⚒       | ✅       | ❌      | ❌     | ❌     |  ✅ |    ✅     |
+|file-backup           | ❌      | ❌       | ❌      | ✅     | ❌     |  ❌ |     ❌    |
+|object-detection      | ❌      | ❌       | ❌      | ✅     | ❌     |  ❌ |     ❌    |
+|storage-cleaner       | ❌      | ❌       | ❌      | ❌     | ❌     | ❌  | ✅        |
 
 
 ## Follow Us
