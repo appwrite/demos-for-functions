@@ -37,11 +37,11 @@ For security issues, kindly email us [security@appwrite.io](mailto:security@appw
 
 | Function / Language  | Deno    | NodeJS    | PHP     | Python  | Ruby   | Dart | Dotnet    |
 | -------------        | --------| --------- | --------|-------- |------- |------|---------- |
-|hello-world           | ⚒       | ⚒        | ⚒       | ✅     | ⚒      |  ✅ |    ❌     |
-|welcome-email         | ⚒       | ✅       | ❌      | ❌     | ❌     |  ✅ |    ✅     |
-|file-backup           | ❌      | ❌       | ❌      | ✅     | ❌     |  ❌ |     ❌    |
-|object-detection      | ❌      | ❌       | ❌      | ✅     | ❌     |  ❌ |     ❌    |
-|storage-cleaner       | ❌      | ❌       | ❌      | ❌     | ❌     | ❌  | ✅        |
+|hello-world           | ⚒       | ⚒        | ⚒       | ✅     | ⚒      |  ✅ | ❌        |
+|welcome-email         | ⚒       | ✅       | ❌      | ❌     | ❌     |  ✅ | ✅        |
+|file-backup           | ❌      | ❌       | ❌      | ✅     | ❌     |  ❌ | ❌        |
+|object-detection      | ❌      | ❌       | ❌      | ✅     | ❌     |  ❌ |❌         |
+|storage-cleaner       | ❌      | ❌       | ❌      | ⚒     | ❌     | ❌  | ✅         |
 
 
 ## Follow Us
