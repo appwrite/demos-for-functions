@@ -30,6 +30,21 @@ We truly ❤️ pull requests! If you wish to help, you can use the templates in
 
 For security issues, kindly email us [security@appwrite.io](mailto:security@appwrite.io) instead of posting a public issue in GitHub.
 
+
+## Progress
+
+✅ = Done - You can still submit PRs with fixes or improvements. <br>
+⚒  = In progress - This function is currently being worked on by a community member.  <br>
+❌ = Missing - This funcion is missing and we are looking for contributors. <br>
+
+| Function / Language  | Deno    | NodeJS    | PHP     | Python  | Ruby   | 
+| -------------        | --------| --------- | --------|-------- |------- |
+|hello-world           | ⚒       | ⚒        | ⚒       | ✅     | ⚒      |
+|welcome-email         | ⚒       | ✅       | ❌      | ❌     | ❌     |
+|file-backup           | ❌      | ❌       | ❌      | ✅     | ❌     |
+|object-orientation    | ❌      | ❌       | ❌      | ✅     | ❌     |
+
+
 ## Follow Us
 
 Join our growing community around the world! Follow us on [Twitter](https://twitter.com/appwrite_io), [Facebook Page](https://www.facebook.com/appwrite.io), [Facebook Group](https://www.facebook.com/groups/appwrite.developers/) or join our live [Discord server](https://discord.gg/GSeTUeA) for more help, ideas, and discussions.
