@@ -31,8 +31,8 @@ We truly ❤️ pull requests! If you wish to help, you can use the templates in
 For security issues, kindly email us [security@appwrite.io](mailto:security@appwrite.io) instead of posting a public issue in GitHub.
 
 ## Progress
-✅ = Done - You can still submit PRs with fixes or improvements. <br>
-⚒  = In progress - This function is currently being worked on.  <br>
+✅ = Done - You can still submit PRs with fixes or improvements. 
+⚒  = In progress - This function is currently being worked on.  
 ❌ =  Missing - This function is missing. Contributions are welcomed.
 
 | Function / Language  | Deno    | NodeJS    | PHP     | Python  | Ruby   | Dart | Dotnet    |
