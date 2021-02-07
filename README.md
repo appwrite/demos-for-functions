@@ -40,8 +40,8 @@ For security issues, kindly email us [security@appwrite.io](mailto:security@appw
 |hello-world           | ⚒       | ⚒        | ⚒       | ✅     | ⚒      |  ✅ | ❌        |
 |welcome-email         | ⚒       | ✅       | ❌      | ❌     | ❌     |  ✅ | ✅        |
 |file-backup           | ❌      | ❌       | ❌      | ✅     | ❌     |  ❌ | ❌        |
-|object-detection      | ❌      | ❌       | ✅      | ✅     | ❌     |  ❌ |❌         |
-|storage-cleaner       | ❌      | ❌       | ❌      | ⚒      | ❌     | ❌  | ✅         |
+|object-detection      | ❌      | ❌       | ✅      | ✅     | ❌     |  ❌ | ❌        |
+|storage-cleaner       | ❌      | ❌       | ✅      | ❌     | ❌     | ❌  | ✅        |
 
 
 ## Follow Us
