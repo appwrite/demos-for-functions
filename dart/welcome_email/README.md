@@ -21,7 +21,7 @@ $ dart pub get
 * Ensure that your folder structure looks like this 
 ```
 .
-├── main.js
+├── main.dart
 ├── .appwrite
 ├── pubspec.lock
 └── pubspec.yaml
