@@ -35,7 +35,7 @@ For security issues, kindly email us [security@appwrite.io](mailto:security@appw
 ⚒  = In progress - This function is currently being worked on.  
 ❌ =  Missing - This function is missing. Contributions are welcomed.
 
-| Function / Language  | Deno    | NodeJS    | PHP     | Python  | Ruby   | Dart | Dotnet    |
+| Function / Language  | Deno    | NodeJS    | PHP     | Python  | Ruby   | Dart | .NET    |
 | -------------        | --------| --------- | --------|-------- |------- |------|---------- |
 |hello-world           | ⚒       | ⚒        | ⚒       | ✅     | ⚒      |  ✅ | ❌        |
 |welcome-email         | ⚒       | ✅       | ❌      | ❌     | ❌     |  ✅ | ✅        |
