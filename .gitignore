@@ -7,3 +7,4 @@ nodejs/code.tar.gz
 dart/**/.dart_tool
 dart/**/.packages
 dart/**/pubspec.lock
+dart/**/.appwrite
