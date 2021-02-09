@@ -1,5 +1,5 @@
 # 🚮 Clean up files in your storage older than XX days
-A sample .NET Cloud Function for deleting files that are older than XX days on a schedule.
+A sample Dart Cloud Function for deleting files that are older than XX days on a schedule.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
@@ -23,7 +23,7 @@ $ dart pub get
 * Ensure that your folder structure looks like this 
 ```
 .
-├── main.js
+├── main.dart
 ├── .appwrite/
 ├── pubspec.lock
 └── pubspec.yaml
@@ -33,7 +33,7 @@ $ dart pub get
 
 ```bash
 $ cd ..
-$ tar -zcvf code.tar.gz welcome-email
+$ tar -zcvf code.tar.gz storage_cleaner
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag

@@ -21,7 +21,7 @@ $ dart pub get
 * Ensure that your folder structure looks like this 
 ```
 .
-├── main.js
+├── main.dart
 ├── .appwrite
 ├── pubspec.lock
 └── pubspec.yaml
@@ -31,7 +31,7 @@ $ dart pub get
 
 ```bash
 $ cd ..
-$ tar -zcvf code.tar.gz welcome-email
+$ tar -zcvf code.tar.gz welcome_email
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
