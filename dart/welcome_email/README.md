@@ -22,7 +22,7 @@ $ dart pub get
 ```
 .
 ├── main.js
-├── .pub_cache/
+├── .appwrite
 ├── pubspec.lock
 └── pubspec.yaml
 ```
