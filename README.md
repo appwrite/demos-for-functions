@@ -18,6 +18,7 @@ To quickly get started , you can always refer to our language templates
 3. [PHP](php/template/README.md)
 4. [Python](python/template/README.md) 
 5. [Ruby](ruby/template/README.md)
+6. [.NET](dotnet//template/README.md)
 
 ## Contributing
 
@@ -28,6 +29,20 @@ We truly ❤️ pull requests! If you wish to help, you can use the templates in
 ## Security
 
 For security issues, kindly email us [security@appwrite.io](mailto:security@appwrite.io) instead of posting a public issue in GitHub.
+
+## Progress
+✅ = Done - You can still submit PRs with fixes or improvements.  
+⚒  = In progress - This function is currently being worked on.  
+❌ =  Missing - This function is missing. Contributions are welcomed.
+
+| Function / Language  | Deno    | NodeJS    | PHP     | Python  | Ruby   | Dart | .NET    |
+| -------------        | --------| --------- | --------|-------- |------- |------|---------- |
+|hello-world           | ⚒       | ⚒        | ⚒       | ✅     | ⚒      |  ✅ | ❌        |
+|welcome-email         | ⚒       | ✅       | ❌      | ❌     | ❌     |  ✅ | ✅        |
+|file-backup           | ❌      | ❌       | ❌      | ✅     | ❌     |  ❌ | ❌        |
+|object-detection      | ❌      | ❌       | ✅      | ✅     | ❌     |  ❌ | ❌        |
+|storage-cleaner       | ❌      | ❌       | ✅      | ❌     | ❌     | ✅   | ✅        |
+
 
 ## Follow Us
 
