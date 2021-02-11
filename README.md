@@ -38,7 +38,7 @@ For security issues, kindly email us [security@appwrite.io](mailto:security@appw
 | Function / Language  | Deno    | NodeJS    | PHP     | Python  | Ruby   | Dart | .NET    |
 | -------------        | --------| --------- | --------|-------- |------- |------|---------- |
 |hello-world           | ⚒       | ⚒        | ⚒       | ✅     | ⚒      |  ✅ | ❌        |
-|welcome-email         | ⚒       | ✅       | ❌      | ❌     | ❌     |  ✅ | ✅        |
+|welcome-email         | ✅       | ✅       | ❌      | ❌     | ❌     |  ✅ | ✅        |
 |file-backup           | ❌      | ❌       | ❌      | ✅     | ❌     |  ❌ | ❌        |
 |object-detection      | ❌      | ❌       | ✅      | ✅     | ❌     |  ❌ | ❌        |
 |storage-cleaner       | ❌      | ❌       | ✅      | ❌     | ❌     | ✅   | ✅        |
