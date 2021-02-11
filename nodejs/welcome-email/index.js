@@ -1,3 +1,4 @@
+
 // Import the mailgun sdk
 const mailgun = require("mailgun-js");
 

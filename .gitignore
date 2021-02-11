@@ -1,10 +1,11 @@
 vendor
 
-nodejs/**/package-lock.json
-nodejs/**/node_modules
+nodejs/welcome-email/node_modules
+nodejs/welcome-email/package-lock.json
 nodejs/code.tar.gz
-
+deno/code.tar.gz
 dart/**/.dart_tool
 dart/**/.packages
 dart/**/pubspec.lock
 dart/**/.appwrite
+*.DS_Store
