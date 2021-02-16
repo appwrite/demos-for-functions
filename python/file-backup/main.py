@@ -1,6 +1,7 @@
 import sys
 import json
 import os
+
 import dropbox
 from dropbox.files import WriteMode
 from dropbox.exceptions import ApiError, AuthError
@@ -37,9 +38,9 @@ BACKUPPATH = '/my-file.txt'
 
 # Setup the appwrite SDK
 client = Client()
-client.set_endpoint('http://192.168.1.6/v1') # Your API Endpoint
-client.set_project('5fca866c65afc') # Your project ID
-client.set_key(os.environ["APPWRITE_KEY"]) # Your secret API key
+client.set_endpoint(os.environ["APPWRITE_ENDPOINT"]) 
+client.set_project(os.environ["APPWRITE_PROJECT_ID"])
+client.set_key(os.environ["APPWRITE_API_KEY"]) 
 
 # Get the ID of the uploaded file from the environment variable set by appwrite.
 payload = json.loads(os.environ["APPWRITE_FUNCTION_EVENT_PAYLOAD"])
