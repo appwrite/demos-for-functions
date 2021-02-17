@@ -1,16 +1,6 @@
-# general imports
 import os
 import requests
 import json
-
-# dependencies
-from appwrite.client import Client
-
-# Setup appwrite client
-client = Client()
-client.set_endpoint(os.environ['APPWRITE_ENDPOINT']) 
-client.set_project(os.environ['APPWRITE_PROJECT_ID']) 
-client.set_key(os.environ['APPWRITE_API_KEY'])
 
 # parsing payload
 payload = json.loads(os.environ['APPWRITE_FUNCTION_EVENT_PAYLOAD'])
