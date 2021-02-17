@@ -6,9 +6,6 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 
 * **MAILGUN_API_KEY** =  API Key for Mailgun
 * **MAILGUN_DOMAIN** = Domain Name from Mailgun
-* **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
-* **APPWRITE_PROJECT_ID** - Your Project ID
-* **APPWRITE_API_KEY** - Your Appwrite API key with atleast `users.read` permissions
 
 ## 🚀 Building and Packaging
 
