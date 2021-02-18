@@ -1,5 +1,5 @@
 # 📧 Welcome Email 
-Sends the welcome email to the newly registered users to the app according to the template provided.
+A sample Python Cloud Function for sending a welcome email to a newly registered user.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
