@@ -1,5 +1,5 @@
 # 🚮 Clean up files in your storage older than XX days
-A sample .NET Cloud Function for deleting files that are older than XX days on a schedule.
+A sample python Cloud Function for deleting files that are older than XX days on a schedule.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
