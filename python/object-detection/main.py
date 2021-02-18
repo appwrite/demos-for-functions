@@ -1,5 +1,3 @@
-from __future__ import print_function
-import time
 from pprint import pprint
 import json 
 import os
@@ -20,9 +18,9 @@ fileID = payload["$id"]
 
 # Setup appwrite client
 client = Client()
-client.set_endpoint('http://192.168.1.6/v1') # PRIVATE IP OF YOUR APPWRITE CONTAINER
-client.set_project('5fca866c65afc') # YOUR PROJECT ID
-client.set_key(os.environ["APPWRITE_KEY"])
+client.set_endpoint(os.environ["APPWRITE_ENDPOINT"]) 
+client.set_project(os.environ["APPWRITE_PROJECT_ID"]) 
+client.set_key(os.environ["APPWRITE_API_KEY"])
 
 # Get the image file 
 storage = Storage(client)
@@ -34,7 +32,7 @@ with open(FILENAME, "wb") as newFile:
 
 # Configure API key authorization: Apikey
 configuration = cloudmersive_image_api_client.Configuration()
-configuration.api_key['Apikey'] = os.environ['API_KEY']
+configuration.api_key['Apikey'] = os.environ['CLOUDMERSIVE_API_KEY']
 
 # create an instance of the API class
 api_instance = cloudmersive_image_api_client.RecognizeApi(cloudmersive_image_api_client.ApiClient(configuration))

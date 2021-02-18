@@ -4,7 +4,9 @@ A sample Python Cloud Function that leverages Dropbox to create backups of impor
 ## 📝 Environment Variables
 Add the following environment variables in your Cloud Function settings.
 
-* **APPWRITE_KEY** - Create a key from the Appwrite console with the following scope (`files.read`)
+* **APPWRITE_API_KEY** - Create a key from the Appwrite console with the following scope (`files.read`)
+* **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
+* **APPWRITE_PROJECT_ID** - Your Project ID
 * **DROPBOX_KEY** - OAuth token from [Dropbox](https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account) 
 
 ## 🚀 Building and Packaging
