@@ -4,8 +4,8 @@ A sample Python Cloud Function for sending a welcome email to a newly registered
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
-* **MAILGUN_API_KEY** =  API Key for Mailgun
-* **MAILGUN_DOMAIN** = Domain Name from Mailgun
+* **MAILGUN_API_KEY** -  API Key for Mailgun
+* **MAILGUN_DOMAIN** - Domain Name from Mailgun
 
 ## 🚀 Building and Packaging
 
