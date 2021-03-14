@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "cloud-functions-storage-cleaner-nodejs",
   "version": "1.0.0",
-  "description": "This template is meant to allow developers to quickly get started with Appwrite's Cloud Functions. Just follow along",
+  "description": "A sample NodeJS Cloud Function for deleting files that are older than XX days on a schedule.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
