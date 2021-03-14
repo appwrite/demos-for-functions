@@ -1,6 +1,6 @@
 # 🚮 Clean up files in your storage older than XX days
 
-A sample .NET Cloud Function for deleting files that are older than XX days on a schedule.
+A sample NodeJS Cloud Function for deleting files that are older than XX days on a schedule.
 
 ## 📝 Environment Variables
 
