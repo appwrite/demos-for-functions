@@ -41,7 +41,7 @@ For security issues, kindly email us [security@appwrite.io](mailto:security@appw
 |welcome-email         | ✅      | ✅       | ❌      | ✅      | ❌     |  ✅  | ✅      |
 |file-backup           | ❌      | ❌       | ❌      | ✅      | ❌     |  ❌  | ❌      |
 |object-detection      | ❌      | ❌       | ✅      | ✅      | ❌     |  ❌  | ❌      |
-|storage-cleaner       | ❌      | ❌       | ✅      | ✅      | ❌     |  ✅  | ✅      |
+|storage-cleaner       | ❌      | ✅       | ✅      | ✅      | ❌     |  ✅  | ✅      |
 
 
 ## Follow Us
