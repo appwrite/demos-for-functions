@@ -4,7 +4,7 @@ const domain = Deno.env.get("MAILGUN_DOMAIN")
 const apiKey = Deno.env.get("MAILGUN_API_KEY")
 
 // Get the name and email of the newly created user from Appwrite's environment variable
-const payload = JSON.parse(Deno.env.get("APPWRITE_FUNCTION_EVENT_PAYLOAD"));
+const payload = JSON.parse(Deno.env.get("APPWRITE_FUNCTION_EVENT_DATA"));
 const name = payload['name'];
 const email = payload['email'];
 
