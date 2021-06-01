@@ -5,15 +5,15 @@ const apiKey = Deno.env.get("MAILGUN_API_KEY")
 
 // Get the name and email of the newly created user from Appwrite's environment variable
 const payload = JSON.parse(Deno.env.get("APPWRITE_FUNCTION_EVENT_DATA"));
-const name = payload['name'];
+const userName = payload['name'];
 const email = payload['email'];
 
 // Create your email 
 const data = {
 	from: 'Welcome to My Awesome App <welcome@my-awesome-app.io>',
 	to: email,
-	subject: `Welcome on board ${name}!`,
-	text: `Hi ${name}\nGreat to have you with us. ! 😍`
+	subject: `Welcome on board ${userName}!`,
+	text: `Hi ${userName}\nGreat to have you with us. ! 😍`
 };
 const form = new FormData();
 Object.keys(data).forEach((k) => form.append(k, data[k]));
