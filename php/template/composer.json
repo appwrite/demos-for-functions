@@ -10,6 +10,6 @@
         }
     ],
     "require": {
-        "appwrite/appwrite": "1.1.*"
+        "appwrite/appwrite": "2.1.*"
     }
 }

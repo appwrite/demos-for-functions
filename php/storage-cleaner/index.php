@@ -8,7 +8,7 @@ use Appwrite\Services\Storage;
 $client = new Client();
 $client
     ->setEndpoint($_ENV['APPWRITE_ENDPOINT'])
-    ->setProject($_ENV['APPWRITE_PROJECT_ID'])
+    ->setProject($_ENV['APPWRITE_FUNCTION_PROJECT_ID']) //Available by default
     ->setKey($_ENV['APPWRITE_API_KEY'])
 ;
 
