@@ -6,12 +6,12 @@ main(List<String> args) async {
   Map<String, String> envVars = Platform.environment;
   final domain = envVars['MAILGUN_DOMAIN'];
   final mailgun = MailgunMailer(
-    apiKey: envVars['MAILGUN_API_KEY'] ?? '',
+    apiKey: envVars['MAILGUN_API_KEY']!,
     domain: domain ?? '',
   );
 
   // Get the name and email of the newly created user from Appwrite's environment variable
-  final payload = jsonDecode(envVars['APPWRITE_FUNCTION_EVENT_DATA'] ?? "{}");
+  final payload = jsonDecode(envVars['APPWRITE_FUNCTION_EVENT_DATA']!);
   final name = payload['name'];
   final email = payload['email'];
 
