@@ -5,7 +5,7 @@ const sdk = require('node-appwrite');
 let client = new sdk.Client();
 client
     .setEndpoint(process.env.APPWRITE_ENDPOINT) // Your API Endpoint
-    .setProject(process.env.APPWRITE_PROJECT_ID) // Your project ID
+    .setProject(process.env.APPWRITE_FUNCTION_PROJECT_ID) // Your project ID available by default
     .setKey(process.env.APPWRITE_API_KEY) // Your secret API key
     ;
 
