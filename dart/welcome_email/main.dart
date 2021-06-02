@@ -6,12 +6,12 @@ main(List<String> args) async {
   Map<String, String> envVars = Platform.environment;
   final domain = envVars['MAILGUN_DOMAIN'];
   final mailgun = MailgunMailer(
-    apiKey: envVars['MAILGUN_API_KEY'],
-    domain: domain,
+    apiKey: envVars['MAILGUN_API_KEY']!,
+    domain: domain ?? '',
   );
 
   // Get the name and email of the newly created user from Appwrite's environment variable
-  final payload = jsonDecode(envVars['APPWRITE_FUNCTION_EVENT_PAYLOAD']);
+  final payload = jsonDecode(envVars['APPWRITE_FUNCTION_EVENT_DATA']!);
   final name = payload['name'];
   final email = payload['email'];
 
@@ -32,19 +32,19 @@ class MailgunMailer {
   final String domain;
   final String apiKey;
 
-  MailgunMailer({this.domain, this.apiKey});
+  MailgunMailer({required this.domain, required this.apiKey});
 
   Future<bool> send(
-      {String from,
+      {String? from,
       List<String> to = const [],
       List<String> cc = const [],
       List<String> bcc = const [],
       List<dynamic> attachments = const [],
-      String subject,
-      String html,
-      String text,
-      String template,
-      Map<String, dynamic> options}) async {
+      String? subject,
+      String? html,
+      String? text,
+      String? template,
+      Map<String, dynamic>? options}) async {
     var client = http.Client();
     try {
       var request = http.MultipartRequest(

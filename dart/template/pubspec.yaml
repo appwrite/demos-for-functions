@@ -4,7 +4,7 @@ description: This template is meant to allow developers to quickly get started
   with Appwrite's Cloud Functions. Just follow along
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  dart_appwrite: ^0.1.0
+  dart_appwrite: ^0.6.1
