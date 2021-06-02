@@ -17,7 +17,7 @@ namespace welcome_email
       HttpRequestMessage request = new HttpRequestMessage(new HttpMethod("POST"), url);
       request.Headers.TryAddWithoutValidation("Authorization", $"Basic {base64authorization}");
 
-      User user = JsonSerializer.Deserialize<User>(Environment.GetEnvironmentVariable("APPWRITE_FUNCTION_EVENT_PAYLOAD"));
+      User user = JsonSerializer.Deserialize<User>(Environment.GetEnvironmentVariable("APPWRITE_FUNCTION_EVENT_DATA"));
 
       MultipartFormDataContent multipartContent = new MultipartFormDataContent();
       multipartContent.Add(new StringContent("Mailgun Sandbox <welcome@my-awesome-app.io>"), "from");
