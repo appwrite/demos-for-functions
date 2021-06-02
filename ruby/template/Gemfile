@@ -2,4 +2,4 @@ source "https://rubygems.org"
 
 ruby "~> 2.6.3"
 
-gem 'appwrite', '~> 1.0', '>= 1.0.11'
+gem 'appwrite', '~> 2.1', '>= 2.1.1'
