@@ -4,7 +4,7 @@ import * as sdk from "https://deno.land/x/appwrite/mod.ts";
 let client = new sdk.Client();
 client
     .setEndpoint('http://[HOSTNAME_OR_IP]/v1')
-    .setProject('5fca866c65afc') // Your project ID
+    .setProject(Deno.env.get("APPWRITE_FUNCTION_PROJECT_ID")) // Your project ID available by default
     .setKey('8d84bc37d4c59bb3b3....f1ab664e94e6df53') // Your secret API key
 ;
 
