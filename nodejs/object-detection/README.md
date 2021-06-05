@@ -1,4 +1,4 @@
-# 📧  Your Function Name
+# 📷 Object Detection using Cloudmersive Vision API
 A sample NodeJS Cloud Function for object detection on an image file uploaded by the user.
 
 ## 📝 Environment Variables
