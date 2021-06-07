@@ -39,7 +39,7 @@ BACKUPPATH = '/my-file.txt'
 # Setup the appwrite SDK
 client = Client()
 client.set_endpoint(os.environ["APPWRITE_ENDPOINT"]) 
-client.set_project(os.environ["APPWRITE_PROJECT_ID"])
+client.set_project(os.environ["APPWRITE_FUNCTION_PROJECT_ID"]) # this is available by default
 client.set_key(os.environ["APPWRITE_API_KEY"]) 
 
 # Get the ID of the uploaded file from the environment variable set by appwrite.
