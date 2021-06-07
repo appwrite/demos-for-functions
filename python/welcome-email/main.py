@@ -3,7 +3,7 @@ import requests
 import json
 
 # parsing payload
-payload = json.loads(os.environ['APPWRITE_FUNCTION_EVENT_PAYLOAD'])
+payload = json.loads(os.environ['APPWRITE_FUNCTION_EVENT_DATA'])
 name = payload['name']
 email = payload['email']
 # see: https://appwrite.io/docs/models/user

@@ -5,7 +5,6 @@ A sample python Cloud Function for deleting files that are older than XX days on
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
 * **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
-* **APPWRITE_PROJECT_ID** - Your Project ID
 * **APPWRITE_API_KEY** - Your Appwrite API key with atleast `files.read` and `files.write` permissions
 * **DAYS_TO_EXPIRE** - Days for files to expire
 

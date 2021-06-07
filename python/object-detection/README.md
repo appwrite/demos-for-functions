@@ -6,7 +6,6 @@ Add the following environment variables in your Cloud Functions settings.
 
 * **APPWRITE_API_KEY** - Create a key from the Appwrite console with the following scope (`files.read`)
 * **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
-* **APPWRITE_PROJECT_ID** - Your Project ID
 * **CLOUDMERSIVE_API_KEY** - API Key for Cloudmersive
 
 ## 🚀 Building and Packaging

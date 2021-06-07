@@ -19,7 +19,7 @@ fileID = payload["$id"]
 # Setup appwrite client
 client = Client()
 client.set_endpoint(os.environ["APPWRITE_ENDPOINT"]) 
-client.set_project(os.environ["APPWRITE_PROJECT_ID"]) 
+client.set_project(os.environ["APPWRITE_FUNCTION_PROJECT_ID"]) # this is available by default
 client.set_key(os.environ["APPWRITE_API_KEY"])
 
 # Get the image file 
