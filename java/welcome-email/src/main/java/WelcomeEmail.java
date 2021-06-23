@@ -13,14 +13,19 @@ public class WelcomeEmail {
         API_KEY = System.getenv("MAILGUN_API_KEY");
         String payload = System.getenv("APPWRITE_FUNCTION_EVENT_DATA");
 
+        if (payload != null && !payload.isEmpty()) {
+            try {
+                JSONObject json = new JSONObject(payload);
+                String name = json.getString("name");
+                String email = json.getString("email");
 
-        if(payload != null && !payload.isEmpty()) {
-            JSONObject json = new JSONObject(payload);
-            String name = json.getString("name");
-            String email = json.getString("email");
+                String response = sendSimpleMessage(name, email);
+                System.out.println(response);
+            } catch (Exception e) {
+                System.out.print("[ERROR] There was an error");
+                System.out.println(e.getMessage());
+            }
 
-            String response = sendSimpleMessage(name, email);
-            System.out.println(response);
         } else {
             System.out.println("[INFO] APPWRITE_FUNCTION_EVENT_DATA is empty");
         }
