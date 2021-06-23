@@ -1,5 +1,5 @@
 # 📧 Sending Welcome Emails using Mailgun's Email API
-A sample Java Cloud Function for sending a welcome email to a newly registered user.
+A sample Kotlin Cloud Function for sending a welcome email to a newly registered user.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
@@ -11,22 +11,21 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 
 To package this example as a cloud function, follow these steps.
 
-* Import the project into IntelliJ, Eclipse or any other IDE that has support for Java projects. 
-
+* Import the project into IntelliJ, Eclipse or any other IDE that has support for Kotlin projects. 
 
 * Build a jar for the project. Here's a [Stack Overflow answer](https://stackoverflow.com/questions/1082580/how-to-build-jars-from-intellij-properly) to help you.
 
 * Create a tarfile
 
-If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/java/welcome-email/out/artifacts/welcome_email_jar/welcome_email.jar`
+If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/kotlin/welcome_email/out/artifacts/welcome_email_jar/welcome_email.jar`
 
 ```bash
-$ cd demos-for-functions/java/welcome-email/out/artifacts/
+$ cd demos-for-functions/kotlin/welcome_email/out/artifacts/
 $ tar -zcvf code.tar.gz welcome_email_jar
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-* Input the command that will run your function (in this case `java -jar welcome-email.jar`) as your entry point command
+* Input the command that will run your function (in this case `java -jar welcome_email.jar`) as your entry point command
 * Upload your `tarfile` 
 * Click 'Activate'
 
