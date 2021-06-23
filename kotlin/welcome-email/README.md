@@ -20,12 +20,12 @@ To package this example as a cloud function, follow these steps.
 If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/kotlin/welcome_email/out/artifacts/welcome_email_jar/welcome_email.jar`
 
 ```bash
-$ cd demos-for-functions/kotlin/welcome_email/out/artifacts/
+$ cd demos-for-functions/kotlin/welcome-email/out/artifacts/
 $ tar -zcvf code.tar.gz welcome_email_jar
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-* Input the command that will run your function (in this case `java -jar welcome_email.jar`) as your entry point command
+* Input the command that will run your function (in this case `java -jar welcome-email.jar`) as your entry point command
 * Upload your `tarfile` 
 * Click 'Activate'
 
