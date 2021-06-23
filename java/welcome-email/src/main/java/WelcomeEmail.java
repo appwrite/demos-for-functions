@@ -13,8 +13,6 @@ public class WelcomeEmail {
         API_KEY = System.getenv("MAILGUN_API_KEY");
         String payload = System.getenv("APPWRITE_FUNCTION_EVENT_DATA");
 
-//        System.out.println("[INFO] Payload");
-//        System.out.println(payload);
 
         if(payload != null && !payload.isEmpty()) {
             JSONObject json = new JSONObject(payload);
