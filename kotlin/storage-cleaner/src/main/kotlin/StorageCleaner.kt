@@ -21,7 +21,7 @@ suspend fun main(args: Array<String>) {
     val files: FileList = Gson().fromJson(fileList, FileList::class.java)
 
     var deletedFiles =  0
-    for( file in files.files!!) {
+    for( file in files.files ?: listOf() ) {
         val diff: Long = Date().time/1000 - file.dateCreated
         if (diff > daysToExpire * 24 * 60 * 60) {
             storage.deleteFile(file.`$id`)
