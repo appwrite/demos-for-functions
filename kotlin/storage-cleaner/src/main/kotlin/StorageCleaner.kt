@@ -30,4 +30,5 @@ suspend fun main(args: Array<String>) {
         }
     }
     println("Total files deleted: $deletedFiles")
+    exitProcess(0)
 }
