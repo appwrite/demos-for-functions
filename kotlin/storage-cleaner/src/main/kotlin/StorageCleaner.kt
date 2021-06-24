@@ -1,11 +1,8 @@
 import com.google.gson.Gson
 import io.appwrite.Client
 import io.appwrite.services.Storage
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.system.exitProcess
-import kotlin.time.milliseconds
 
 suspend fun main(args: Array<String>) {
     val client = Client()
