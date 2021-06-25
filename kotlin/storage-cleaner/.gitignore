@@ -6,3 +6,4 @@ src/main/resources
 .classpath
 .project
 .settings
+*.iml
