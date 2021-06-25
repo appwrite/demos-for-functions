@@ -1,7 +1,9 @@
 # 📧 Sending Welcome Emails using Mailgun's Email API
+
 A sample Kotlin Cloud Function for sending a welcome email to a newly registered user.
 
 ## 📝 Environment Variables
+
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
 * **MAILGUN_API_KEY** - API Key for Mailgun 
