@@ -1,9 +1,0 @@
-target/
-out/
-.idea/
-src/test
-src/main/resources
-.classpath
-.project
-.settings
-*.iml
