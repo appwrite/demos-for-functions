@@ -10,7 +10,7 @@ const emailConfig = {
 const mg = mailgun(emailConfig);
 
 // Get the name and email of the newly created user from Appwrite's environment variable
-const payload = JSON.parse(process.env.APPWRITE_FUNCTION_EVENT_PAYLOAD)
+const payload = JSON.parse(process.env.APPWRITE_FUNCTION_EVENT_DATA)
 const name = payload['name']
 const email = payload['email']
 
