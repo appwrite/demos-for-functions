@@ -17,7 +17,7 @@ To package this example as a cloud function, follow these steps.
 
 * Create a tarfile
 
-If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/kotlin/welcome_email/out/artifacts/welcome_email_jar/welcome_email.jar`
+If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/kotlin/welcome-email/out/artifacts/welcome_email_jar/welcome_email.jar`
 
 ```bash
 $ cd demos-for-functions/kotlin/welcome-email/out/artifacts/
