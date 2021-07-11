@@ -13,8 +13,8 @@ $ dotnet publish --runtime linux-x64 --framework net5.0 --no-self-contained
 
 * Ensure that your output looks like this 
 ```
-  StorageCleaner -> ......\demos-for-functions\dotnet\hello-world\bin\Debug\net5.0\linux-x64\StorageCleaner.dll
-  StorageCleaner -> ......\demos-for-functions\dotnet\hello-world\bin\Debug\net5.0\linux-x64\publish\
+  HelloWorld -> ......\demos-for-functions\dotnet\hello-world\bin\Debug\net5.0\linux-x64\HelloWorld.dll
+  HelloWorld -> ......\demos-for-functions\dotnet\hello-world\bin\Debug\net5.0\linux-x64\publish\
 ```
 
 * Create a tarfile
