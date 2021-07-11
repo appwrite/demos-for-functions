@@ -27,7 +27,7 @@ namespace FCMPushNotifications
                     Priority = Priority.High,
                 },
                 //Topic = "/topics/some_topic",
-                //Token = "token taken from FirebaseMessaging.instance.getToken()"
+                //Token = "d8sG......OApP3"// token taken from FirebaseMessaging.instance.getToken()
             });
         }
     }
