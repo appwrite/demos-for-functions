@@ -29,6 +29,7 @@ $ dotnet publish --runtime linux-x64 --framework net5.0 --no-self-contained
 ```
 
 * Ensure that your output looks like this 
+
 ```
   FCMPushNotifications -> ......\demos-for-functions\dotnet\fcm-push-notifications\bin\Debug\net5.0\linux-x64\FCMPushNotifications.dll
   FCMPushNotifications -> ......\demos-for-functions\dotnet\fcm-push-notifications\bin\Debug\net5.0\linux-x64\publish\
