@@ -1,6 +1,8 @@
 ﻿using Appwrite;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -14,10 +16,10 @@ namespace ObjectDetection
             var filename = "temp.jpg";
 
             // Triggered by the storage.files.create event
-            var payload = json.loads(Environment.GetEnvironmentVariable["APPWRITE_FUNCTION_EVENT_DATA"]);
+            var payload = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(Environment.GetEnvironmentVariable("APPWRITE_FUNCTION_EVENT_DATA"));
             var fileID = payload["$id"];
 
-            // Setup appwrite client
+            // // Setup appwrite client
             var client = new Client();
             client
               .SetEndPoint(Environment.GetEnvironmentVariable("APPWRITE_ENDPOINT"))
@@ -29,8 +31,12 @@ namespace ObjectDetection
             var storage = new Storage(client);
             var result = storage.GetFilePreview(fileID);
 
-            // Save the file to the container
-            await File.WriteAllBytesAsync(fileID, result);
+            // Read bytes from the url we received
+            var clientt = new System.Net.WebClient();
+            clientt.Headers.Add("X-Appwrite-Project", Environment.GetEnvironmentVariable("APPWRITE_PROJECT_ID")); // needed as we only get url string without projectID
+            var bytes = await clientt.DownloadDataTaskAsync(new Uri(result));
+            //Save the file to the container
+            await File.WriteAllBytesAsync(filename, bytes);
 
             // Configure API key authorization: Apikey
             var configuration = new Cloudmersive.APIClient.NETCore.ImageRecognition.Client.Configuration();
@@ -42,8 +48,8 @@ namespace ObjectDetection
 
             try
             {
-                // Detect objects including types and locations in an image
-                var api_response = await api_instance.RecognizeDetectObjectsAsync(File.OpenRead(fileID));
+                //Detect objects including types and locations in an image
+                var api_response = await api_instance.RecognizeDetectObjectsAsync(File.OpenRead(image_file));
                 Console.WriteLine(api_response);
             }
             catch (System.Exception ex)
