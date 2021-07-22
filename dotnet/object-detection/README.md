@@ -1,5 +1,5 @@
-# 🚮 Clean up files in your storage older than XX days
-A sample .NET Cloud Function for deleting files that are older than XX days on a schedule.
+# 📷 Object Detection using Cloudmersive Vision API
+A sample .Net Cloud Function for object detection on an image file uploaded by the user. 
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
@@ -7,14 +7,19 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 * **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
 * **APPWRITE_PROJECT_ID** - Your Project ID
 * **APPWRITE_API_KEY** - Your Appwrite API key with `files.read` and `files.write` permissions
-* **DAYS_TO_EXPIRE** - Days for files to expire
+* **CLOUDMERSIVE_API_KEY** - API key acquired from https://cloudmersive.com. There is free trie.
+
+## 📝 Default Environment Variables
+No need to add these variables, these are supplied by Appwrite itself. 
+
+* **APPWRITE_FUNCTION_EVENT_DATA** - Your function event payload. This value is available only when your function trigger is 'event'. This variable value contains a string in JSON format with your specific event data.
 
 ## 🚀 Building and Packaging
 
 To package this example as a cloud function, follow these steps.
 
 ```bash
-$ cd demos-for-functions/dotnet/storage-cleaner
+$ cd demos-for-functions/dotnet/object-detection
 
 $ dotnet publish --runtime linux-x64 --framework net5.0 --no-self-contained
 ```
@@ -32,16 +37,8 @@ $ tar -C bin/Debug/net5.0/linux-x64 -zcvf code.tar.gz publish
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-* Input the command that will run your function (in this case `dotnet StorageCleaner.dll`) as your entrypoint command
+* Input the command that will run your function (in this case `dotnet ObjectDetection.dll`) as your entrypoint command
 * Upload your tarfile 
 * Click 'Activate'
-
-## ⏰ Schedule
-
-Head over to your function in the Appwrite console and under the Settings Tab, enter a reasonable schedule time (cron syntax).
-
-For example:
-
-- `*/30 * * * *` every 30 minutes
-- `0 * * * *` every hour
-- `0 0 * * *` every day
+* Navigate to the Settings Tab of your Cloud Function > Events > select storage.files.create
+* (optional) set Timeout to some 30s as function may timeout before  fisnishing
