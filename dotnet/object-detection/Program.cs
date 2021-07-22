@@ -15,8 +15,15 @@ namespace ObjectDetection
         {
             var filename = "temp.jpg";
 
+            // .NET parser is taking first property starting with "$" as metadata
+            var jsonSettings = new Newtonsoft.Json.JsonSerializerSettings()
+            {
+                MetadataPropertyHandling = Newtonsoft.Json.MetadataPropertyHandling.Ignore
+            };
+            var json = Environment.GetEnvironmentVariable("APPWRITE_FUNCTION_EVENT_DATA");
+
             // Triggered by the storage.files.create event
-            var payload = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(Environment.GetEnvironmentVariable("APPWRITE_FUNCTION_EVENT_DATA"));
+            var payload = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, object>>(json, jsonSettings);
             var fileID = payload["$id"];
 
             // // Setup appwrite client
@@ -29,7 +36,7 @@ namespace ObjectDetection
 
             // Get the image file 
             var storage = new Storage(client);
-            var result = storage.GetFilePreview(fileID);
+            var result = storage.GetFilePreview(fileID.ToString());
 
             // Read bytes from the url we received
             var clientt = new System.Net.WebClient();
@@ -50,7 +57,17 @@ namespace ObjectDetection
             {
                 //Detect objects including types and locations in an image
                 var api_response = await api_instance.RecognizeDetectObjectsAsync(File.OpenRead(image_file));
-                Console.WriteLine(api_response);
+                if (api_response.Successful == true)
+                {
+                    foreach (var item in api_response.Objects)
+                    {
+                        Console.WriteLine(item.ObjectClassName);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("It failed");
+                }
             }
             catch (System.Exception ex)
             {
