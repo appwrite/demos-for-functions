@@ -10,7 +10,7 @@ const config = {
 };
 
 // Getting the URL from Appwrite's environment variable
-const payload = JSON.parse(process.env.APPWRITE_FUNCTION_EVENT_DATA);
+const payload = JSON.parse(process.env.APPWRITE_FUNCTION_DATA);
 const data = {
     "long_url": payload['url']
 };
