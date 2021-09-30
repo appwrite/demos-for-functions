@@ -1,26 +1,43 @@
 import os
 import requests
-import json
+import validators
 
-# parsing payload
-payload = json.loads(os.environ['APPWRITE_FUNCTION_EVENT_DATA'])
-name = payload['name']
-email = payload['email']
-# see: https://appwrite.io/docs/models/user
+from json import dumps
 
-def send_simple_message():
-    '''using mailgun API to send email'''
+BITLY_TOKEN = os.environ['BITLY_TOKEN']
+LONG_URL = os.environ['LONG_URL']
 
-    return requests.post(
-        f"https://api.mailgun.net/v3/{os.environ['MAILGUN_DOMAIN']}/messages",
-            auth=("api", f"{os.environ['MAILGUN_API_KEY']}"),
-            data={"from": f"Excited User <mailgun@{os.environ['MAILGUN_DOMAIN']}>",
-                "to": [ email ],
-                "subject": f"Hello, {name}",
-                "text": "Testing some Mailgun awesomness!"})
+def shorten_long_url():
+    '''
+        shorten a long url using bitly api
+    '''
+
+    headers = {
+        'Authorization': f'Bearer {BITLY_TOKEN}',
+        'Content-Type': 'application/json',
+    }
+
+    payload = { 
+        "long_url": LONG_URL, 
+        "domain": "bit.ly", 
+        #"group_guid": "Ba1bc23dE4F" 
+    }
+
+    return requests.post('https://api-ssl.bitly.com/v4/shorten', headers=headers, data=dumps(payload))
 
 try:
-    response = send_simple_message()
-    print("response code: ", response.status_code)
+    if LONG_URL:
+        if not validators.url(LONG_URL):
+            # not a valid url, abort
+            raise Exception('long url provided is not a valid url')
+            
+    response = shorten_long_url()
+
+    if response.status_code == 200 or 201:
+        print(response.json().get('link'))
+    
+    else:
+        print(response.json().get('description'))
+
 except Exception as e:
-    print(e)
+    print(str(e))
