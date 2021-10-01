@@ -1,5 +1,5 @@
 # 📧 getInternetSpeed
-Python implementation to get check the download and upload speed of the server
+Python implementation to check the download and upload speed of the server
 
 ## 📝 Environment Variables
 No environment variables required for this one
