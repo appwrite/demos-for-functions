@@ -1,4 +1,4 @@
-# 📧  Send SMS
+# ✉️ Send SMS
 
 Demo function to send SMS to a phone number using Twilio API.
 
@@ -38,9 +38,9 @@ $ tar -zcvf code.tar.gz send-sms
 
 You can trigger the function using the SDK, HTTP API, or the Appwrite Console.
 
-Your data must include the following data:
+Your data must include the following fields:
 
-```Json
+```json
 {
     "to": "<receiver's phone number>",
     "message": "<message body>"
