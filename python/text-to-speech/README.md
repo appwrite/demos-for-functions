@@ -1,4 +1,4 @@
-# 📷 Object Detection using Cloudmersive Vision API
+# 📷 Text to Speech usng Google's API
 A sample Python Function for text to speech, where text is given by the user. 
 
 ## 📝 Environment Variables
