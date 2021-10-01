@@ -54,7 +54,7 @@ class BitlyUrlShortener {
 
     try {
       final response =
-          await _client.post(_url, headers: headers, body: payload);
+          await _client.post(_url, headers: headers, body: jsonEncode(payload));
 
       final _resp = jsonDecode(response.body) as Map<String, dynamic>;
 

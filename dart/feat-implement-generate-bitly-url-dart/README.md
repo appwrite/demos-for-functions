@@ -45,7 +45,7 @@ If using this from appwrite console, paste this example code on the popup<br>
 
 ```json
 {
-    "url": "https://appwrite.io/"
+    "url": "https://dev.to/appwrite/learn-how-to-create-and-run-appwrite-functions-with-dart-5668"
 }
 ```
 <br>
