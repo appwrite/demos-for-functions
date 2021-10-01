@@ -4,7 +4,7 @@ A dart Cloud Function for generating a bitly short link from a passed long url l
 ## Dart AW Setup
 To setup dart cloud function, follow this excellent tutorial [on dev here](https://dev.to/appwrite/learn-how-to-create-and-run-appwrite-functions-with-dart-5668)
 
-Im using `dart-2.1.3`
+Created using `dart-2.1.3`
 
 <br>
 <br>
@@ -36,9 +36,8 @@ Consider the scenarios (more info [on aw docs, here](https://appwrite.io/docs/fu
 <br>
 <br>
 
-## Scenario 1: `APPWRITE_FUNCTION_DATA`
+##  `APPWRITE_FUNCTION_DATA`
 This variable can be set only when triggering a function using the SDK or HTTP API and the Appwrite Dashboard. <br>
-If using this approach, uncomment `TODO: 1` in `main.py` 
 
 <br>
 If using this from appwrite console, paste this example code on the popup<br>
@@ -48,18 +47,7 @@ If using this from appwrite console, paste this example code on the popup<br>
     "url": "https://dev.to/appwrite/learn-how-to-create-and-run-appwrite-functions-with-dart-5668"
 }
 ```
-<br>
-<br>
 
-## Scenario 2: `APPWRITE_FUNCTION_EVENT_DATA`
-Your function event payload. This value is available only when your function trigger is 'event'. This variable value contains a string in JSON format with your specific event data<br>
-If using this approach, uncomment `TODO: 2` in `main.py` 
-<br>
-<br>
-Once done, dont forget to confirm your settings on `TODO: 3` and `TODO: 4`
-
-<br>
-<br>
 
 ## Bitly Account
 If you do not have an account already, [register here](https://bitly.com/pages/pricing/v2) for free.
