@@ -1,0 +1,15 @@
+name: feat_implement_generate_bitly_url_dart
+description: A simple command-line application.
+version: 1.0.0
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.14.0 <3.0.0'
+
+
+dependencies:
+  path: ^1.8.0
+  http: ^0.13.3
+
+dev_dependencies:
+  lints: ^1.0.0
