@@ -1,6 +1,6 @@
 # 📧  Send SMS
 
-Demo function to send SMS to a phone number.
+Demo function to send SMS to a phone number using Twilio API.
 
 ## 📝 Environment Variables
 
