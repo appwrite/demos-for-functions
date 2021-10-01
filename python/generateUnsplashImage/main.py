@@ -1,7 +1,6 @@
 import os
 import requests
 
-client_id=YOUR_ACCESS_KEY
 
 def getUnsplashImage(keyword):
     searchEndpoint = "https://api.unsplash.com/search/photos?page=1&"
