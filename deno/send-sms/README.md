@@ -42,7 +42,7 @@ Your data must include the following fields:
 
 ```json
 {
-    "to": "<receiver's phone number>",
-    "message": "<message body>"
+    "phoneNumber": "<receiver's phone number>",
+    "text": "<message body>"
 }
 ```
