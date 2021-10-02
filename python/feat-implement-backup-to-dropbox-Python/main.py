@@ -70,7 +70,7 @@ client.set_key("APPWRITE_API_KEY")
 
 
 # Get the ID of the uploaded file from the environment variable set by appwrite.
-payload = json.loads("APPWRITE_FUNCTION_EVENT_DATA")# your json of collection id
+payload = json.loads("APPWRITE_FUNCTION_EVENT_DATA")# your json of database id
 fileID = payload["$id"]
 
 database = Database(client)
