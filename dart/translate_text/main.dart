@@ -1,9 +1,18 @@
+import 'dart:io';
 import 'package:googleapis/translate/v3.dart';
-import 'package:http/http.dart';
+import 'package:googleapis/storage/v1.dart';
+import 'package:googleapis_auth/auth_io.dart';
 
 Future<String> translateText(
     String text, String sourceLanguage, String destinationLanguage) async {
-  Client client = Client();
+
+  Map<String, String> envVars = Platform.environment;
+  
+  final client = await clientViaApplicationDefaultCredentials(scopes: [
+    StorageApi.devstorageReadOnlyScope,
+  ]);
+  
+  
   TranslateApi translateApi = TranslateApi(client);
 
   /// [request] - The metadata request object.
@@ -16,9 +25,8 @@ Future<String> translateText(
 
   /// [parent] - Project or location to make a call. Must refer to a
   /// caller's project.
-  /// `Replace {project-number-or-id} this with your project number or Id`
-
-  final parent = "projects/{project-number-or-id}";
+  /// `PROJECT_ID` is manually set
+  final parent = "projects/${envVars['PROJECT_ID']}";
 
   final TranslateTextResponse result =
       await translateApi.projects.translateText(request, parent);
