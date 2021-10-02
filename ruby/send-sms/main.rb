@@ -13,10 +13,14 @@ receiver=payload["receiver"]
 message=payload["message"]
 
 # Send your message
-@client = Twilio::REST::Client.new account_sid, auth_token
-message = @client.messages.create(
-    body: message,
-    from: sender,
-    to: receiver
-    )
-puts message 
+begin
+    @client = Twilio::REST::Client.new account_sid, auth_token
+    message = @client.messages.create(
+        body: message,
+        from: sender,
+        to: receiver
+        )
+    puts message 
+rescue Twilio::REST::TwilioError => e
+    puts e.message
+end
