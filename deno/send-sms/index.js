@@ -3,8 +3,8 @@ const authToken = Deno.env.get("TWILIO_AUTH_TOKEN");
 const sender = Deno.env.get("TWILIO_SENDER");
 
 const {
-    to,
-    message,
+    phoneNumber,
+    text,
 } = JSON.parse(Deno.env.get("APPWRITE_FUNCTION_DATA"));
 
 fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSID}/Messages.json`, {
@@ -14,9 +14,9 @@ fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSID}/Messages.json`, 
         "Authorization": `Basic ${btoa(`${accountSID}:${authToken}`)}`,
     },
     body: new URLSearchParams({
-        To: to,
+        To: phoneNumber,
         From: sender,
-        Body: message,
+        Body: text,
     }).toString(),
 }).then((res) => res.json()).then((data) => {
     console.log(data);
