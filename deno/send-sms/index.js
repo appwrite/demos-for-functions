@@ -17,7 +17,7 @@ fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSID}/Messages.json`, 
         To: phoneNumber,
         From: sender,
         Body: text,
-    }).toString(),
+    }),
 }).then((res) => res.json()).then((data) => {
     console.log(data);
 }).catch(console.error);
