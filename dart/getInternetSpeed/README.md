@@ -4,7 +4,6 @@ Dart implementation to check the download and upload speed of the server. This c
 ## 📝 Environment Variables
 No environment variables required for this one
 
-
 ## 🚀 Building and Packaging
 
 To package this as a cloud function, follow these steps.
