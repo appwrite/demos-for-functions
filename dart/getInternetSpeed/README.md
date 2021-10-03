@@ -13,6 +13,7 @@ To package this as a cloud function, follow these steps.
 
 ```bash
 $ cd demos-for-functions/dart/getInternetSpeed
+$ export PUB_CACHE=.appwrite/
 $ dart pub get
 ```
 
@@ -20,6 +21,8 @@ $ dart pub get
 ```
 .
 ├── main.dart
+├── .appwrite/
+├── pubspec.lock
 └── pubspec.yaml
 ```
 
