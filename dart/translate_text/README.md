@@ -1,5 +1,5 @@
 # Translate text from one language to another
-A sample python Cloud Function for translating text from one language to another using google translate API.
+A sample Dart Cloud Function for translating text from one language to another using google translate API.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
@@ -12,7 +12,9 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 To package this example as a cloud function, follow these steps.
 
 ```bash
-$ cd demos-for-functions/dart/translate_text
+$ cd demos-for-functions/dart/welcome_email
+
+$ export PUB_CACHE=.appwrite/
 $ dart pub get
 ```
 
@@ -20,6 +22,7 @@ $ dart pub get
 ```
 .
 ├── main.dart
+├── .appwrite
 ├── pubspec.lock
 └── pubspec.yaml
 ```
@@ -37,5 +40,6 @@ $ tar -zcvf code.tar.gz translate_text
 * Click 'Activate'
 
 ## 🎯 Trigger
+
 Press Execute once deployed to tranlate the text. 
 Make sure to set the timeout above 45 seconds under the settings tab.
