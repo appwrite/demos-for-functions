@@ -13,7 +13,7 @@ Your data must include the following fields:
 
 ```json
 {
-    "email": "<email@appwrite.io>",
+    "email": "<email@appwrite.io>"
 }
 ```
 
