@@ -1,0 +1,15 @@
+{
+    "name": "demos-for-functions/subscribe-to-mailchimp",
+    "description": "A sample PHP Cloud Function for subscribe to mailchimp newsletter.",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Team Appwrite",
+            "email": "team@appwrite.io"
+        }
+    ],
+    "require": {
+        "appwrite/appwrite": "2.1.*"
+    }
+}
