@@ -11,11 +11,11 @@ Created using `dart-2.1.3`
 
 ## 🚀 Result
 Here is our very own shortened appwrite generated link
-![result](shots/result.png)
+![result](docs-images/result.png)
 <br>
-![result log](shots/result-log.png)
+![result log](docs-images/result-log.png)
 <br>
-![re](shots/execute.png)
+![re](docs-images/execute.png)
 <br>
 <br>
 
@@ -27,7 +27,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 If you are testing from AW console, provide this environment variable
 * **LONG_URL** - example long url to shorten
 <br>
-![bitly.png](shots/console.png)
+![bitly.png](docs-images/console.png)
 <br>
 <br>
 
@@ -60,7 +60,7 @@ Under this tab, notice the `Access token` menu, enter your account password you 
 <br>
 After a success, copy the token and paste on your AW console variables as `BITLY_TOKEN`
 <br>
-![bitly.png](shots/bitly.png)
+![bitly.png](docs-images/bitly.png)
 <br>
 <br>
 
