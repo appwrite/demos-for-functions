@@ -8,6 +8,7 @@ A sample Ruby Cloud function to send SMS to other user's phone number.
 - **TWILIO_AUTH_TOKEN** - Twilio auth token
 
 ℹ️ _Find your Account SID and Auth Token at twilio.com/console._
+
 ## 🚀 Building and Packaging
 
 To package this example as a cloud function, follow these steps.
