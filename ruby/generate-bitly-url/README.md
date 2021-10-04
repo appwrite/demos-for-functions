@@ -5,8 +5,6 @@ This function takes an url as an input, generate a short URL using Bitly and out
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
 Required:
-* **APPWRITE_API_ENDPOINT** — Your Appwrite Endpoint
-* **APPWRITE_SECRET_KEY** — Your Appwrite API key
 * **BITLY_ACCESS_TOKEN** — Bitly access token (you should generate it [here](https://app.bitly.com/settings/api/))
 
 Optional (available with an Enterprise plan subscription):
@@ -46,4 +44,4 @@ $ tar -zcvf ../code.tar.gz .
 * On the Overview Tab click Execute Now
 * Insert original url you want to shorten to Custom Data field and submit
 
-<img src="http://g.recordit.co/CufD3I9wL8.gif" width="643" height="448">
+![execution](docs-images/execution.gif)

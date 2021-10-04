@@ -28,13 +28,8 @@ class BitlyUrlShortener
   end
 end
 
-client = Appwrite::Client.new
-client.set_endpoint(ENV['APPWRITE_API_ENDPOINT']) # Your API Endpoint
-      .set_project(ENV['APPWRITE_FUNCTION_PROJECT_ID']) # Your project ID available by default
-      .set_key(ENV['APPWRITE_SECRET_KEY']) # Your secret API key
-
 original_url = ENV['APPWRITE_FUNCTION_DATA']
 short_url = BitlyUrlShortener.new(ENV['BITLY_ACCESS_TOKEN'])
                              .call(original_url, ENV['BITLY_CUSTOM_DOMAIN'], ENV['BITLY_GROUP_GUID'])
 
-puts "original: '#{original_url}'\nshortened: '#{short_url}'"
+puts short_url
