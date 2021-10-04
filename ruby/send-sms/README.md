@@ -20,7 +20,7 @@ $ cd demos-for-functions/ruby/send-sms
 You will first need to install the application's dependencies. You can do this manually using RubyGems, or you can install them using Bundler. To install via bundler, type:
 
 ```bash
-$ bundle install
+$ GEM_HOME=./.appwrite bundle install
 ```
 
 To install the gems manually (if you don't have bundler installed), type the following commands:
@@ -34,6 +34,7 @@ $ gem install twilio-ruby
 ```
 .
 ├── main.rb
+├── .appwrite/
 ├── Gemfile
 ├── README.md
 ```
@@ -67,3 +68,32 @@ You need to include the following data to properly trigger the function
 - `sender` is the sender's phone number
 - `receiver` is the receiver's phone number
 - `message` is the message you want to send
+
+Example response:
+
+```json
+{
+  "account_sid": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "api_version": "2010-04-01",
+  "body": "Hi there",
+  "date_created": "Thu, 04 Oct 2021 20:12:31 +0000",
+  "date_sent": "Thu, 04 Oct 2021 20:12:33 +0000",
+  "date_updated": "Thu, 04 Oct 2021 20:12:33 +0000",
+  "direction": "outbound-api",
+  "error_code": null,
+  "error_message": null,
+  "from": "+15017122661",
+  "messaging_service_sid": null,
+  "num_media": "0",
+  "num_segments": "1",
+  "price": null,
+  "price_unit": null,
+  "sid": "SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "status": "sent",
+  "subresource_uris": {
+    "media": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json"
+  },
+  "to": "+15558675310",
+  "uri": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json"
+}
+```
