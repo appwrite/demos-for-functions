@@ -1,4 +1,4 @@
-name: feat_implement_generate_bitly_url_dart
+name: generate_bitly_url
 description: A appwrite dart cloud function to shorten long urls using bitly api.
 
 version: 1.0.0
@@ -7,8 +7,6 @@ version: 1.0.0
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
-dependencies:
-  path: ^1.8.0
   http: ^0.13.3
 
 dev_dependencies:

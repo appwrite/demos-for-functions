@@ -12,9 +12,7 @@ void main(List<String> arguments) async {
   final String bitlyToken = envVars['BITLY_TOKEN']!;
 
   // Get the long url from Appwrite's environment variable
-  final payload = jsonDecode(envVars['APPWRITE_FUNCTION_DATA']!);
-
-  final longUrl = payload['url'];
+  final longUrl = envVars['APPWRITE_FUNCTION_DATA']!;
 
   // create header payload
   final Map<String, String> _headers = {
