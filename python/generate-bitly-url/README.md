@@ -6,11 +6,9 @@ A Python Cloud Function for generating a bitly short link from a passed long url
 
 ## 🚀 Result
 Here is our very own shortened appwrite generated link
-![result](shots/result.png)
+![result](docs-images/result.png)
 <br>
-![result log](shots/result-log.png)
-<br>
-![re](shots/execute.png)
+
 <br>
 <br>
 
@@ -22,39 +20,36 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 If you are testing from AW console, provide this environment variable
 * **LONG_URL** - example long url to shorten
 <br>
-![bitly.png](shots/console.png)
+![bitly.png](docs-images/console.png)
 <br>
 <br>
 
 You can use both the `APPWRITE_FUNCTION_DATA` or `APPWRITE_FUNCTION_EVENT_DATA` default environment variables too depending on your use-case.<br>
-Consider the scenarios (more info [on aw docs, here](https://appwrite.io/docs/functions#enviromentVariables)):
+In each scenario, provide the `url` you want to shorten as a string
+<br><br>
+Consider the scenarios (more info [on Appwrite docs](https://appwrite.io/docs/functions#enviromentVariables))
 <br>
 <br>
 
 ## Scenario 1: `APPWRITE_FUNCTION_DATA`
 This variable can be set only when triggering a function using the SDK or HTTP API and the Appwrite Dashboard. <br>
-If using this approach, uncomment `TODO: 1` in `main.py` 
 
 <br>
 If using this from appwrite console, paste this example code on the popup<br>
 
-```json
-{
-    "url": "https://appwrite.io/"
-}
+```
+ https://appwrite.io/
+
 ```
 <br>
 <br>
 
 ## Scenario 2: `APPWRITE_FUNCTION_EVENT_DATA`
-Your function event payload. This value is available only when your function trigger is 'event'. This variable value contains a string in JSON format with your specific event data<br>
-If using this approach, uncomment `TODO: 2` in `main.py` 
+Your function event payload. This value is available only when your function trigger is 'event'. This variable value contains a string in JSON format with your specific event data.<br>
 <br>
 <br>
-Once done, dont forget to confirm your settings on `TODO: 3` and `TODO: 4`
 
-<br>
-<br>
+
 
 ## Bitly Account
 If you do not have an account already, [registere here](https://bitly.com/pages/pricing/v2) for free.
@@ -67,7 +62,7 @@ Under this tab, notice the `Access token` menu, enter your account password you 
 <br>
 After a success, copy the token and paste on your AW console variables as `BITLY_TOKEN`
 <br>
-![bitly.png](shots/bitly.png)
+![bitly.png](docs-images/bitly.png)
 <br>
 <br>
 
@@ -76,7 +71,7 @@ After a success, copy the token and paste on your AW console variables as `BITLY
 To package this as a cloud function, follow these steps.
 
 ```bash
-$ cd demos-for-functions/python/feat-implement-generate-bitly-url-python
+$ cd demos-for-functions/python/generate-bitly-url-python
 
 $ PIP_TARGET=./.appwrite pip install -r ./requirements.txt --upgrade --ignore-installed 
 ```
@@ -98,7 +93,7 @@ $ pip install -t ./.appwrite -r ./requirements.txt --upgrade --ignore-installed
 
 ```bash
 $ cd ..
-$ tar -zcvf code.tar.gz feat-implement-generate-bitly-url-python
+$ tar -zcvf code.tar.gz generate-bitly-url-python
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
@@ -107,6 +102,6 @@ $ tar -zcvf code.tar.gz feat-implement-generate-bitly-url-python
 * Click 'Activate'
 
 ## 🎯 Trigger
-You can use any event here to enable automatic configuring of this cloud function, just make sure that the payload contains the `url` field so that the function will pick it up as the field containing the long url to shorten
+You can use any event here to enable automatic configuring of this cloud function, just make sure that the payload contains the `url` string value so that the function will pick it up as the field containing the long url to shorten
 
 
