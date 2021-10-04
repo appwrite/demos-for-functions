@@ -43,3 +43,4 @@ $ tar -zcvf code.tar.gz tweet-new-membership
 ## 🎯 Trigger
 
 Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
+Whenever a new user registers, this function will be fired and a tweet with the content "Welcome <name>!" will be sent. The output log for the function on the Appwrite dashboard will indicate if a tweet was sent out successfully, if not it will contain the error output. 
