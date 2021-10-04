@@ -17,7 +17,6 @@ To package this example as a cloud function, follow these steps.
 ```bash
 $ cd demos-for-functions/ruby/generate-bitly-url
 $ docker run --rm -v $(pwd):/app -w /app --env GEM_HOME=./.appwrite appwrite/env-ruby-3.0:1.0.0 bundle install
-$ tar -zcvf ../code.tar.gz .
 ```
 * Ensure that your folder structure looks like this
 ```
@@ -32,7 +31,7 @@ $ tar -zcvf ../code.tar.gz .
 * Create a tarfile
 
 ```bash
-$ tar -zcvf ../code.tar.gz .
+$ tar -zcvf ../generate_bitly_url.tar.gz .
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
@@ -44,4 +43,4 @@ $ tar -zcvf ../code.tar.gz .
 * On the Overview Tab click Execute Now
 * Insert original url you want to shorten to Custom Data field and submit
 
-![execution](docs-images/execution.gif)
+![execution](../docs-images/execution.gif)
