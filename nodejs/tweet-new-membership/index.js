@@ -24,5 +24,5 @@ client.post("statuses/update", {
     console.log(`Tweet sent for user ${name}!`, response)
 })
 .catch((err) => {
-    console.log(err.errors)
+    console.error(err.errors)
 });
