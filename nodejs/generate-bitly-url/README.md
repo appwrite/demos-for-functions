@@ -40,3 +40,6 @@ $ tar -zcvf code.tar.gz generate-bitly-url
 ## 🎯 Trigger
 
 Trigger the function using the SDK or HTTP API or the Appwrite Dashboard.
+
+The URL to be shortened should be passed to the Appwrite Function and is available to the function in an environment variable named `APPWRITE_FUNCTION_DATA`. This variable can be set only when triggering a function using the SDK or HTTP API and the Appwrite Dashboard.
+After the function runs, it prints the shortened Bitly URL to `stdout`. This can be seen in the logs for the function on the Appwrite Dashboard.
