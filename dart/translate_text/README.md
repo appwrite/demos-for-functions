@@ -7,6 +7,12 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 * **GOOGLE_APPLICATION_CREDENTIALS** - Your google json API key path
 * **PROJECT_ID** - Your google cloud project id
 
+### 📝 Input Format
+Add the following to APPWRITE_FUNCTION_EVENT_DATA
+* **text** - text to be translated
+* **sourceLanguage** - source language from which text is to be translated in **BCP-47** format
+* **destinationLanguage** - target language to which text is to be in **BCP-47** formattranslated
+
 ## 🚀 Building and Packaging
 
 To package this example as a cloud function, follow these steps.
@@ -22,7 +28,7 @@ $ dart pub get
 ```
 .
 ├── main.dart
-├── .appwrite
+├── .appwrite/
 ├── pubspec.lock
 └── pubspec.yaml
 ```
