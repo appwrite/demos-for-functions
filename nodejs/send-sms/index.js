@@ -10,8 +10,8 @@ const payload = JSON.parse(process.env.APPWRITE_FUNCTION_DATA);
 const receiver = payload['receiver'];
 const message = payload['message'];
 
-if (!receiver) throw new Error("Receiver's phone number is required!");
-if (!message) throw new Error("Message content is required!");
+if (!receiver) console.error("Receiver's phone number is required!");
+if (!message) console.error("Message content is required!");
 
 client.messages
     .create({
