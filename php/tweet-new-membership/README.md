@@ -60,3 +60,7 @@ $ tar -zcvf code.tar.gz tweet-new-membership
 ## 🎯 Trigger
 
 This function is triggered by the event teams.membership.create. To simulate this event, go to Users on Appwrite Dashboard. From Teams tab, create a new team and add a new member to it. This will trigger the function. Go the logs of the function to view the output.
+
+## Output
+
+STDOUT is the response returned by Twitter which contains information about the tweet posted.
