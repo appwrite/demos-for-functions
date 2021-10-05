@@ -12,7 +12,7 @@ public class SendSms {
     public static final String SENDER = System.getenv("TWILIO_PHONE_NUMBER");
 
     public static void main(String[] args) {
-        String payload = System.getenv("APPWRITE_FUNCTION_EVENT_DATA");
+        String payload = System.getenv("APPWRITE_FUNCTION_DATA");
 
         if (payload != null && !payload.isEmpty()) {
             try {
@@ -27,7 +27,7 @@ public class SendSms {
             }
 
         } else {
-            System.out.println("[INFO] APPWRITE_FUNCTION_EVENT_DATA is empty");
+            System.out.println("[INFO] APPWRITE_FUNCTION_DATA is empty");
         }
     }
 
