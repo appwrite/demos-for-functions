@@ -36,19 +36,17 @@ def JSON_to_CSV(list_db, filepath):
 
     data_file.close()
 
-# Uploads contents of PATH1 to Dropbox
+# Uploads contents of PATH1 to Appwrite Storage
 def backup():
     now = datetime.now()
-    date_today = now.strftime("%d-%m-%Y")
+    date_today = now.strftime("%d-%m-%Y") # Gets the date of today for naming of the csv file 
     FileName = "data_file-" + date_today + ".csv"
     os.rename(PATH1, FileName)
     storage = Storage(client)
     result_upload = storage.create_file(open(FileName, 'rb'))
 
 
-# Add OAuth2 access token here.
-# You can generate one for yourself in the App Console.
-# See <https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/>
+
 PATH1 = 'data_file.csv'
 PATH2 = 'data_file2.csv'
 BACKUPPATH = '/data_file1.csv'
@@ -90,7 +88,6 @@ data = data1[keys] # We will only take the required columns from the dataset.
 data.to_csv(PATH1) 
 
 
-# Create an instance of a Dropbox class, which can make requests to the API.
 print("Uploading to your storage...")
 
 backup()
