@@ -96,6 +96,7 @@ if(j > 0): # If all the data can't be acquired from one request (more than 100 d
         data1 = pd.concat([data1, data2]) 
         data1.to_csv(PATH1)
 
+data1 = pd.read_csv(PATH1)
 data = data1[keys] # We will only take the required columns from the dataset.
 data.to_csv(PATH1) 
 
