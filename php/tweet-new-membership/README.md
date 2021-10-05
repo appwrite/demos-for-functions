@@ -64,3 +64,4 @@ This function is triggered by the event teams.membership.create. To simulate thi
 ## Output
 
 STDOUT is the response returned by Twitter which contains information about the tweet posted.
+https://ibb.co/JxsbcDL
