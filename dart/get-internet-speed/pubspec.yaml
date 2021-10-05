@@ -1,9 +1,7 @@
-name: getInternetSpeed
+name: get_internet_speed
 version: 1.0.0
 description: "A appwrite function to get the internet speed of the server."
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
-
-dependencies:
   

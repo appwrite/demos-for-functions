@@ -1,4 +1,4 @@
-# 📧 getInternetSpeed
+# 📧 Get Internet Speed
 Dart implementation to check the download and upload speed of the server. This code checks the speed using the [SpeedTest CLI](https://www.speedtest.net/apps/cli).
 
 ## 📝 Environment Variables
