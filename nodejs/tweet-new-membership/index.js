@@ -11,17 +11,12 @@ const client = new Twitter({
   });
 
 
-// Get the name new member from Appwrite's environment variable
-const payload = JSON.parse(process.env.APPWRITE_FUNCTION_EVENT_DATA);
-const name = payload['name'];
-
-
 // Send a tweet 
 client.post("statuses/update", {
-    status: `Welcome ${name}!`,
+    status: `A new user has joined!`,
 })
 .then((response) => {
-    console.log(`Tweet sent for user ${name}!`, response)
+    console.log(`Tweet sent for new user!`, response)
 })
 .catch((err) => {
     console.error(err.errors)
