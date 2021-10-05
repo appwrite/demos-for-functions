@@ -46,16 +46,11 @@ async function upload(filename) {
 
   // Open the file
   const f = await Deno.readFile(filename);
-
-  console.log(f);
   await storage.createFile(f).then((res) => {
     console.log("successfull", res);
   }, (err) => {
     console.log("err", err);
   });
-
-  // closes the file
-  // f.close();
 }
 
 promise.then(async ({ collections }) => {
@@ -69,7 +64,6 @@ promise.then(async ({ collections }) => {
     await writeToCSV(docs, filename);
     await upload(filename);
   }
-  // console.log(collections)
 }, (err) => {
   console.log(err);
 });
