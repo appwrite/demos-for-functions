@@ -1,5 +1,5 @@
-# 📁 Database Collection Backup using the Dropbox API
-A sample Python Cloud Function that leverages Dropbox to create backups of all the collection of a database made using Appwrite.
+# 📁 Database Collection Backup using Appwrite
+A sample Python Cloud Function that leverages Appwrite Storage API to create backups of all the collection of a database made using Appwrite.
 
 ## 📝 Environment Variables
 Add the following environment variables in your Cloud Function settings.
