@@ -34,7 +34,7 @@ const createCloudConvertJob = async () => {
     },
   });
   const uploadTask = job.tasks.filter((task) => task.name === "upload-file")[0];
-  const inputFile = await fs.createReadStream("./Coding.png");
+  const inputFile = fs.createReadStream("./Coding.png");
   const res = await cloudConvert.tasks.upload(
     uploadTask,
     inputFile,
@@ -47,9 +47,8 @@ const createCloudConvertJob = async () => {
   const file = exportTask.result.files[0];
 
   const writeStream = fs.createWriteStream("./" + file.filename);
-  let test;
-  https.get(file.url, function (response) {
-    test = response;
+
+  https.get(file.url, (response) => {
     response.pipe(writeStream);
   });
 };
