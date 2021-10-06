@@ -38,4 +38,4 @@ $ tar -zcvf code.tar.gz generateUnsplashImage
 * Click 'Activate'
 
 ## 🎯 Trigger
-Head over to your function in the Appwrite console and under the Setti
+Head over to your function in the Appwrite console and under the Settings select relevant event or schedule.
