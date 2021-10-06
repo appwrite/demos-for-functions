@@ -1,5 +1,6 @@
 # Tweet when a new member joins a team
 A python Cloud Function to tweet welcome msg for the new team members when they join
+
 NOTE : You'll require to have a Twitter developer account to get the Twitter API!
 
 ## 📝 Environment Variables
