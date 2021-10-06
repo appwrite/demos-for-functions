@@ -1,5 +1,5 @@
 # 📧 Subscribe to mailchimp newsletter using Mailchimp API V3
-A sample nodejs Cloud Function for subscribing a mailchimp newsletter
+A sample nodejs Cloud Function for subscribing to a Mailchimp newsletter
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
