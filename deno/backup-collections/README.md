@@ -33,14 +33,14 @@ import "https://deno.land/x/dotenv/load.ts";
 
 4. **Run the function**
 ```bash
-$ deno run --allow-env --allow-read --allow-write index.js
+$ deno run --allow-env --allow-read --allow-net --allow-write index.js
 ```
 
 5. **Deploy to appwrite using Appwrite CLI**
 ```bash
 appwrite functions createTag \
     --functionId=<functionId> \
-    --command="deno run --allow-env --allow-read --allow-write index.js" \
+    --command="deno run --allow-env --allow-net --allow-read --allow-write index.js" \
     --code="<code-directory>"
 ```
 
