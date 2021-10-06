@@ -37,4 +37,4 @@ $ tar -zcvf code.tar.gz get-covid-stats
 node index.js
 ```
 ## 🎯 Trigger
-Can be triggered from manually from the Appwrite Console.
+Can be triggered manually from the Appwrite Console.
