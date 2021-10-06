@@ -1,4 +1,4 @@
-# 📧 getInternetSpeed
+# 📧 get-internet-speed
 Python implementation to check the download and upload speed of the server
 
 ## 📝 Environment Variables
@@ -9,7 +9,7 @@ No environment variables required for this one
 To package this as a cloud function, follow these steps.
 
 ```bash
-$ cd demos-for-functions/python/getInternetSpeed
+$ cd demos-for-functions/python/get-internet-speed
 
 $ pip install --target=./.appwrite -r ./requirements.txt --upgrade --ignore-installed 
 ```
@@ -26,7 +26,7 @@ $ pip install --target=./.appwrite -r ./requirements.txt --upgrade --ignore-inst
 
 ```bash
 $ cd ..
-$ tar -zcvf code.tar.gz getInternetSpeed
+$ tar -zcvf code.tar.gz get-internet-speed
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
