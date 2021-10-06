@@ -40,3 +40,7 @@ $ tar -zcvf code.tar.gz tweet-new-membership
 * Input the command that will run your function (in this case `python main.py`) as your entrypoint command
 * Upload your tarfile 
 * Click 'Activate'
+
+## 🎯 Trigger
+
+Check team.membership.create under the setting->events tab
