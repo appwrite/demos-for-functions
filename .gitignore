@@ -3,6 +3,8 @@ vendor
 nodejs/welcome-email/node_modules
 nodejs/welcome-email/package-lock.json
 nodejs/code.tar.gz
+nodejs/send-message-bird-sms/node_modules
+nodejs/send-message-bird-sms/package-lock.json
 deno/code.tar.gz
 dart/**/.dart_tool
 dart/**/.packages
