@@ -16,6 +16,10 @@ client
 // Initialise the storage SDK
 const storage = new sdk.Storage(client)
 
+
+// PAYLOAD
+const payload = JSON.parse(process.env.APPWRITE_FUNCTION_EVENT_DATA)
+
 // Generate website screenshot based on url, format and other API params
 async function generateWebsiteScreenshot (url, format = 'jpg') {
   const job = await createCloudconvertJob(url, format)
@@ -70,4 +74,4 @@ async function uploadCaptureToStorage (file) {
 }
 
 // function call
-generateWebsiteScreenshot('example.com', 'png');
+generateWebsiteScreenshot(payload.url, payload.format);
