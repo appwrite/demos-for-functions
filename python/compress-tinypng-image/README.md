@@ -1,10 +1,10 @@
-# 📁 Database Collection Backup using Appwrite
+# 🎴 Compressing the given image url and storing it to Appwrite
 A sample Python Cloud Function that leverages Appwrite Storage API to create backups of all the collection of a database made using Appwrite.
 
 ## 📝 Environment Variables
 Add the following environment variables in your Cloud Function settings.
 
-* **APPWRITE_API_KEY** - Create a key from the Appwrite console with the following scope (`files.read`)
+* **APPWRITE_API_KEY** - Create a key from the Appwrite console with the following scope (`files.write`)
 * **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
 * **TINIFY_KEY** - Your TinyPNG key. To generate the key, go to here -> https://tinypng.com/developers
 * **IMAGE_URL** - Give the URL of the image for compression
