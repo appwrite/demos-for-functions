@@ -3,6 +3,8 @@ vendor
 nodejs/welcome-email/node_modules
 nodejs/welcome-email/package-lock.json
 nodejs/code.tar.gz
+nodejs/convert-cloud-convert-file/node_modules
+nodejs/convert-cloud-convert-file/package-lock.json
 deno/code.tar.gz
 dart/**/.dart_tool
 dart/**/.packages
