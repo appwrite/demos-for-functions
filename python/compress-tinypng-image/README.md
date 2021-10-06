@@ -1,5 +1,5 @@
 # 🎴 Compressing the given image url and storing it to Appwrite
-A sample Python Cloud Function that leverages Appwrite Storage API to create backups of all the collection of a database made using Appwrite.
+A sample Python Cloud Function that takes an image url, compress it using TinyPNG API and store it to Appwrite
 
 ## 📝 Environment Variables
 Add the following environment variables in your Cloud Function settings.
