@@ -8,7 +8,6 @@ on:
 jobs:
   update-progress-for-function-demos:
     name: Update Progress for Function Demos
-      runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
         - name: List files in the repository
