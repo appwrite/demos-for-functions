@@ -1,2 +1,2 @@
-tinypng
+tinify
 appwrite
