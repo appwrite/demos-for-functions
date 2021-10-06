@@ -2,7 +2,8 @@
 Javascript function that prints today's COVID statistics for a country or for the whole world, with a helper function for the format.
 
 ## 📝 Environment Variables
-Go to Settings tab of your Cloud Function. Add the following environment variables.
+ We are going to use the following environment variable, we can set it by: Going to Settings tab of your Cloud Function and setting it, also on the dashboard when you manually trigger the Function there is a dialog that pops up and you can set it there and finally when using the functions api on the SDK we can set this variable as the second parameter to `createExecution` function.
+
 - APPWRITE_FUNCTION_DATA - Country code in ISO2 format, For example `US`, `HN` etc.
 
 
