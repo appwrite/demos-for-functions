@@ -1,21 +1,55 @@
-# 📧  Your Function Name
-<!--  A brief descripption about your Cloud Function  -->
+# 📧 Sending Welcome Emails using Mailgun's Email API
+A sample Node.js Cloud Function for generating and saving a website screenshot in
+the Appwrite storage.
+
+This function takes url of a website as input, send it to CloudConvert CaptureWebsite API,
+waits for the job to finish and saves newly created screenshot image into Appwrite Storage.
+Finally, returns ID of the new file.
 
 ## 📝 Environment Variables
-<!-- Tell the users of your Cloud function, what Environment Variables your function uses. Use the following format -->
+Go to Settings tab of your Cloud Function. Add the following environment variables. Note
+that you need a valid Cloudconvert account with an API key.
 
-* **VARIABLE 1** - <!-- Short Description --> 
-* **VARIABLE 2** - <!-- Short Description -->
+* **CLOUDCONVERT_API_KEY** - API Key for Cloudconvert
+
+## 📝 Custom Data (Parameters)
+Add the following custom data when executing the Cloud Function.
+
+* **url** - URL of the website to take the snapshot from
+* **format** - (OPTIONAL, defaults to jpg) required image format. Must be a valid value
+according to the Cloudconvert API (pdf, png or jpg).
 
 ## 🚀 Building and Packaging
-<!-- 
-Highlight the steps required to build and deploy this cloud function. 
 
-Take a look at this example (https://github.com/appwrite/demos-for-functions/blob/master/nodejs/welcome-email/README.md) for more information.  
+To package this example as a cloud function, follow these steps.
 
-Make sure you mention the instructions clearly and also mention the entrypoint command for the function 
--->
+```bash
+$ cd demos-for-functions/nodejs/generate-website-screenshot
+$ npm install
+```
+
+* Ensure that your folder structure looks like this 
+```
+.
+├── index.js
+├── node_modules/
+├── package-lock.json
+├── package.json
+└── README.md
+```
+
+* Create a tarfile
+
+```bash
+$ cd ..
+$ tar -zcvf code.tar.gz generate-website-screenshot
+```
+
+* Navigate to the Overview Tab of your Cloud Function > Deploy Tag
+* Input the command that will run your function (in this case "node index.js") as your entrypoint command
+* Upload your tarfile
+* Click 'Activate'
+
 ## 🎯 Trigger
-<!-- Clearly explain the triggers that this cloud function relies on to work correctly. Take a look at the below example: 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
- --> 
+
+Head over to your function in the Appwrite console and under the Settings Tab, enable the `storage.files.create` event.
