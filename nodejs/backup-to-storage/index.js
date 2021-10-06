@@ -34,5 +34,5 @@ const documents = [];
 		if (err) console.log(err);
 	});
 	await storage.createFile(fs.createReadStream(__dirname + '/data.csv'));
-	// console.log('backup created!');
+	console.log('backup created!');
 })();
