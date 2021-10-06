@@ -1,12 +1,11 @@
 import * as sdk from "https://deno.land/x/appwrite/mod.ts";
-import "https://deno.land/x/dotenv/load.ts";
 
 // Init SDK
 let client = new sdk.Client();
 client
-  .setEndpoint("APPWRITE_ENDPOINT")
+  .setEndpoint(Deno.env.get("APPWRITE_ENDPOINT"))
   .setProject(Deno.env.get("APPWRITE_FUNCTION_PROJECT_ID")) // Your project ID available by default
-  .setKey("APPWRITE_API_KEY") // Your secret API key
+  .setKey(Deno.env.get("APPWRITE_API_KEY")) // Your secret API key
 ;
 
 // Environment variables
