@@ -1,0 +1,18 @@
+name: Apwrite Workflow
+on:
+  schedule:
+    # Runs every 12 hours
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-progress-for-function-demos:
+    name: Update Progress for Function Demos
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: List files in the repository
+          run: |
+            ls ${{ github.workspace }}
+        with:
+          feed_list: https://github.com/appwrite/demos-for-functions.git
