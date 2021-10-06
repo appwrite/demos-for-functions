@@ -7,11 +7,12 @@ on:
 
 jobs:
   update-progress-for-function-demos:
+    runs-on: ubuntu-latest
     name: Update Progress for Function Demos
-      steps:
-        - uses: actions/checkout@v2
-        - name: List files in the repository
-          run: |
-            ls ${{ github.workspace }}
-        with:
-          feed_list: https://github.com/appwrite/demos-for-functions.git
+    steps:
+      - uses: actions/checkout@v2
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+          with:
+            feed_list: https://github.com/appwrite/demos-for-functions.git
