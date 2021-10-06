@@ -11,8 +11,17 @@ client
   .setKey(Deno.env.get("APPWRITE_API_KEY")) // Your secret API key
 ;
 
+// Init Apprwite DB
 const db = new sdk.Database(client);
+
+// Get the collections from the appwrite database
 const promise = db.listCollections();
+
+/**
+ * Get the data for the collection from the appwrite server
+ * @param {String} collectionId 
+ * @returns {Object} data of the given id of the collection
+ */
 
 async function getDocuments(collectionId) {
   let docs;
@@ -28,6 +37,12 @@ async function getDocuments(collectionId) {
   return docs;
 }
 
+/**
+ * Creates a CSV file for a collection and write data to the CSV file from respective collection  
+ * @param {Object} data 
+ * @param {String} filename 
+ */
+
 async function writeToCSV(data, filename) {
   const f = await Deno.open(filename, {
     write: true,
@@ -41,18 +56,29 @@ async function writeToCSV(data, filename) {
   f.close();
 }
 
+/**
+ * Upload the csv file to the appwrite storage
+ * @param {String} filename 
+ */
+
 async function upload(filename) {
   const storage = new sdk.Storage(client);
 
-  // Open the file
+  // Read a file
   const f = await Deno.readFile(filename);
-  await storage.createFile(f).then((res) => {
+
+  // Create file object to upload to storage
+  const file = new File([f], filename);
+
+  // Upload to appwrite storage
+  await storage.createFile(file).then((res) => {
     console.log("successfull", res);
   }, (err) => {
     console.log("err", err);
   });
 }
 
+// Driver function for the appwrite function
 promise.then(async ({ collections }) => {
   const date = format(new Date(), "dd-MM-yyyy");
   for (const collection of collections) {

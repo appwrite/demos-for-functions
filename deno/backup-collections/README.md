@@ -1,21 +1,50 @@
 # 📧  Your Function Name
-<!--  A brief descripption about your Cloud Function  -->
+A sample Deno Cloud Function that leverages Appwrite Storage API to create backups of all the collection of a database made using Appwrite.
 
 ## 📝 Environment Variables
-<!-- Tell the users of your Cloud function, what Environment Variables your function uses. Use the following format -->
+Add the following environment variables in your Cloud Function settings.
 
-* **VARIABLE 1** - <!-- Short Description --> 
-* **VARIABLE 2** - <!-- Short Description -->
+* **APPWRITE_API_KEY** - Create a key from the Appwrite console with the following scope (`files.read`)
+* **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
+* **COLLECTION_ID** - The id of collection which is needed to be Backed Up.
 
 ## 🚀 Building and Packaging
-<!-- 
-Highlight the steps required to build and deploy this cloud function. 
 
-Take a look at this example (https://github.com/appwrite/demos-for-functions/blob/master/nodejs/welcome-email/README.md) for more information.  
+To package this example as a cloud function, follow these steps.
 
-Make sure you mention the instructions clearly and also mention the entrypoint command for the function 
--->
+1. **Move to the functions directory**
+
+```bash
+$ cd demos-for-functions/deno/backup-collections
+```
+
+2. **Add the .env file to the folder**
+```bash
+APPWRITE_ENDPOINT=""
+APPWRITE_FUNCTION_PROJECT_ID=""
+APPWRITE_API_KEY=""
+```
+
+3. **Add the import at top of the file to import environment variables**
+
+```deno
+import "https://deno.land/x/dotenv/load.ts";
+```
+
+4. **Run the function**
+```bash
+$ deno run --allow-env --allow-read --allow-write index.js
+```
+
+5. **Deploy to appwrite using Appwrite CLI**
+```bash
+appwrite functions createTag \
+    --functionId=<functionId> \
+    --command="deno run --allow-env --allow-read --allow-write index.js" \
+    --code="<code-directory>"
+```
+
 ## 🎯 Trigger
-<!-- Clearly explain the triggers that this cloud function relies on to work correctly. Take a look at the below example: 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
- --> 
+
+Head over to your function in the Appwrite console and under the Settings Tab, enable the `storage.files.create` event. 
+Or, Just press Excecute
