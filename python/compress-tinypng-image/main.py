@@ -26,6 +26,6 @@ get_image()
 try:
     print("Uploading your file....")
     send_image()
-    Print("Done!")
+    print("Done!")
 except Exception as e:
     print(e)
