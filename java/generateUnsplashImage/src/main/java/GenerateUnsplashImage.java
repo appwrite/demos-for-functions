@@ -14,6 +14,11 @@ public class GenerateUnsplashImage{
 
     public static void main(String[] args) throws UnirestException{
         CLIENT_ID = System.getenv("UNSPLASH_ACCESS_KEY");
+        String payload = System.getenv("APPWRITE_FUNCTION_DATA");
+
+        JSONObject jsonObject = new JSONObject(payload);
+
+        String searchQuery = jsonObject.getString("query");
 
         Map<String, String> headers = new HashMap<>();
         headers.put("accept", "application/json");
@@ -22,7 +27,7 @@ public class GenerateUnsplashImage{
         HttpResponse<JsonNode> jsonResponse
                 = Unirest.get(SEARCH_ENDPOINT)
                 .queryString("client_id",CLIENT_ID)
-                .queryString("query","fire")
+                .queryString("query",searchQuery)
                 .queryString("page","1")
                 .asJson();
         JSONObject firstResult = jsonResponse.getBody().getObject().getJSONArray("results").getJSONObject(0);
