@@ -1,6 +1,6 @@
 # 📧 Add an email to SendGrid list
 
-A sample Python908iu Cloud Function for adding the given email address to a Sendgrid contact list.
+A sample Python Cloud Function for adding the given email address to a Sendgrid contact list.
 
 ## 📝 Environment Variables
 
