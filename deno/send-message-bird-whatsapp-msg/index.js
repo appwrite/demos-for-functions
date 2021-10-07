@@ -22,7 +22,7 @@ const {
 const messagebird = initMB(MESSAGE_BIRD_API_KEY);
 
 // Send message to the whatsapp number
-async function sendMessage() {
+async function sendMessageBirdWhatsAppMessage() {
   const params = {
     to: PHONE_NUMBER,
     from: WHATSAPP_CHANNEL_ID,
@@ -43,4 +43,4 @@ async function sendMessage() {
   });
 }
 
-await sendMessage();
+await sendMessageBirdWhatsAppMessage();
