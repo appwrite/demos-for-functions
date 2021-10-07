@@ -13,6 +13,10 @@ const config = {
     },
 }
 
-fetch(api, config) // Makes HTTP request to the API
-.then(response => console.log(response.data.status)) // Outputs the payment status
-.catch(error => console.error(error)) // Catches errors if any and outputs it
+try {
+    const response = await fetch(api, config) // Makes HTTP request to the API
+    const data = await response.json() // Parses the JSON
+    console.log(data.status) // Outputs the payment status
+} catch(error) {
+    console.error(error) // Catches errors if any and outputs it
+}

@@ -3,12 +3,12 @@ A sample Deno Cloud Function for retreiving payment status using Stripe API.
 
 ## ☁️ Make a New Cloud Function
 Navigate to 'Functions' and 'Add Function.'
-Use 'Deno 1.5' environment.
+Use 'Deno 1.8' environment.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
-* **STRIPE_API_TOKEN** - Stripe API access token  
+* **STRIPE_API_TOKEN** - Stripe API secret token  
 
 Provide the `stripePaymentId` you want to retrieve the status of as the `APPWRITE_FUNCTION_DATA` environment variable.
 
