@@ -4,7 +4,7 @@ A sample .NET cloud function to give you COVID stats in Appwrite
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
-* **COUNTRY_SLUG** - The country slug which COVID data you want to get
+* **COUNTRY_SLUG** - The country slug which COVID data you want to get. If not informed, global data will be fetch.
 
 ## 🚀 Building and Packaging
 
