@@ -18,7 +18,6 @@ namespace GetCovidStats
     {
         async static Task Main(string[] args)
         {
-            Environment.SetEnvironmentVariable("COUNTRY_SLUG", "brazil");
             var country = Environment.GetEnvironmentVariable("COUNTRY_SLUG");
 
             using (var client = new HttpClient())
@@ -40,34 +39,26 @@ namespace GetCovidStats
 
         static void PrintResults(List<ProvinceData> provinceDataList)
         {
-            foreach (var provicenData in provinceDataList)
-            {
-                Console.WriteLine($"- Country: {provicenData.Country}");
-                Console.WriteLine($"    - Province: {provicenData.Province}");
-                Console.WriteLine($"        - Confirmed cases: {provicenData.Confirmed}");
-                Console.WriteLine($"        - Death cases: {provicenData.Deaths}");
-                Console.WriteLine($"        - Recovered cases: {provicenData.Recovered}");
-                Console.WriteLine($"        - Active cases: {provicenData.Active}");
-                Console.WriteLine($"        - Date: {provicenData.Date.ToShortDateString()}");
-            }
+            var todaysDataList = provinceDataList.Where(p => p.Date == DateTime.Today);
+            Console.WriteLine("- Country: " + todaysDataList.First().Country);
+            Console.WriteLine("- Confirmed cases: " + todaysDataList.Sum(p => p.Confirmed));
+            Console.WriteLine("- Death cases: " + todaysDataList.Sum(p => p.Deaths));
+            Console.WriteLine("- Recovered cases: " + todaysDataList.Sum(p => p.Recovered));
+            Console.WriteLine("- Active cases: " + todaysDataList.Sum(p => p.Active));
         }
 
         static void PrintResults(GlobalData globalData)
         {
-            Console.WriteLine($"- New Confirmed: {globalData.NewConfirmed}");
-            Console.WriteLine($"- Total Confirmed: {globalData.TotalConfirmed}");
-            Console.WriteLine($"- New Deaths: {globalData.NewDeaths}");
-            Console.WriteLine($"- Total Deaths: {globalData.TotalDeaths}");
-            Console.WriteLine($"- New Recovered: {globalData.NewRecovered}");
-            Console.WriteLine($"- Total Recovered: {globalData.TotalRecovered}");
-            Console.WriteLine($"- Date: {globalData.Date.ToShortDateString()}");
+            Console.WriteLine("- Global Stats");
+            Console.WriteLine("- Confirmed cases: " + globalData.TotalConfirmed);
+            Console.WriteLine("- Death cases: " + globalData.TotalDeaths);
+            Console.WriteLine("- Recovered cases: " + globalData.TotalRecovered);
         }
     }
 
     public class ProvinceData
     {
         public string Country { get; set; }
-        public string Province { get; set; }
         public int Confirmed { get; set; }
         public int Deaths { get; set; }
         public int Recovered { get; set; }
@@ -83,7 +74,6 @@ namespace GetCovidStats
         public int TotalDeaths { get; set; }
         public int NewRecovered { get; set; }
         public int TotalRecovered { get; set; }
-        public DateTime Date { get; set; }
     }
 
     public static class Extensions
