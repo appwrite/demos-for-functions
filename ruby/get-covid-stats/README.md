@@ -2,6 +2,10 @@
 
 A sample Ruby Cloud function that fetch and displays today's coronavirus stats for a given country or for the globe.
 
+## 📝 Environment Variables
+
+- **COUNTRY_CODE** - The country code for which COVID data will be fetched. If not provided, global data will be fetched.
+
 ## 🚀 Building and Packaging
 
 To package this example as a cloud function, follow these steps.
