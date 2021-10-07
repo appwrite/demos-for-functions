@@ -1,8 +1,6 @@
-import sys
-import json
 import csv
 import os
-import pandas as pd
+import sys
 
 import dropbox
 from dropbox.files import WriteMode
@@ -11,6 +9,7 @@ from dropbox.exceptions import ApiError, AuthError
 from appwrite.client import Client
 from appwrite.services.database import Database
 
+count2 = 0 # this will prevent the formation of repetative header files if the collection has more records than limit
 def JSON_to_CSV(list_db, filepath):
     document_data = list_db['documents']
 
@@ -22,9 +21,10 @@ def JSON_to_CSV(list_db, filepath):
 
     # Counter variable used for writing headers to the CSV file
     count = 0
+    global count2
 
     for doc in document_data:
-        if count == 0:
+        if count == 0 and count2 == 0:
 
             # Writing headers of CSV file
             header = doc.keys()
@@ -71,9 +71,8 @@ client.set_project(os.environ["APPWRITE_FUNCTION_PROJECT_ID"]) # this is availab
 client.set_key(os.environ["APPWRITE_API_KEY"]) 
 
 
-# Get the ID of the uploaded file from the environment variable set by appwrite.
-payload = json.loads(os.environ["APPWRITE_FUNCTION_EVENT_DATA"])# your json of collection id.
-fileID = payload["$id"]
+# Provide the ID of the collection for making backup
+fileID = os.environ["COLLECTION_ID"]
 
 database = Database(client)
 limit = 100 # Max number of documents we can request at a time from appwrite.
@@ -91,14 +90,10 @@ if(j > 0): # If all the data can't be acquired from one request (more than 100 d
     for i in range(1, j): # As we have already requested for collection once already, we will start the loop from 1.
         list = database.list_documents(fileID, limit=limit, offset=(i)*limit) 
         JSON_to_CSV(list, PATH2)
-        data1 = pd.read_csv(PATH1)         # You can extract the information from the JSON using the document key and append it to an empty list 
-        data2 = pd.read_csv(PATH2)         # iteratively. But it will from a list of list and converting it to a .csv was prooving to be quite inconsistent.
-        data1 = pd.concat([data1, data2]) 
-        data1.to_csv(PATH1)
+        data1 = open(PATH1, 'a+')        
+        data2 = open(PATH2, 'r')       
+        data1 = data1.write("\n" + data2.read())
 
-data1 = pd.read_csv(PATH1)
-data = data1[keys] # We will only take the required columns from the dataset.
-data.to_csv(PATH1) 
 
 # Check if we have the access token 
 if (len(TOKEN) == 0):
