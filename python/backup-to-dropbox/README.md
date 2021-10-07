@@ -42,4 +42,4 @@ python main.py
 
 ## 🎯 Trigger
 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `collection.read` event.
+Head over to your function in the Appwrite console and under the Settings Tab, enable the `database.collections.delete` event. 
