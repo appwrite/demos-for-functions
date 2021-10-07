@@ -3,7 +3,7 @@ A sample Deno Cloud Function for generating a shortened URL using the Bitly API.
 
 ## ☁️ Make a New Cloud Function
 Navigate to 'Functions' and 'Add Function.'
-Use 'Deno 1.5' environment.
+Use 'Deno 1.8' environment.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
