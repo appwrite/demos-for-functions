@@ -7,6 +7,7 @@ Add the following environment variables in your Cloud Function settings.
 * **APPWRITE_API_KEY** - Create a key from the Appwrite console with the following scope (`files.read`)
 * **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
 * **DROPBOX_KEY** - OAuth token from [Dropbox](https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account) 
+* **COLLECTION_ID** - The collection id which is needed to be backed up
 
 ## 🛠 Building and Packaging
 
@@ -41,4 +42,4 @@ python main.py
 
 ## 🎯 Trigger
 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `storage.files.create` event.
+Head over to your function in the Appwrite console and under the Settings Tab, enable the `collection.read` event.
