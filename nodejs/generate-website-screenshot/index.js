@@ -61,11 +61,12 @@ async function uploadCaptureToStorage (file) {
 
   return new Promise((resolve, reject) => {
     temp.on('finish', async () => {
-      await storage.createFile(fs.createReadStream(file.filename))
-      console.log('Screenshot Uploaded\n')
+      const storedFile = await storage.createFile(
+        fs.createReadStream(file.filename)
+      )
       await fs.unlink(
         file.filename,
-        () => console.log('Temp file deleted succesfully')
+        () => console.log(`Stored screenshot with id: ${storedFile['$id']}`)
       )
       resolve()
     })
