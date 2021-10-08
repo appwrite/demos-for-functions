@@ -58,7 +58,7 @@ const createCloudConvertJob = async () => {
   const stream = Readable.from(buffer);
   stream.name = file.filename;
   const convertedFile = await storage.createFile(stream);
-  return convertedFile.id;
+  return convertedFile.$id;
 };
 
-console.log(createCloudConvertJob());
+createCloudConvertJob().then((id) => console.log(id));
