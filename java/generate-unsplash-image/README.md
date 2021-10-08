@@ -18,15 +18,15 @@ To package this example as a cloud function, follow these steps.
 
 - Create a tarfile
 
-If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/java/generateUnsplashImage/out/artifacts/generateUnsplashImage_jar/generateUnsplashImage.jar`
+If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/java/generate-unsplash-image/out/artifacts/generate-unsplash-image_jar/generate-unsplash-image.jar`
 
 ```bash
-$ cd demos-for-functions/java/generateUnsplashImage/out/artifacts/
-$ tar -zcvf code.tar.gz generateUnsplashImage_jar
+$ cd demos-for-functions/java/generate-unsplash-image/out/artifacts/
+$ tar -zcvf code.tar.gz generate-unsplash-image-jar
 ```
 
 - Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-- Input the command that will run your function (in this case `java -jar generateUnsplashImage.jar`) as your entry point command
+- Input the command that will run your function (in this case `java -jar generate-unsplash-image.jar`) as your entry point command
 - Upload your `tarfile`
 - Click 'Activate'
 
