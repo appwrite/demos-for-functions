@@ -35,12 +35,13 @@ const createCloudConvertJob = async () => {
   });
 
   const uploadTask = job.tasks.filter((task) => task.name === "upload-file")[0];
+  const fileDetails = await storage.getFile("615db46f9a051");
   const fileBuffer = Buffer.from(
     await storage.getFileDownload("615db46f9a051"),
     "utf-8"
   );
   const inputFile = Readable.from(fileBuffer);
-  await cloudConvert.tasks.upload(uploadTask, inputFile, "Coding.png");
+  await cloudConvert.tasks.upload(uploadTask, inputFile, fileDetails.name);
 
   job = await cloudConvert.jobs.wait(job.id); // Wait for job completion
 
@@ -53,7 +54,7 @@ const createCloudConvertJob = async () => {
   const buffer = Buffer.from(response.data, "utf-8");
 
   const stream = Readable.from(buffer);
-  stream.name = "Coding.jpg";
+  stream.name = file.filename;
   storage.createFile(stream);
 };
 
