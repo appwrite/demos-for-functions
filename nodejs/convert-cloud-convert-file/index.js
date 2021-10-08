@@ -7,12 +7,14 @@ require("dotenv").config();
 
 const client = new sdk.Client();
 const storage = new sdk.Storage(client);
-const cloudConvert = new CloudConvert(process.env.CLOUD_CONVERT_API_KEY, true);
+const cloudConvert = new CloudConvert(process.env.CLOUD_CONVERT_API_KEY); // to use the Sandbox, pass true as second parameter
 
 client
   .setEndpoint(process.env.APPWRITE_API_ENDPOINT) // Your API Endpoint
   .setProject(process.env.APPWRITE_PROJECT_ID) // Your project ID
   .setKey(process.env.APPWRITE_API_KEY); // Your secret API key
+
+const appwriteParameters = JSON.parse(process.env.APPWRITE_FUNCTION_DATA);
 
 const createCloudConvertJob = async () => {
   let job = await cloudConvert.jobs.create({
@@ -35,9 +37,9 @@ const createCloudConvertJob = async () => {
   });
 
   const uploadTask = job.tasks.filter((task) => task.name === "upload-file")[0];
-  const fileDetails = await storage.getFile("615db46f9a051");
+  const fileDetails = await storage.getFile(appwriteParameters.id);
   const fileBuffer = Buffer.from(
-    await storage.getFileDownload("615db46f9a051"),
+    await storage.getFileDownload(appwriteParameters.id),
     "utf-8"
   );
   const inputFile = Readable.from(fileBuffer);
@@ -55,7 +57,8 @@ const createCloudConvertJob = async () => {
 
   const stream = Readable.from(buffer);
   stream.name = file.filename;
-  storage.createFile(stream);
+  const convertedFile = await storage.createFile(stream);
+  return convertedFile.id;
 };
 
-createCloudConvertJob();
+console.log(createCloudConvertJob());
