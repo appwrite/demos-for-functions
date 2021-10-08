@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "axios": "^0.22.0",
     "cloudconvert": "^2.2.4",
     "dotenv": "^10.0.0",
     "node-appwrite": "^2.5.0"
