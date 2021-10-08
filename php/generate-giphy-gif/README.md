@@ -24,3 +24,8 @@ $ tar -zcvf code.tar.gz .
 
 ## 🎯 Trigger
 Go to the Settings tab of your Cloud Function. Select the relevant event to fire this function or schedule it. You can also execute this function manually from the Overview tab.
+
+## 👀 Preview
+![gif1](https://user-images.githubusercontent.com/13732765/136447730-6aef67f5-367d-443e-96d2-e7de84cac5f0.png)
+![gif2](https://user-images.githubusercontent.com/13732765/136447737-70da6cc9-7779-4486-9eec-d9324c211f0e.png)
+![gif3](https://user-images.githubusercontent.com/13732765/136447744-cff36c5d-6844-44c7-9f47-2f62f721a121.png)
