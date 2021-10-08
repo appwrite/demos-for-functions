@@ -1,6 +1,5 @@
 const sdk = require("node-appwrite");
 const CloudConvert = require("cloudconvert");
-const fs = require("fs");
 const { Readable } = require("stream");
 const axios = require("axios");
 
@@ -36,7 +35,11 @@ const createCloudConvertJob = async () => {
   });
 
   const uploadTask = job.tasks.filter((task) => task.name === "upload-file")[0];
-  const inputFile = fs.createReadStream("./Coding.png");
+  const fileBuffer = Buffer.from(
+    await storage.getFileDownload("615db46f9a051"),
+    "utf-8"
+  );
+  const inputFile = Readable.from(fileBuffer);
   await cloudConvert.tasks.upload(uploadTask, inputFile, "Coding.png");
 
   job = await cloudConvert.jobs.wait(job.id); // Wait for job completion
