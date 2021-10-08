@@ -20,6 +20,9 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
   <br><br>
   > **Note** <br> If you don't plan to use REPORT*URL , make sure to remove the `reportUrl` json \_key-value* pair from `main.py`
 
+![2021 10 08-12 40 32 screenshot](https://user-images.githubusercontent.com/63491234/136563554-946289f4-4eaf-4802-85a5-65e5da87178a.png)
+
+
 ## 📝 Custom Function Data
 
 Go to `Execute Now` button , click it , then add the following custom data to the function
@@ -32,6 +35,7 @@ Go to `Execute Now` button , click it , then add the following custom data to th
   "TEXT ": "<whatsapp-text>"
 }
 ```
+![2021 10 08-18 33 38 screenshot](https://user-images.githubusercontent.com/63491234/136563782-e2c1587b-477c-4030-bf09-de50063c7104.png)
 
 ## 🚀 Building and Packaging
 
