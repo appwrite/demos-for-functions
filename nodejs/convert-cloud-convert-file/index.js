@@ -1,7 +1,8 @@
 const sdk = require("node-appwrite");
 const CloudConvert = require("cloudconvert");
 const fs = require("fs");
-const https = require("https");
+const { Readable } = require("stream");
+const axios = require("axios");
 
 require("dotenv").config();
 
@@ -33,24 +34,24 @@ const createCloudConvertJob = async () => {
       },
     },
   });
+
   const uploadTask = job.tasks.filter((task) => task.name === "upload-file")[0];
   const inputFile = fs.createReadStream("./Coding.png");
-  const res = await cloudConvert.tasks.upload(
-    uploadTask,
-    inputFile,
-    "Coding.png"
-  );
+  await cloudConvert.tasks.upload(uploadTask, inputFile, "Coding.png");
+
   job = await cloudConvert.jobs.wait(job.id); // Wait for job completion
+
   const exportTask = job.tasks.filter(
     (task) => task.operation === "export/url" && task.status === "finished"
   )[0];
   const file = exportTask.result.files[0];
 
-  const writeStream = fs.createWriteStream("./" + file.filename);
+  const response = await axios.get(file.url, { responseType: "arraybuffer" });
+  const buffer = Buffer.from(response.data, "utf-8");
 
-  https.get(file.url, (response) => {
-    response.pipe(writeStream);
-  });
+  const stream = Readable.from(buffer);
+  stream.name = "Coding.jpg";
+  storage.createFile(stream);
 };
 
 createCloudConvertJob();
