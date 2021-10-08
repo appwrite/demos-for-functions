@@ -6,7 +6,7 @@ const {Readable}=require('stream');
 // Initialise the client SDK
 let client = new sdk.Client();
 client
-    .setEndpoint("http://192.168.1.13/v1"/*process.env.APPWRITE_ENDPOINT*/) // Your API Endpoint
+    .setEndpoint(process.env.APPWRITE_ENDPOINT) // Your API Endpoint
     .setProject(process.env.APPWRITE_FUNCTION_PROJECT_ID) // Your project ID available by default
     .setKey(process.env.APPWRITE_API_KEY) // Your secret API key
    ;
