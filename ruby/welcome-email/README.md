@@ -7,7 +7,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 * **MAILGUN_API_KEY** -  API Key for Mailgun
 * **MAILGUN_DOMAIN** - Domain Name from Mailgun
 
-## 🤔 Requirements
+## 🚀 Building and Packaging
 Make sure to install requirements by:
 ```ruby
 gem install json
