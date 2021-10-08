@@ -18,7 +18,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 - **WHATSAPP_CHANNEL_ID** - Channel Id of the whatsapp channel in MessageBird
 - **REPORT_URL** - Deliver status reports to your platform through a POST request to a specific URL
   <br><br>
-  > **Note** <br> If you don't plan to use REPORT*URL , make sure to remove the `reportUrl` json \_key-value* pair from `main.py`
+  > **Note** <br> If you don't plan to use REPORT_URL , make sure to remove the `reportUrl` json *key-value* pair from `main.py`
 
 ![2021 10 08-12 40 32 screenshot](https://user-images.githubusercontent.com/63491234/136563554-946289f4-4eaf-4802-85a5-65e5da87178a.png)
 
