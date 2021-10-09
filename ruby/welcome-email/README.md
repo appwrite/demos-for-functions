@@ -36,6 +36,10 @@ $ tar -zcvf code.tar.gz welcome-email
 
 ![exec](https://user-images.githubusercontent.com/73291466/136646754-70c344ad-8bee-4f2b-ab89-2ab80a4e8864.png)
 
+This event can be seen in logs section:
+
+![event](https://user-images.githubusercontent.com/73291466/136650182-2b3cef2d-1752-4ebd-acbb-173c650fe8f2.png)
+
 
 ## 🎯 Trigger
 
