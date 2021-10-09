@@ -5,7 +5,7 @@ A sample Dart Cloud Function which takes a keyword and returns the first result 
 ## Getting Started
 
 Head over to the [Giphy Developers](https://developers.giphy.com/docs/api) to read their quick start guide and get your API key. Make sure to use the **GIPHY API** and not the **GIPHY SDK**.
-<img src = 'https://github.com/2002Bishwajeet/demos-for-functions/blob/feat-implement-generate-giphy-gif-dart/dart/generate-giphy-gif/screenshots/SDKvsAPI.png' width = '100%' />
+<img src = 'https://github.com/2002Bishwajeet/demos-for-functions/blob/feat-implement-generate-giphy-gif-dart/dart/generate-giphy-gif/screenshots/SDKvsAPI.png' width = '100%' height = '50% />
 
 Since we are retrieving an url from the API, the GIPHY API is more than enough for our needs.
 
