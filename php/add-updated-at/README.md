@@ -38,7 +38,7 @@ Go to Database tab and follow these steps:
 - fill in the data needed and click create
 - there should be `Document ID` and `Collection ID` on the right side (we need both of this as data when triggering cloud functions )
 
-PS: You can add as many rules as wanted, we just need `updatedAt` key to see the cloud functions woking
+PS: You can add as many rules as wanted, we just need `updatedAt` key to see the cloud functions working
 
 ## 🎯 Trigger
 
