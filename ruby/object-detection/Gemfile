@@ -4,3 +4,4 @@ ruby '~> 3.0'
 
 gem 'cloudmersive-image-recognition-api-client', '~> 2.0', '>= 2.0.5'
 gem 'faraday', '~> 1.8'
+gem 'dotenv-rails'

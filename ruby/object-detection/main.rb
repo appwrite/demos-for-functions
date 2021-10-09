@@ -1,10 +1,14 @@
 require 'cloudmersive-image-recognition-api-client'
 require 'json'
 require 'faraday'
+require 'dotenv/load'
 
 def get_file(file_id)
+  puts "#{ENV['APPWRITE_ENDPOINT']}/storage/files/#{file_id}/download"
+  puts ENV['APPWRITE_FUNCTION_PROJECT_ID']
+  puts ENV['APPWRITE_API_KEY']
   response = Faraday.new(
-                          ENV['APPWRITE_ENDPOINT'],
+                          "#{ENV['APPWRITE_ENDPOINT']}/storage/files/#{file_id}/download",
                           headers: 
                             { 
                               'x-appwrite-project' => ENV['APPWRITE_FUNCTION_PROJECT_ID'],
@@ -32,7 +36,7 @@ end
 
 data = JSON.parse(ENV['APPWRITE_FUNCTION_EVENT_DATA'])
 file_id = data['$id']
+puts file_id
 
 file  = get_file(file_id)
-
 object_detection(file)

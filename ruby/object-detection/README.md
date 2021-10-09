@@ -38,6 +38,13 @@ $ tar -zcvf ../object-detection.tar.gz .
 * Upload your tarfile
 * Click 'Activate'
 
+* Manually run:
+- `cd demos-for-functions/ruby/object-detection`
+- `cp .env.example .env`
+- Change your config in .env
+- `bundle install`
+- `ruby main.rb`
+
 ## 🎯 Trigger
 Trigger the cloud function using the SDK or HTTP API or the Appwrite Console.
 
