@@ -5,7 +5,7 @@ A sample Dart Cloud Function which takes a keyword and returns the first result 
 ## Getting Started
 
 Head over to the [Giphy Developers](https://developers.giphy.com/docs/api) to read their quick start guide and get your API key. Make sure to use the **GIPHY API** and not the **GIPHY SDK**.
-![difference between sdk and api](screenshots\SDKvsAPI.png)
+![difference between sdk and api](https://github.com/2002Bishwajeet/demos-for-functions/blob/feat-implement-generate-giphy-gif-dart/dart/generate-giphy-gif/screenshots/SDKvsAPI.png)
 
 Since we are retrieving an url from the API, the GIPHY API is more than enough for our needs.
 
@@ -15,9 +15,9 @@ Since we are retrieving an url from the API, the GIPHY API is more than enough f
 
 1. Go to your `appwrite console`
 2. Select your project and go to `Functions`
-![Image](screenshots\functions.png)
+![Image](https://github.com/2002Bishwajeet/demos-for-functions/blob/feat-implement-generate-giphy-gif-dart/dart/generate-giphy-gif/screenshots/functions.png)
 3. Under `Functions` click on `Add Function`
-![Image2](screenshots\function2.png)
+![Image2](https://github.com/2002Bishwajeet/demos-for-functions/blob/feat-implement-generate-giphy-gif-dart/dart/generate-giphy-gif/screenshots/function2.png)
 
 **NOTE:** If you don't see the Dart option in the runtimes. Follow `troubleshooting.md` guide to learn how to add the Dart runtime.
 
