@@ -7,7 +7,6 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 * **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
 * **APPWRITE_API_KEY** - Your Appwrite API key with `files.read` and `files.write` permissions
 * **CLOUDCONVERT_API_KEY** - API Key for Cloudconvert
-* **APPWRITE_SCREENSHOT_URL** - Full path URL to screenshot (For example: https://www.mywebsite.com)
 
 ## 🚀 Building and Packaging
 
@@ -25,4 +24,7 @@ $ tar -zcvf code.tar.gz .
 * Click 'Activate'
 
 ## 🎯 Trigger
-After the Building and Packaging step, Press the Execute Now button.
+After the Building and Packaging step, follow the following steps:
+1. Press the Execute Now button. 
+2. Enter in the Custom Data field the full path URL of the website you want to screenshot (example: http://example.com) 
+3. Press Again Execute Now Button

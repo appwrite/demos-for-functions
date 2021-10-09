@@ -8,7 +8,10 @@ use \CloudConvert\CloudConvert;
 use \CloudConvert\Models\Job;
 use \CloudConvert\Models\Task;
 
-$url = getenv('APPWRITE_SCREENSHOT_URL');
+$url = getenv('APPWRITE_FUNCTION_DATA');
+if(empty($url)){
+    throw new Exception('Please enter a URL.');
+}
 $client = new Client();
 $client
     ->setEndpoint(getenv('APPWRITE_ENDPOINT'))
