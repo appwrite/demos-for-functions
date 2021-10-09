@@ -10,4 +10,12 @@ environment:
 #   path: ^1.8.0
 
 dependencies:
-  http: 
+  http:
+#  This dependencies has been kept empty cause
+#  cause currently Appwrite uses Dart 2.13.0
+#  and my system contains Dart 2.14.0
+#  So to avoid version solving conflicts I kept this empty
+#  so for dart to detect this automatically
+#  when I degraded this version
+#  You can update to lates version when the latest image of dart
+#  is available in the appwrite
