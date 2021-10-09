@@ -11,7 +11,6 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 Make sure to install requirements by:
 ```ruby
 gem install json
-gem install http
 ```
 
 * Ensure that your folder structure looks like this 
