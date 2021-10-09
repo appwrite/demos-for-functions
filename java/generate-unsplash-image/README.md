@@ -1,6 +1,6 @@
 # Generate Image From Unsplash API
 
-A sample Java Cloud Function for sending a welcome email to a newly registered user.
+A sample Java Cloud Function for generating picture url from Unsplash API.
 
 ## 📝 Environment Variables
 
