@@ -8,33 +8,18 @@ To package this example as a cloud function, follow these steps.
 
 ```bash
 $ cd demos-for-functions/ruby/translate-text
-```
-
-Add this line to your application's Gemfile:
-
-```bash
-gem 'free_google_translate'
-```
-
-And then execute: 
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-
-```bash
-$ gem install free_google_translate
+$ docker run --rm -v $(pwd):/app -w /app --env GEM_HOME=./.appwrite appwrite/env-ruby-3.0:1.0.0 bundle install
 ```
 
 - Ensure that your folder structure looks like this
 
 ```
 .
-├── main.rb
+├── .appwrite/
 ├── Gemfile
 ├── Gemfile.lock
-├── README.md
+├── main.rb
+└── README.md
 ```
 
 - Create a tarfile
@@ -52,3 +37,19 @@ $ tar -zcvf code.tar.gz translate-text
 ## 🎯 Trigger
 
 Trigger the cloud function using the SDK or HTTP API or the Appwrite Console.
+
+You need to include the following data to properly trigger the function
+
+```Json
+{
+    "text": "hello",
+    "sourceLanguage": "en",
+    "destinationLanguage": "es"
+}
+```
+
+Example response:
+
+```text
+Hola
+```
