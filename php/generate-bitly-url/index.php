@@ -2,14 +2,7 @@
 
 include './vendor/autoload.php';
 
-use Appwrite\Client;
-use GuzzleHttp\Client as GuzzleClient;
-
-$client = new Client();
-$client
-    ->setEndpoint($_ENV['APPWRITE_ENDPOINT'])
-    ->setProject($_ENV['APPWRITE_FUNCTION_PROJECT_ID']) //Available by default
-    ->setKey($_ENV['APPWRITE_API_KEY']);
+use GuzzleHttp\Client;
 
 $custom_data = json_decode($_ENV['APPWRITE_FUNCTION_DATA'], true);
 
@@ -17,7 +10,7 @@ $custom_data = json_decode($_ENV['APPWRITE_FUNCTION_DATA'], true);
 $bitly_api_url = 'https://api-ssl.bitly.com/';
 
 try {
-    $guzzleclient = new GuzzleClient([
+    $guzzleclient = new Client([
         // Base URI is used with relative requests
         'base_uri' => $bitly_api_url,
     ]);
@@ -38,9 +31,8 @@ try {
     if (!in_array($response->getStatusCode(), [200, 201]))
         throw new Exception($e->getMessage(), $response->getStatusCode());
 
-    $body = $response->getBody();
-    print_r(json_decode($body));
-    
+    $response = json_decode($response->getBody());
+    echo $response->link;
 } catch (Exception $e) {
     echo $e->getMessage();
 }
