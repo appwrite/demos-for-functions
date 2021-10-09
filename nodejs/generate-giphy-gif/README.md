@@ -44,3 +44,15 @@ $ tar -zcvf code.tar.gz generate-giphy-gif
 ## 💬 Query
 
 Make sure you pass in the search query as a string as the custom execution data.
+Here is a quick example of an input:
+```
+"thumbs up"
+```
+
+## 🧾 Response
+
+The url will be returned directly so the output will be the url directly so you won't have to parse the output as json.
+Here's a quick example output:
+```
+https://giphy.com/gifs/vhs-positive-vhspositive-3oEjHFOscgNwdSRRDy
+```
