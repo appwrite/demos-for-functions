@@ -1,4 +1,6 @@
 import 'dart:convert';
+
+//  Since we only wanted to use Platform, we didn't need to import the entire library.
 import 'dart:io' show Platform;
 
 // We are using an external http package to make the http requests.
