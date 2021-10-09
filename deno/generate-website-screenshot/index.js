@@ -1,4 +1,3 @@
-// Perform all your imports
 import * as sdk from "https://deno.land/x/appwrite/mod.ts";
 import * as dotenv from "https://deno.land/x/dotenv/mod.ts";
 
@@ -13,62 +12,110 @@ client
 
 // Initialise the storage SDK
 const storage = new sdk.Storage(client);
-const database = new sdk.Database(client);
 
-//retrieve all collections
-//for each collection, retrieve all documents and post to storage api
+// Data
+const payload = JSON.parse(Deno.env.get("APPWRITE_FUNCTION_EVENT_DATA"));
+const uri = payload["url"];
+const format = payload["format"];
 
-const documents = [];
+async function generateWebsiteScreenshot(url, format = "jpg") {
+  const file = await createExportTask(await captureScreenshot(url, format));
 
-async function fileBackup() {
-  let retrievedCollections = await database.listCollections();
+  const response = await fetch(file.url);
 
-  for (let collection of retrievedCollections.collections) {
-    let retrievedDocuments = await database.listDocuments(collection.$id);
-    for (let document of retrievedDocuments.documents) {
-      documents.push(document);
-    }
+  const blob = await response.blob();
+  const buffer = await blob.arrayBuffer();
+  const unit8arr = new Deno.Buffer(buffer).bytes();
+
+  await Deno.writeFile(file.filename, unit8arr);
+
+  try {
+    const storedFile = await storage.createFile(
+      new File(await Deno.readFile(`./${file.filename}`), file.filename)
+    );
+
+    console.log(`Stored screenshot with id: ${storedFile["$id"]}`);
+  } catch (error) {
+    console.error(error);
   }
 
-  const generatedCsv = generateCsv(documents);
+  Deno.remove(file.filename);
+}
 
-  await Deno.writeFile("./data.csv", generatedCsv, function (err) {
-    if (err) console.log(err);
-  });
+async function captureScreenshot(url, format) {
+  const config = JSON.stringify({ url, output_format: format });
 
-  await storage.createFile(
-    new File(
-      [Deno.readFile("./data.csv").toString()],
-      `${new Date().toString()}.csv`
-    )
+  // Create a request to capture the website screen shot
+
+  const captureRequest = await fetch(
+    "https://api.cloudconvert.com/v2/capture-website",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.CLOUDCONVERT_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: config,
+    }
   );
 
-  console.log("backup created!");
+  const captureRequestData = (await captureRequest.json()).data;
 
-  await Deno.remove("./data.csv");
-}
+  // Wait for the task to finish
 
-async function generateCsv(items) {
-  let csv = "";
-  let keysCounter = 0;
-  const keysAmount = Object.keys(items[0]).length;
-
-  //generate headers for the csv
-  for (let key in items[0]) {
-    csv += key + (keysCounter + 1 < keysAmount ? "," : "\r\n");
-    keysCounter++;
-  }
-
-  // generate data items for csv
-  for (let row = 0; row < items.length; row++) {
-    keysCounter = 0;
-
-    for (let key in items[row]) {
-      csv += items[row][key] + (keysCounter + 1 < keysAmount ? "," : "\r\n");
-      keysCounter++;
+  await fetch(
+    `https://api.cloudconvert.com/v2/tasks/${captureRequestData.id}/wait`,
+    {
+      headers: {
+        Authorization: `Bearer ${env.CLOUDCONVERT_API_KEY}`,
+      },
     }
-  }
-  return csv;
+  );
+
+  return captureRequestData.id;
 }
 
-fileBackup();
+async function createExportTask(id) {
+  // Create a request to export the screenshot
+
+  const createExportRequest = await fetch(
+    `https://api.cloudconvert.com/v2/export/url?input=${id}`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.CLOUDCONVERT_API_KEY}`,
+      },
+    }
+  );
+
+  const createExportRequestData = (await createExportRequest.json()).data;
+
+  // Wait for it to get exported
+
+  await fetch(
+    `https://api.cloudconvert.com/v2/tasks/${createExportRequestData.id}/wait`,
+    {
+      headers: {
+        Authorization: `Bearer ${env.CLOUDCONVERT_API_KEY}`,
+      },
+    }
+  );
+
+  const captureDataRequest = await fetch(
+    `https://api.cloudconvert.com/v2/tasks/${id}`,
+    {
+      headers: {
+        Authorization: `Bearer ${env.CLOUDCONVERT_API_KEY}`,
+      },
+    }
+  );
+
+  const captureData = (await captureDataRequest.json()).data;
+
+  return {
+    url: `https://storage.cloudconvert.com/${createExportRequestData.id}/${captureData.result.files[0].filename}`,
+    filename: captureData.result.files[0].filename,
+  };
+}
+
+generateWebsiteScreenshot(uri, format);
