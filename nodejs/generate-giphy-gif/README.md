@@ -51,7 +51,7 @@ Here is a quick example of an input:
 
 ## 🧾 Response
 
-The url will be returned directly so the output will be the url directly so you won't have to parse the output as json.
+The URL will be returned as a string, so you won't have to parse the output as JSON.
 Here's a quick example output:
 ```
 https://giphy.com/gifs/vhs-positive-vhspositive-3oEjHFOscgNwdSRRDy
