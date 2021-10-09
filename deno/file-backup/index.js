@@ -32,8 +32,6 @@ async function fileBackup() {
 
   const generatedCsv = generateCsv(documents);
 
-  console.log(generatedCsv);
-
   await Deno.writeFile("./data.csv", generatedCsv, function (err) {
     if (err) console.log(err);
   });
