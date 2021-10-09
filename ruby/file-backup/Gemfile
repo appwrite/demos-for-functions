@@ -4,3 +4,4 @@ ruby '~> 3.0'
 
 gem 'faraday', '~> 1.8'
 gem 'dotenv-rails'
+gem 'dropbox_api', '~> 0.1.20'

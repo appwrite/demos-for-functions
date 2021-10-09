@@ -56,5 +56,6 @@ Input:
 
 Output:
 ```
-
+panda-happy.png uploaded successfully!
 ```
+And your file should be appear on Dropbox.

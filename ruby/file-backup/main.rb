@@ -1,38 +1,55 @@
 require 'json'
 require 'faraday'
 require 'dotenv/load'
+require 'dropbox_api'
 
 def get_file(file_id)
-  response = Faraday.new(
-                          "#{ENV['APPWRITE_ENDPOINT']}/storage/files/#{file_id}/download",
-                          headers: 
-                            { 
-                              'x-appwrite-project' => ENV['APPWRITE_FUNCTION_PROJECT_ID'],
-                              'x-appwrite-key' => ENV['APPWRITE_API_KEY']
-                            } 
-                        ).get
-  response.body
+	begin
+		response = Faraday.new(
+														url: "#{ENV['APPWRITE_ENDPOINT']}/storage/files/#{file_id}/download",
+														headers: 
+															{ 
+																'x-appwrite-project' => ENV['APPWRITE_FUNCTION_PROJECT_ID'],
+																'x-appwrite-key' => ENV['APPWRITE_API_KEY']
+															} 
+													).get
+		response.body	
+	rescue => e
+		puts "Exception when calling Appwrite::Storage::download_file: #{e}"
+	end
 end
 
-def backup_to_dropbox(file)
-	CloudmersiveImageRecognitionApiClient.configure do |config|
-		config.api_key['Apikey'] = ENV['CLOUDMERSIVE_API_KEY']
+def get_file_description(file_id)
+	begin
+		response = Faraday.new(
+														url: "#{ENV['APPWRITE_ENDPOINT']}/storage/files/#{file_id}",
+														headers: 
+															{ 
+																'x-appwrite-project' => ENV['APPWRITE_FUNCTION_PROJECT_ID'],
+																'x-appwrite-key' => ENV['APPWRITE_API_KEY']
+															} 
+													).get
+		response.body	
+	rescue => e
+		puts "Exception when calling Appwrite::Storage::file: #{e}"
 	end
+end
 
-	api_instance = CloudmersiveImageRecognitionApiClient::RecognizeApi.new
-
+def backup_to_dropbox(file_descripion, file)
   begin
-    #Detect objects including types and locations in an image
-    result = api_instance.recognize_detect_objects(file)
-    puts result
-  rescue CloudmersiveImageRecognitionApiClient::ApiError => e
-    puts "Exception when calling RecognizeApi->recognize_detect_objects: #{e}"
+		dropbox_client = DropboxApi::Client.new(ENV['DROPBOX_API_KEY'])
+		dropbox_client.upload("/#{file_descripion['name']}", file)
+
+		puts "#{file_descripion['name']} uploaded successfully!"
+  rescue  => e
+    puts "Exception when calling DropboxApi::Client::upload_by_chunks: #{e}"
   end
 end
 
 data = JSON.parse(ENV['APPWRITE_FUNCTION_EVENT_DATA'])
 file_id = data['$id']
-puts file_id
 
 file  = get_file(file_id)
-backup_to_dropbox(file)
+file_descripion = JSON.parse(get_file_description(file_id))
+
+backup_to_dropbox(file_descripion, file)
