@@ -62,3 +62,8 @@ tar -zcvf code.tar.gz generate-giphy-gif
 ## 🎯 Trigger
 
 Head over to your function in the Appwrite console and just press **Execute**. You will notice the output in your logs
+
+
+## 👨‍💻 Live Working 
+
+<img src = "screenshots\ans.gif"/>
