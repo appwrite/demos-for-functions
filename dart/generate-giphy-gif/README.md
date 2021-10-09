@@ -19,7 +19,7 @@ Since we are retrieving an url from the API, the GIPHY API is more than enough f
 3. Under `Functions` click on `Add Function`
 <img src ='https://github.com/2002Bishwajeet/demos-for-functions/blob/feat-implement-generate-giphy-gif-dart/dart/generate-giphy-gif/screenshots/function2.png' width = '100%' />
 
-**NOTE:** If you don't see the Dart option in the runtimes. Follow `troubleshooting.md` guide to learn how to add the Dart runtime.
+**NOTE:** If you don't see the Dart option in the runtimes. Follow [`troubleshooting.md`](troubleshoot.md) guide to learn how to add the Dart runtime.
 
 ## 📝 Environment Variables
 
