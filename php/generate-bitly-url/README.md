@@ -4,8 +4,6 @@ This function takes an url as an input, generate a short URL using Bitly and out
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
-* **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
-* **APPWRITE_API_KEY** - Your Appwrite API key
 * **BITLY_ACCESS_TOKEN** - Your Bitly access token
 
 Your data must include the following fields:
