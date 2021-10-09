@@ -1,12 +1,22 @@
 require 'json'
-require 'http'
+require 'net/http'
 
 # Parsing data
 data = JSON.parse(ENV['APPWRITE_FUNCTION_EVENT_DATA'])
+# puts data
 name = data["name"]
 email = data["email"]
 
 # Using Mailgun API to send email
-response = HTTP.basic_auth(:user => 'auth', :pass => '%s' % [ENV['MAILGUN_API_KEY']]).post("https://api.mailgun.net/v3/%s/messages" % [ENV['MAILGUN_DOMAIN']], :form => {'from' => 'Excited User <mailgun@%s>' % [ENV['MAILGUN_DOMAIN']], 'to' => email, 'subject': 'Hello, %' % [name], 'text' => 'Testing some Mailgun awesomness!'})
+uri = URI('https://api.mailgun.net/v3/%{a}/messages' % { a: ENV['MAILGUN_DOMAIN'] })
+req = Net::HTTP::Post.new(uri)
 
-puts 'response code: %s' % [response.code.to_s]
+# Basic Authentication 
+req.basic_auth 'auth', '%{b}' % { b:[ENV['MAILGUN_API_KEY']] }
+
+# Setting up form data
+req.set_form_data('from' => 'Excited User <mailgun@%{c}>' % { c: ENV['MAILGUN_DOMAIN'] }, 'to' => email, 'subject': 'Hello, %{d}' % { d: name }, 'text' => 'Testing some Mailgun awesomness!')
+
+# Printing response code
+res = Net::HTTP.get_response(uri)
+puts 'response code: %{e}' % { e:res.code.to_s }
