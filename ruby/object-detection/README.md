@@ -40,3 +40,29 @@ $ tar -zcvf ../object-detection.tar.gz .
 
 ## 🎯 Trigger
 Trigger the cloud function using the SDK or HTTP API or the Appwrite Console.
+
+Input:
+```
+{
+	"$id": "your_file_id"
+}
+```
+
+Output:
+```
+{
+	:Successful=>true, 
+	:Objects=>
+		[
+			{
+				:ObjectClassName=>"dog", 
+				:Height=>228, 
+				:Width=>266, 
+				:Score=>0.5911540985107422, 
+				:X=>11, 
+				:Y=>19
+			}
+		], 
+	:ObjectCount=>1
+}
+```
