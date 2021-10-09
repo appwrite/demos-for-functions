@@ -11,3 +11,5 @@ dart/**/.appwrite
 python/**/__pycache__
 python/**/.appwrite
 *.DS_Store
+nodejs/**/node_modules
+nodejs/**/.env
