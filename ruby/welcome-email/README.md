@@ -32,6 +32,10 @@ $ tar -zcvf code.tar.gz welcome-email
 * Upload your tarfile 
 * Click 'Activate'
 
+## Screenshot of working
+
+![exec](https://user-images.githubusercontent.com/73291466/136646754-70c344ad-8bee-4f2b-ab89-2ab80a4e8864.png)
+
 
 ## 🎯 Trigger
 
