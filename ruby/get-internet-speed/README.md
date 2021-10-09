@@ -8,33 +8,18 @@ To package this example as a cloud function, follow these steps.
 
 ```bash
 $ cd demos-for-functions/ruby/get-internet-speed
-```
-
-Add this line to your application's Gemfile:
-
-```bash
-gem 'speedtest'
-```
-
-And then execute: 
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-
-```bash
-$ gem install speedtest
+$ docker run --rm -v $(pwd):/app -w /app --env GEM_HOME=./.appwrite appwrite/env-ruby-3.0:1.0.0 bundle install
 ```
 
 - Ensure that your folder structure looks like this
 
 ```
 .
-├── main.rb
+├── .appwrite/
 ├── Gemfile
 ├── Gemfile.lock
-├── README.md
+├── main.rb
+└── README.md
 ```
 
 - Create a tarfile
