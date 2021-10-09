@@ -6,7 +6,6 @@ Add the following environment variables in your Cloud Function settings.
 
 * **APPWRITE_API_KEY** - Create a key from the Appwrite console with the following scope (`files.read`)
 * **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
-* **COLLECTION_ID** - The id of collection which is needed to be Backed Up.
 
 ## 🛠 Building and Packaging
 
