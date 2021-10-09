@@ -2,30 +2,24 @@
 
 A sample Ruby Cloud function that fetch and displays today's coronavirus stats for a given country or for the globe.
 
-## 📝 Environment Variables
-
-- **COUNTRY_CODE** - The country code for which COVID data will be fetched. If not provided, global data will be fetched.
-
 ## 🚀 Building and Packaging
 
 To package this example as a cloud function, follow these steps.
 
 ```bash
 $ cd demos-for-functions/ruby/get-covid-stats
-```
-Execute the following command to install the modules: 
-```bash
-$ bundle
+$ docker run --rm -v $(pwd):/app -w /app --env GEM_HOME=./.appwrite appwrite/env-ruby-3.0:1.0.0 bundle install
 ```
 
 - Ensure that your folder structure looks like this
 
 ```
 .
-├── main.rb
+├── .appwrite/
 ├── Gemfile
 ├── Gemfile.lock
-├── README.md
+├── main.rb
+└── README.md
 ```
 
 - Create a tarfile
@@ -51,6 +45,8 @@ Trigger the cloud function using the SDK or HTTP API or the Appwrite Console.
     "COUNTRY_CODE": "IN"
 }
 ```
+
+**COUNTRY_CODE** - The country code for which COVID data will be fetched. If not provided, global data will be fetched.
 
 Sample response:
 

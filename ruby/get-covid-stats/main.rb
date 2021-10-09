@@ -4,7 +4,7 @@ require "net/http"
 require "json"
 
 # Get summary for all countries
-summaryURL = URI('https://api.covid19api.com/summary')
+summaryURL = URI("https://api.covid19api.com/summary")
 
 # Parse the request
 summary = JSON.parse(Net::HTTP.get(summaryURL))
@@ -16,7 +16,7 @@ globalData = summary["Global"]
 countries = summary["Countries"]
 
 # Get the country code from Appwrite's environment variable
-payload = JSON.parse(ENV['APPWRITE_FUNCTION_DATA'])
+payload = JSON.parse(ENV["APPWRITE_FUNCTION_DATA"])
 COUNTRY_CODE = payload["COUNTRY_CODE"]
 
 # Display Stats

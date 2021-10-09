@@ -2,4 +2,4 @@ source "https://rubygems.org"
 
 gem "uri"
 gem "net-http"
-gem 'json'
+gem "json"
