@@ -15,28 +15,18 @@ To package this example as a cloud function, follow these steps.
 
 ```bash
 $ cd demos-for-functions/ruby/send-sms
-```
-
-You will first need to install the application's dependencies. You can do this manually using RubyGems, or you can install them using Bundler. To install via bundler, type:
-
-```bash
-$ GEM_HOME=./.appwrite bundle install
-```
-
-To install the gems manually (if you don't have bundler installed), type the following commands:
-
-```bash
-$ gem install twilio-ruby
+$ docker run --rm -v $(pwd):/app -w /app --env GEM_HOME=./.appwrite appwrite/env-ruby-3.0:1.0.0 bundle install
 ```
 
 - Ensure that your folder structure looks like this
 
 ```
 .
-├── main.rb
 ├── .appwrite/
 ├── Gemfile
-├── README.md
+├── Gemfile.lock
+├── main.rb
+└── README.md
 ```
 
 - Create a tarfile
