@@ -16,7 +16,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 To package this example as a cloud function, follow these steps.
 
 ```bash
-$ cd demos-for-functions/deno/welcome-email
+$ cd demos-for-functions/deno/file-backup
 ```
 
 * Ensure that your folder structure looks like this 
@@ -28,7 +28,7 @@ $ cd demos-for-functions/deno/welcome-email
 
 ```bash
 $ cd ..
-$ tar -zcvf code.tar.gz welcome-email
+$ tar -zcvf code.tar.gz file-backup
 ```
 
 * Navigate to Overview Tab of your Cloud Function
