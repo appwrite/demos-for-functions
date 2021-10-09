@@ -4,9 +4,6 @@ require 'faraday'
 require 'dotenv/load'
 
 def get_file(file_id)
-  puts "#{ENV['APPWRITE_ENDPOINT']}/storage/files/#{file_id}/download"
-  puts ENV['APPWRITE_FUNCTION_PROJECT_ID']
-  puts ENV['APPWRITE_API_KEY']
   response = Faraday.new(
                           "#{ENV['APPWRITE_ENDPOINT']}/storage/files/#{file_id}/download",
                           headers: 
