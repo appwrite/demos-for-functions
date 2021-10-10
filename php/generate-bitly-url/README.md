@@ -6,13 +6,13 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 
 * **BITLY_ACCESS_TOKEN** - Your Bitly access token
 
-Your data must include the following fields:
+Your data must include the url:
 
-```json
-{
-    "url": "https://appwrite.io"
-}
+### Example:
+```url
+https://appwrite.io
 ```
+
 
 ## 🚀 Building and Packaging
 
@@ -28,3 +28,10 @@ $ tar -zcvf code.tar.gz .
 * Input the command that will run your function (in this case `php index.php`) as your entrypoint command
 * Upload your tarfile 
 * Click 'Activate'
+
+
+## 🎯 Trigger
+
+Head over to your function in the Appwrite console and click on execute. Provide your link and continue.
+
+For example: https://appwrite.io/
