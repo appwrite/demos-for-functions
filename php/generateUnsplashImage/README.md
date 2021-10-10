@@ -19,7 +19,11 @@ $ tar -zcvf code.tar.gz .
 * Input the command that will run your function (in this case `php index.php`) as your entrypoint command
 * Upload your tarfile 
 * Click 'Activate'
-  
+
+### Example input:
+![](examples/ExampleInput.png)
+### Example output:
+![](examples/ExampleOutput.png)
 ## 🎯 Trigger
 After the Building and Packaging step, follow the following steps:
 

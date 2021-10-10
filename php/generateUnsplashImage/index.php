@@ -12,8 +12,9 @@ Unsplash\HttpClient::init([
 ]);
 $response = Unsplash\Search::photos($keyword);
 if(!empty($response->getResults())){
-    print_r("Image url:{$response->getResults()[0]["urls"]["raw"]} and the Author Name is:{$response->getResults()[0]["user"]["name"]}");
+    $output = ["imageAuthor" => $response->getResults()[0]["user"]["name"],"imageUrl" => $response->getResults()[0]["urls"]["raw"]];
+    echo json_encode($output, JSON_UNESCAPED_SLASHES);
 }
 else{
-    print_r("No result found for the keyword entered");
+    echo "No result found for the keyword entered";
 }
