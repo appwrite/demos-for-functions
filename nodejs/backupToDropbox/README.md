@@ -1,21 +1,45 @@
-# 📧  Your Function Name
+# 📧  backupToDropbox
 <!--  A brief descripption about your Cloud Function  -->
+This functions reads all the collection from Appwrite and then all the documents
+off the collections and uses csv-strigify a single document per row.
 
 ## 📝 Environment Variables
 <!-- Tell the users of your Cloud function, what Environment Variables your function uses. Use the following format -->
 
-* **VARIABLE 1** - <!-- Short Description --> 
-* **VARIABLE 2** - <!-- Short Description -->
+* **APPWRITE_API_ENDPOINT** - The API endpoint from the AppWrite console
+* **APPWRITE_API_KEY** - The API key from the AppWorite console.
+* **DROPBOX_ACCESS_TOKEN** - Dropbox Access Token from Dropbox App Console
+
 
 ## 🚀 Building and Packaging
-<!-- 
-Highlight the steps required to build and deploy this cloud function. 
 
-Take a look at this example (https://github.com/appwrite/demos-for-functions/blob/master/nodejs/welcome-email/README.md) for more information.  
+To package this as a cloud function, follow these steps.
 
-Make sure you mention the instructions clearly and also mention the entrypoint command for the function 
--->
+```bash
+$ cd demos-for-functions/nodejs/backupToDropbox
+$ npm install
+```
+
+- Ensure that your folder structure looks like this
+
+```
+.
+├── index.js
+├── node_modules/
+├── package-lock.json
+└── package.json
+```
+
+- Create a tarfile
+
+```bash
+$ cd ..
+$ tar -zcvf code.tar.gz backupToDropbox
+```
+
+- Navigate to the Overview Tab of your Cloud Function > Deploy Tag
+- Input the command that will run your function (in this case "node index.js") as your entrypoint command
+- Upload your tarfile
+- Click 'Activate'
+
 ## 🎯 Trigger
-<!-- Clearly explain the triggers that this cloud function relies on to work correctly. Take a look at the below example: 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
- --> 
