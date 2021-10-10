@@ -7,6 +7,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 Required:
 * **APPWRITE_API_KEY** - Create a key from the Appwrite console with the following scope (`files.read`)
 * **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
+* **DROPBOX_KEY** - OAuth token from [Dropbox](https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account) 
 
 ## 🚀 Building and Packaging
 To package this example as a cloud function, follow these steps.
