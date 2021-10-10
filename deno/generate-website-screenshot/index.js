@@ -101,8 +101,8 @@ async function createExportTask(id) {
     }
   );
 
-  const captureDataRequest = await fetch(
-    `https://api.cloudconvert.com/v2/tasks/${id}`,
+  const exportDataRequest = await fetch(
+    `https://api.cloudconvert.com/v2/tasks/${createExportRequestData.id}}`,
     {
       headers: {
         Authorization: `Bearer ${env.CLOUDCONVERT_API_KEY}`,
@@ -110,11 +110,11 @@ async function createExportTask(id) {
     }
   );
 
-  const captureData = (await captureDataRequest.json()).data;
+  const exportData = (await exportDataRequest.json()).data;
 
   return {
-    url: `https://storage.cloudconvert.com/${createExportRequestData.id}/${captureData.result.files[0].filename}`,
-    filename: captureData.result.files[0].filename,
+    url: exportData.result.files[0].url,
+    filename: exportData.result.files[0].filename,
   };
 }
 
