@@ -2,15 +2,6 @@
 
 include './vendor/autoload.php';
 
-use Appwrite\Client;
-
-$client = new Client();
-
-$client
-    ->setEndpoint($_ENV['APPWRITE_ENDPOINT'])
-    ->setProject($_ENV['APPWRITE_FUNCTION_PROJECT_ID']) //Available by default
-    ->setKey($_ENV['APPWRITE_API_KEY']);
-
 // Endpoint API URL
 $api_endpoint = 'https://<us>.api.mailchimp.com/3.0/';
 

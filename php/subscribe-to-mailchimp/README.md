@@ -4,8 +4,6 @@ A sample PHP Cloud Function for subscribe mailchimp newsletter
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
-* **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
-* **APPWRITE_API_KEY** - Your Appwrite API key
 * **APPWRITE_MAILCHIMP_API_KEY** - Your Mailchimp API key
 * **APPWRITE_MAILCHIMP_LIST_ID** - Your Mailchimp List ID
 
@@ -13,7 +11,7 @@ Your data must include the following fields:
 
 ```json
 {
-    "email": "<email@appwrite.io>",
+    "email": "<email@appwrite.io>"
 }
 ```
 

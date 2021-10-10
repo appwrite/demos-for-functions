@@ -9,7 +9,5 @@
             "email": "team@appwrite.io"
         }
     ],
-    "require": {
-        "appwrite/appwrite": "2.1.*"
-    }
+    "require": {}
 }
