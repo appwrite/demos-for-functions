@@ -4,7 +4,7 @@ include './vendor/autoload.php';
 
 use GuzzleHttp\Client;
 
-$custom_data = json_decode($_ENV['APPWRITE_FUNCTION_DATA'], true);
+$url = $_ENV['APPWRITE_FUNCTION_DATA'];
 
 // bitly base url
 $bitly_api_url = 'https://api-ssl.bitly.com/';
@@ -15,12 +15,13 @@ try {
         'base_uri' => $bitly_api_url,
     ]);
 
-    if (empty($custom_data['url'])) throw new Exception('url is requierd!', 500);
 
+    if (filter_var($url, FILTER_VALIDATE_URL) === FALSE)
+        throw new Exception('url is not valid!', 500);
 
     $response = $guzzleclient->request('POST', 'v4/bitlinks', [
         'json' => [
-            'long_url' => $custom_data['url']
+            'long_url' => $url
         ],
         'headers' => [
             'Authorization' => $_ENV['BITLY_ACCESS_TOKEN']
