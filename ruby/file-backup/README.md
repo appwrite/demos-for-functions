@@ -40,10 +40,26 @@ $ tar -zcvf ../file-backup.tar.gz .
 
 * Manually run:
 - `cd demos-for-functions/ruby/file-backup`
-- `cp .env.example .env`
-- Change your config in .env
 - `bundle install`
 - `ruby main.rb`
+* Note : If you have an error ``parse': 809: unexpected token at '�PNG\r (JSON::ParserError)`
+* Please modify file appwrite-2.4.0/lib/appwrite/client.rb in function fetch
+* Change from
+```
+begin
+	res = JSON.parse(response.body);
+rescue JSON::ParserError => e
+	raise Appwrite::Exception.new(response.body, response.code, nil)
+end
+```
+* to below (Don't parse JSON if response is image.)
+```
+begin
+	res = JSON.parse(response.body);
+rescue JSON::ParserError => e
+	res = response.body
+end
+```
 
 ## 🎯 Trigger
 Trigger the cloud function using the SDK or HTTP API or the Appwrite Console.
@@ -57,6 +73,6 @@ Input:
 
 Output:
 ```
-panda-happy.png uploaded successfully!
+your-file-name uploaded successfully!
 ```
 And your file should be appear on Dropbox.

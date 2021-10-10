@@ -27,7 +27,7 @@ end
 def backup_to_dropbox(file_descripion, file)
   begin
 		dropbox_client = DropboxApi::Client.new(ENV['DROPBOX_API_KEY'])
-		dropbox_client.upload("/backup/#{file_descripion['name']}", file)
+		dropbox_client.upload("/#{file_descripion['name']}", file)
 
 		puts "#{file_descripion['name']} uploaded successfully!"
   rescue  => e
