@@ -43,3 +43,4 @@ $ tar -zcvf code.tar.gz backupToDropbox
 - Click 'Activate'
 
 ## 🎯 Trigger
+Once the function is activated click on **Execute** to execute the function.
