@@ -37,3 +37,7 @@ $ tar -zcvf code.tar.gz .
 * Input the command that will run your function (in this case "node index.js") as your entrypoint command
 * Upload your tarfile 
 * Click 'Activate'
+
+## Trigger
+
+Head over to your function in the Appwrite console and just press **Execute Now**.
