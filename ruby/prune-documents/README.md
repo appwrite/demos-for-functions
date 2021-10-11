@@ -43,3 +43,7 @@ $ tar -zcvf ../prune_documents.tar.gz .
 * Add function execution to schedule:
   * Go to the Function **Settings** Tab
   * Fill CRON schedule, for example `0 6 * * *` — will execute function every day at 6am
+
+Function outputs amount of deleted documents.
+
+![execution](../docs-images/prune-documents-execution.gif)
