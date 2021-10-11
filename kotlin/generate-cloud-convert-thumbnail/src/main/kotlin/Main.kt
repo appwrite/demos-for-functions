@@ -1,23 +1,24 @@
 import io.appwrite.Client
 import io.appwrite.services.Storage
+import java.io.InputStream
 import kotlin.system.exitProcess
 
 suspend fun main() {
     val envVars = readEnvVars()
 
-    val appwriteClient = with (envVars) {
+    val appwriteClient = with(envVars) {
         Client()
             .setEndpoint(appwriteApiEndpoint)
             .setProject(appwriteProjectId)
             .setKey(appwriteSecretKey)
     }
-
     val appwriteStorage = Storage(appwriteClient)
 
-    println("fetching data")
+    val (
+        filename: String,
+        fileStream: InputStream
+    ) = appwriteStorage.getFilenameAndInputStream(envVars.fileId)
 
-    val result = appwriteStorage.getFileView(envVars.fileId)
-
-    println(result)
+    println(filename)
     exitProcess(0)
 }
