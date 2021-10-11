@@ -1,4 +1,5 @@
 plugins {
+    java
     kotlin("jvm") version "1.5.31"
 }
 
@@ -28,4 +29,5 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation("io.appwrite:sdk-for-kotlin:0.1.0")
     implementation("com.google.code.gson:gson:2.8.8")
+    implementation("com.cloudconvert:cloudconvert-java:1.0.7")
 }
