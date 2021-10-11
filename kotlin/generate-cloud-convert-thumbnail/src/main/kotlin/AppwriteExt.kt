@@ -1,7 +1,7 @@
 import com.google.gson.Gson
 import io.appwrite.Client
 import io.appwrite.services.Storage
-import model.File
+import model.AppwriteFile
 import java.io.InputStream
 
 fun Client.configureFrom(envVars: EnvVars) = with(envVars) {
@@ -14,7 +14,7 @@ suspend fun Storage.getFilenameAndInputStream(fileId: String): Pair<String, Inpu
     try {
         val fileStream = getFileView(fileId).body?.byteStream()!!
         val response = getFile(fileId).body?.string()!!
-        val name = Gson().fromJson(response, File::class.java)!!.name
+        val name = Gson().fromJson(response, AppwriteFile::class.java)!!.name
 
         name to fileStream
     } catch (e: NullPointerException) {

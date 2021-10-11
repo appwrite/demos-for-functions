@@ -1,9 +1,9 @@
 package model
 
-data class File(
+data class AppwriteFile(
     val `$id`: String,
     val name: String,
-    val `$permissions`: Permissions,
+    val `$permissions`: AppwritePermissions,
     val dateCreated: Int,
     val signature: String,
     val mimeType: String,
