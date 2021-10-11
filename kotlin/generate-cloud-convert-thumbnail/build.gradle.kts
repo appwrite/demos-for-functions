@@ -16,6 +16,8 @@ tasks.withType<Jar>() {
     from({
         configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) }
     })
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 repositories {
@@ -24,4 +26,5 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation("io.appwrite:sdk-for-kotlin:0.1.0")
 }
