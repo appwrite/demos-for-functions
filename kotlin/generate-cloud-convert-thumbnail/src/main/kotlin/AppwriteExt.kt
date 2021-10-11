@@ -4,7 +4,7 @@ import io.appwrite.services.Storage
 import model.File
 import java.io.InputStream
 
-fun Client.setEnvVars(envVars: EnvVars) = with(envVars) {
+fun Client.configureFrom(envVars: EnvVars) = with(envVars) {
     setEndpoint(appwriteApiEndpoint)
         .setProject(appwriteProjectId)
         .setKey(appwriteSecretKey)
