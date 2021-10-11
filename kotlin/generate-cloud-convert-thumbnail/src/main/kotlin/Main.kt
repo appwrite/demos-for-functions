@@ -1,15 +1,8 @@
 import com.cloudconvert.client.CloudConvertClient
 import com.cloudconvert.client.setttings.EnvironmentVariableSettingsProvider
 import com.cloudconvert.dto.response.TaskResponse
-import com.google.gson.Gson
 import io.appwrite.Client
 import io.appwrite.services.Storage
-import io.ktor.client.*
-import io.ktor.client.call.*
-import io.ktor.client.request.*
-import io.ktor.client.statement.*
-import model.AppwriteFile
-import java.io.File
 import java.io.InputStream
 import kotlin.system.exitProcess
 
@@ -30,23 +23,15 @@ suspend fun main() {
         uploadFileTask = uploadFileTask
     )
 
-    val exportFileDetails = cloudConvertClient.exportFileDetailsFor(thumbnailGenerationJob.id)
+    val exportFileDetails =
+        cloudConvertClient.exportFileDetailsFor(thumbnailGenerationJob.id)
 
-    val thumbnail = File(exportFileDetails.filename)
+    val thumbnail = appwriteStorage.createFromUrl(
+        exportFileDetails.filename,
+        exportFileDetails.url
+    )
 
-    HttpClient().use { httpClient ->
-        val httpResponse: HttpResponse = httpClient.get(exportFileDetails.url)
-        val responseBody: ByteArray = httpResponse.receive()
-        thumbnail.writeBytes(responseBody)
-    }
-
-    val appwriteFile = appwriteStorage.createFile(thumbnail).body?.string()!!.run {
-        Gson().fromJson(this, AppwriteFile::class.java)!!
-    }
-
-    thumbnail.deleteOnExit()
-
-    println(appwriteFile.`$id`)
+    println(thumbnail.`$id`)
     exitProcess(0)
 }
 
