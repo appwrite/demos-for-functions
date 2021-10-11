@@ -6,19 +6,14 @@ import kotlin.system.exitProcess
 suspend fun main() {
     val envVars = readEnvVars()
 
-    val appwriteClient = with(envVars) {
-        Client()
-            .setEndpoint(appwriteApiEndpoint)
-            .setProject(appwriteProjectId)
-            .setKey(appwriteSecretKey)
-    }
+    val appwriteClient = Client().setEnvVars(envVars)
     val appwriteStorage = Storage(appwriteClient)
 
     val (
         filename: String,
         fileStream: InputStream
     ) = appwriteStorage.getFilenameAndInputStream(envVars.fileId)
-
+    
     println(filename)
     exitProcess(0)
 }

@@ -1,8 +1,14 @@
-
 import com.google.gson.Gson
+import io.appwrite.Client
 import io.appwrite.services.Storage
 import model.File
 import java.io.InputStream
+
+fun Client.setEnvVars(envVars: EnvironmentVars) = with(envVars) {
+    setEndpoint(appwriteApiEndpoint)
+        .setProject(appwriteProjectId)
+        .setKey(appwriteSecretKey)
+}
 
 suspend fun Storage.getFilenameAndInputStream(fileId: String): Pair<String, InputStream> =
     try {
