@@ -6,4 +6,10 @@
     <RootNamespace>subscribe_to_sendgrid</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="dotenv.net" Version="3.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="SendGrid" Version="9.24.3" />
+  </ItemGroup>
+
 </Project>
