@@ -12,7 +12,7 @@ suspend fun main() {
     val keyword = readStringFromEnvironment(KEYWORD_KEY)
 
     if (!isValidKeyword(keyword)) {
-        System.err.println("[ERR] `$keyword` is not valid")
+        System.err.println("[ERR] keyword: $keyword is not valid")
         exitProcess(-1)
     }
 
