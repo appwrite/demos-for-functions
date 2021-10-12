@@ -21,10 +21,14 @@ namespace subscribe_to_sendgrid
       {
         list_ids = new string[1] { sendGridListId }
       ,
-        contacts = new Contact[] {new Contact {
-            first_name = DateTime.Now.ToString(),
+        contacts = new Contact[] {
+          new Contact {
             email = "ganesht049@gmail.com"
-        }}
+          },
+          new Contact {
+            email = "gat786@outlook.com"
+          }
+        }
       };
 
       var jsonString = JsonConvert.SerializeObject(data);
