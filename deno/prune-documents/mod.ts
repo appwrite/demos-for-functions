@@ -10,8 +10,8 @@ client
 
 const database: any = new sdk.Database(client);
 
-// 157784630 is 5 years in seconds
-let fiveYearsAgo: number = Date.now() - 157784630;
+// 157784760000 is 5 years in miliseconds
+let fiveYearsAgo: number = Date.now() - 157784760000;
 
 let getCollections: any = await database.listCollections();
 let collections: Array<any> = getCollections.collections;
