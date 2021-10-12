@@ -7,27 +7,20 @@ namespace subscribe_to_sendgrid
 {
   class Program
   {
-    static async Task Main(string[] args)
-    {
-      // LOAD ENVIRONMENT VARIABLES FROM .env file if it exists
-      DotEnv.Load();
 
-      var envVars = DotEnv.Read();
-      var sendGridKey = envVars["SENDGRID_KEY"];
-      var sendGridListId = envVars["SENDGRID_LIST_ID"];
+    static string sendGridKey;
+    static string sendGridListId;
+    static SendGridClient client;
 
-      var client = new SendGridClient(sendGridKey);
+    static async Task addToSendgrid(string emailAddress){
       var data = new RequestBody
       {
         list_ids = new string[1] { sendGridListId }
       ,
         contacts = new Contact[] {
           new Contact {
-            email = "ganesht049@gmail.com"
+            email = emailAddress
           },
-          new Contact {
-            email = "gat786@outlook.com"
-          }
         }
       };
 
@@ -42,6 +35,21 @@ namespace subscribe_to_sendgrid
       );
 
       Console.WriteLine(response.StatusCode);
+    }
+
+    static async Task Main(string[] args)
+    {
+      // LOAD ENVIRONMENT VARIABLES FROM .env file if it exists
+      DotEnv.Load();
+
+      var envVars = DotEnv.Read();
+      sendGridKey = envVars["SENDGRID_KEY"];
+      sendGridListId = envVars["SENDGRID_LIST_ID"];
+
+      client = new SendGridClient(sendGridKey);
+
+      await addToSendgrid("ganesh@mail.com");
+      
     }
   }
 }
