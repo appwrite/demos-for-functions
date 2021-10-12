@@ -14,6 +14,7 @@ To package this example as a cloud function, follow these steps.
 
 ```bash
 $ cd demos-for-functions/swift/storage_cleaner
+docker run --rm -it -v $(pwd):/app -w /app swift:5.5 swift build
 ```
 // build package
 
