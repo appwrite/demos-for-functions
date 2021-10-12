@@ -1,6 +1,8 @@
 # Import the helper library
-require "speedtest"
+require "speedtest_net"
 
-# Starts the speedtest and logs your network details like download and upload speed.
-test = Speedtest::Test.new(debug: true)
-test.run
+# Starts the speedtest 
+result = SpeedtestNet.run    
+
+puts "Download speed is: #{result.pretty_download}"       # download bit/second in speedtest
+puts "Upload speed is: #{result.pretty_upload}"           # upload bit/second in speedtest
