@@ -13,6 +13,8 @@ namespace subscribe_to_sendgrid
     static SendGridClient client;
 
     static async Task addToSendgrid(string emailAddress){
+
+      // create the request body that is to be sent
       var data = new RequestBody
       {
         list_ids = new string[1] { sendGridListId }
@@ -24,10 +26,11 @@ namespace subscribe_to_sendgrid
         }
       };
 
+      // convert the object to string
       var jsonString = JsonConvert.SerializeObject(data);
 
-      Console.WriteLine(jsonString);
-
+      // make the request to client with appropriate method 
+      // and body content
       var response = await client.RequestAsync(
           method: SendGridClient.Method.PUT,
           urlPath: "marketing/contacts",
@@ -39,17 +42,22 @@ namespace subscribe_to_sendgrid
 
     static async Task Main(string[] args)
     {
-      // LOAD ENVIRONMENT VARIABLES FROM .env file if it exists
+      // load ENVIRONMENT VARIABLES from `.env` file if it exists
       DotEnv.Load();
-
+      // read ENVIRONMENT VARIABLES
       var envVars = DotEnv.Read();
+
+      // load sendgrid key and id of the list that is to be updated
       sendGridKey = envVars["SENDGRID_KEY"];
+      // you can manually set anyother list id here and not load 
+      // it from environment
       sendGridListId = envVars["SENDGRID_LIST_ID"];
 
+      // create a sendgrid api client
       client = new SendGridClient(sendGridKey);
 
+      // call the function to add it to sendgrid
       await addToSendgrid("ganesh@mail.com");
-      
     }
   }
 }
