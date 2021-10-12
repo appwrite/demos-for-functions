@@ -2,7 +2,7 @@
 A cloud function to generate a GIF using [GIPHY API](https://developers.giphy.com/docs/api/#quick-start-guide)
 
 ## 📝 Environment Variables
-When running function, pass keyword you want to search for as function data. This should not be empty
+When running function, **pass** keyword you want to search for as ***function data***. This should not be empty
 
 * **GIPHY_API_KEY** - Your GIPHY API Key for public authorization
 
