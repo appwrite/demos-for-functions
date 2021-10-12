@@ -56,8 +56,10 @@ namespace subscribe_to_sendgrid
       // create a sendgrid api client
       client = new SendGridClient(sendGridKey);
 
-      // call the function to add it to sendgrid
-      await addToSendgrid("ganesh@mail.com");
+      // call the function to add it to sendgrid for every arg passed
+      foreach(var arg in args){
+        await addToSendgrid(arg);
+      }
     }
   }
 }
