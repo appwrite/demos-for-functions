@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using SendGrid;
 using Newtonsoft.Json;
@@ -44,14 +45,10 @@ namespace subscribe_to_sendgrid
     {
       // load ENVIRONMENT VARIABLES from `.env` file if it exists
       DotEnv.Load();
-      // read ENVIRONMENT VARIABLES
-      var envVars = DotEnv.Read();
 
       // load sendgrid key and id of the list that is to be updated
-      sendGridKey = envVars["SENDGRID_KEY"];
-      // you can manually set anyother list id here and not load 
-      // it from environment
-      sendGridListId = envVars["SENDGRID_LIST_ID"];
+      sendGridKey = Environment.GetEnvironmentVariable("SENDGRID_KEY");
+      sendGridListId = Environment.GetEnvironmentVariable("SENDGRID_LIST_ID");
 
       // create a sendgrid api client
       client = new SendGridClient(sendGridKey);
