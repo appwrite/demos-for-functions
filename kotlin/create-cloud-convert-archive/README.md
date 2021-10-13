@@ -10,6 +10,7 @@ When running function, pass space separated appwrite Storage ID of the files you
 - **CLOUDCONVERT_SANDBOX** - Are you using Sandbox? Set to `false` if you don't know what it means
 - **CLOUDCONVERT_WEBHOOK_SIGNING_SECRET** - CloudConvert Webhook secret
 - **APPWRITE_FUNCTION_DATA** - space separated appwrite Storage ID of the files you want to archive
+- **OUTPUT_FORMAT** - The archive format, can only be one of `zip`, `rar`, `7z`, `tar`, `tar.gz`, `tar.bz2`. Defaults to `zip`
 
 ## 🚀 Building and Packaging
 

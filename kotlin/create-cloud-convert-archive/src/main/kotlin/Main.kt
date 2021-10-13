@@ -1,4 +1,3 @@
-
 import com.cloudconvert.client.CloudConvertClient
 import com.cloudconvert.client.setttings.EnvironmentVariableSettingsProvider
 import com.cloudconvert.dto.response.TaskResponse
@@ -14,6 +13,9 @@ private const val FILE_LIST_KEY = "APPWRITE_FUNCTION_DATA"
 private const val APPWRITE_ENDPOINT_KEY = "APPWRITE_ENDPOINT"
 private const val APPWRITE_PROJECT_ID_KEY = "APPWRITE_FUNCTION_PROJECT_ID"
 private const val APPWRITE_SECRETKEY_KEY = "APPWRITE_API_KEY"
+private const val OUTPUT_FORMAT_KEY = "OUTPUT_FORMAT"
+
+private val validOutputFormats = listOf("zip", "rar", "7z", "tar", "tar.gz", "tar.bz2")
 
 suspend fun main() {
     val appwriteClient = Client()
@@ -32,8 +34,16 @@ suspend fun main() {
 
     val fileIds = Env.read(FILE_LIST_KEY) { it.split(" ") }
         .map { it.trim() }
+    if (fileIds.isEmpty()) {
+        throw IllegalArgumentException("At least one fileId is required")
+    }
 
-    val archiveJob = cloudConvertClient.createArchiveJob(fileIds, "zip")
+    val outputFormat = Env.readString(OUTPUT_FORMAT_KEY, "zip")
+    if (outputFormat !in validOutputFormats) {
+        throw IllegalArgumentException("$outputFormat is not a valid output format")
+    }
+
+    val archiveJob = cloudConvertClient.createArchiveJob(fileIds, outputFormat)
 
     archiveJob.uploadFileTasks().map { task: TaskResponse ->
         task.uploadFile(appwriteStorage, jsonParser, cloudConvertClient)
@@ -42,7 +52,7 @@ suspend fun main() {
     val exportedFileUrl = cloudConvertClient.exportedFileUrlFor(archiveJob.id)
 
     val archive = appwriteStorage.createFromUrl(
-        filename = "archived--${fileIds.joinToString("-")}.zip",
+        filename = "archived--${fileIds.joinToString("-")}.$outputFormat",
         url = exportedFileUrl,
         jsonParser = jsonParser
     )
