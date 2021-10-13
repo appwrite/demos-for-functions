@@ -11,7 +11,7 @@ To package this as a cloud function, follow these steps.
 **Install the SpeedTest CLI according to your distribution from [this link](https://www.speedtest.net/apps/cli)!**
 
 ```bash
-$ cd demos-for-functions/dart/getInternetSpeed
+$ cd demos-for-functions/dart/get-internet-speed
 $ export PUB_CACHE=.appwrite/
 $ dart pub get
 ```
@@ -29,7 +29,7 @@ $ dart pub get
 
 ```bash
 $ cd ..
-$ tar -zcvf getInternetSpeed.tar.gz getInternetSpeed
+$ tar -zcvf get-internet-speed.tar.gz 
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
