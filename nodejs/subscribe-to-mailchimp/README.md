@@ -6,15 +6,6 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 
 * **APPWRITE_MAILCHIMP_API_KEY** - Your Mailchimp API key
 * **APPWRITE_MAILCHIMP_LIST_ID** - Your Mailchimp List ID
-* **APPWRITE_FUNCTION_DATA** - Must be included. Containing an email address
-
-Your data must include the following field:
-
-```json
-{
-    "email": "<email@appwrite.io>",
-}
-```
 
 ## 🚀 Building and Packaging
 
@@ -40,4 +31,11 @@ $ tar -zcvf code.tar.gz .
 
 ## Trigger
 
-Head over to your function in the Appwrite console and just press **Execute Now**.
+Head over to your function in the Appwrite console and just press **Execute Now**. 
+You must pass json data in the form including "email" e.g.:
+
+```json
+{
+    "email": "<email@appwrite.io>",
+}
+```
