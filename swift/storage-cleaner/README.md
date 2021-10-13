@@ -13,7 +13,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 To package this example as a cloud function, follow these steps.
 
 ```bash
-$ cd demos-for-functions/swift/storage_cleaner
+$ cd demos-for-functions/swift/storage-cleaner
 docker run --rm -it -v $(pwd):/app -w /app swift:5.5 swift build
 ```
 // build package
@@ -31,7 +31,7 @@ $ tar -zcvf code.tar.gz storage_cleaner
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-* Input the command that will run your function (in this case `swift main.swift`) as your entrypoint command
+* Input the command that will run your function (in this case `./StorageCleaner`) as your entrypoint command
 * Upload your tarfile 
 * Click 'Activate'
 
