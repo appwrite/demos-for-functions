@@ -8,9 +8,7 @@ func cleanStorage() throws -> Void {
     if(daysToExpire == nil) {
         throw NSError(domain: "DAYS_TO_EXPIRE environment is required", code: 0)
     }
-
     let endpoint = ProcessInfo.processInfo.environment["APPWRITE_ENDPOINT"] ?? ""
-
     let project = ProcessInfo.processInfo.environment["APPWRITE_FUNCTION_PROJECT_ID"] ?? ""
     
     let key = ProcessInfo.processInfo.environment["APPWRITE_API_KEY"] ?? ""
@@ -43,12 +41,10 @@ func cleanStorage() throws -> Void {
                     }
                     //print total files deleted
                     print("Total files deleted: \(deletedFiles)")
-
                 }
         }
     }
     group.leave()
-
 }
 
 try!
