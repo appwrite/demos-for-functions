@@ -1,3 +1,4 @@
+
 import com.cloudconvert.client.CloudConvertClient
 import com.cloudconvert.client.setttings.EnvironmentVariableSettingsProvider
 import com.cloudconvert.dto.response.TaskResponse
@@ -9,10 +10,10 @@ import kotlinx.serialization.json.Json
 import util.*
 import kotlin.system.exitProcess
 
-const val FILE_LIST_KEY = "APPWRITE_FUNCTION_DATA"
-const val APPWRITE_ENDPOINT_KEY = "APPWRITE_ENDPOINT"
-const val APPWRITE_PROJECT_ID_KEY = "APPWRITE_FUNCTION_PROJECT_ID"
-const val APPWRITE_SECRETKEY_KEY = "APPWRITE_API_KEY"
+private const val FILE_LIST_KEY = "APPWRITE_FUNCTION_DATA"
+private const val APPWRITE_ENDPOINT_KEY = "APPWRITE_ENDPOINT"
+private const val APPWRITE_PROJECT_ID_KEY = "APPWRITE_FUNCTION_PROJECT_ID"
+private const val APPWRITE_SECRETKEY_KEY = "APPWRITE_API_KEY"
 
 suspend fun main() {
     val appwriteClient = Client()
@@ -36,7 +37,7 @@ suspend fun main() {
 
     archiveJob.uploadFileTasks().map { task: TaskResponse ->
         task.uploadFile(appwriteStorage, jsonParser, cloudConvertClient)
-    }.collect()
+    }.collect() // to materialize the flow
 
     val exportedFileUrl = cloudConvertClient.exportedFileUrlFor(archiveJob.id)
 
@@ -48,21 +49,6 @@ suspend fun main() {
 
     println(archive.id)
     exitProcess(0)
-}
-
-private suspend fun TaskResponse.uploadFile(
-    appwriteStorage: Storage,
-    jsonParser: Json,
-    cloudConvertClient: CloudConvertClient
-) {
-    val fileId = name.split("-").last()
-    val rawFile = appwriteStorage.getRawFile(fileId, jsonParser)
-    runCatching {
-        cloudConvertClient.importUsing().upload(id!!, result.form!!, rawFile.data, rawFile.name)
-    }.getOrElse {
-        System.err.println("[ERR] Failed to upload file to cloudConvert. Failed File Id: $fileId")
-        throw it
-    }
 }
 
 fun createCloudConvertClient() = runCatching {
