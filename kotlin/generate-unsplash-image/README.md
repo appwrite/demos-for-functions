@@ -2,10 +2,10 @@
 A sample Kotlin Cloud Function to get an image from [Unsplash API](https://unsplash.com/documentation#search-photos)
 
 ## 📝 Environment Variables
-When running function, pass country code or name as function data.
+When running function, pass keyword you want to search for as ***function data***.
 
-* **APPWRITE_FUNCTION_DATA** - Keyword you want to search for. Should not be empty
 * **UNSPLASH_ACCESS_KEY** - Your Unsplash Access Key for public authorization
+* **APPWRITE_FUNCTION_DATA** - Keyword you want to search for. Should not be empty
 
 ## 🚀 Building and Packaging
 
