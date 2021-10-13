@@ -2,14 +2,14 @@
 A Kotlin Cloud Function that generates thumbnail using [CloudConvert API](https://cloudconvert.com/login#thumbnail-tasks)
 
 ## 📝 Environment Variables
-When running function, pass country code or name as function data.
+When running function, pass appwrite Storage ID of the file you want thumbnail for as ***function data***.
 
-- **APPWRITE_FUNCTION_DATA** - ID of the file you want thumbnail for, in appwrite storage
 - **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
 - **APPWRITE_API_KEY** - Your Appwrite API key with `files.read` and `files.write` permissions
 - **CLOUDCONVERT_API_KEY** - Your Cloud Convert API Key with `tasks.read` and `tasks.write` scopes
 - **CLOUDCONVERT_SANDBOX** - Are you using Sandbox? Set to `false` if you don't know what it means
 - **CLOUDCONVERT_WEBHOOK_SIGNING_SECRET** - CloudConvert Webhook secret
+- **APPWRITE_FUNCTION_DATA** - ID of the file you want thumbnail for, in appwrite storage
 
 ## 🚀 Building and Packaging
 
