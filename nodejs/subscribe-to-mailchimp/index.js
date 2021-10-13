@@ -13,4 +13,6 @@ const body = {
 mailchimp.post({
     path: `/lists/${listId}/members`,
     body
-}).then((response) => console.log(response)).catch((err) => console.error(err));
+}).then(console.log).catch((err) => {
+    console.error(err.detail);
+});
