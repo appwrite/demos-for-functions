@@ -43,7 +43,7 @@ client.set_project(os.environ["APPWRITE_FUNCTION_PROJECT_ID"]) # this is availab
 client.set_key(os.environ["APPWRITE_API_KEY"]) 
 
 # Get the ID of the uploaded file from the environment variable set by appwrite.
-payload = json.loads(os.environ["APPWRITE_FUNCTION_EVENT_PAYLOAD"])
+payload = json.loads(os.environ["APPWRITE_FUNCTION_EVENT_DATA"])
 fileID = payload["$id"]
 
 # Create an instance of Appwrite's Storage API

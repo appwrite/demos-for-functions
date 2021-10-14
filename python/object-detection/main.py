@@ -13,7 +13,7 @@ from appwrite.services.storage import Storage
 FILENAME = "temp.jpg"
 
 # Triggered by the storage.files.create event
-payload = json.loads(os.environ["APPWRITE_FUNCTION_EVENT_PAYLOAD"])
+payload = json.loads(os.environ["APPWRITE_FUNCTION_EVENT_DATA"])
 fileID = payload["$id"]
 
 # Setup appwrite client
