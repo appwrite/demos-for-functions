@@ -5,10 +5,10 @@ require "json"
 # Set the environment variables.
 account_sid = ENV["TWILIO_ACCOUNT_SID"]
 auth_token = ENV["TWILIO_AUTH_TOKEN"]
+sender = ENV["TWILIO_SENDER"]
 
-# Get the sender's and receiver's mobile number and the message which has to be send.
+# Get the receiver's mobile number and the message which has to be send.
 payload = JSON.parse(ENV["APPWRITE_FUNCTION_DATA"])
-sender=payload["sender"]
 receiver=payload["receiver"]
 message=payload["message"]
 
@@ -25,7 +25,7 @@ begin
         from: sender,
         to: receiver
         )
-    puts message 
+    puts @client.http_client.last_response  
 rescue Twilio::REST::TwilioError => e
     puts e.message
 end
