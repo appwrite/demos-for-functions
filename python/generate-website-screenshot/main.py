@@ -37,9 +37,9 @@ jobObj = cloudconvert.Job.create(payload={
         }
     }
 })
-print("Job Created!")
+# Job Created!
 jobObj = cloudconvert.Job.wait(jobObj['id'])
-print("Job Finished!")
+# Job Finished!
 taskList = jobObj['tasks']
 
 # Getting Task with Export URL
@@ -53,10 +53,10 @@ if taskList[1]['operation'] == 'export/url':
 exported_url_task_id = exportTask
 res = cloudconvert.Task.wait(id=exported_url_task_id) # Wait for job completion
 file = res.get("result").get("files")[0]
-res = cloudconvert.download(filename=file['filename'], url=file['url'])
-print("Screenshot Saved with file name : ",res)
+cloudconvert.download(filename=file['filename'], url=file['url'])
+# Screenshot Saved with file name
 
 # Storing the Downloaded file in AppWrite Storage
-result = storage.create_file(open(file['filename'], 'rb'))
+result = storage.create_file(open(file['filename'], 'rb'),['*'],['*'])
 print(result)
-print("Stored in AppWrite Storage")
+# Stored in AppWrite Storage
