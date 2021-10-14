@@ -11,7 +11,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 * **TINYPNG_API_KEY** - API Key for Tinypng 
 * **API_ENDPOINT** - Appwrite API endpoint
 * **API_SECRET** - Appwrite API Key
-* **APP_FUNCTION_DATA** - Image URL to compress and save
+* ** APPWRITE_FUNCTION_DATA** - Image URL to compress and save
 
 ## 🚀 Building and Packaging
 To package this example as a cloud function, follow these steps.
