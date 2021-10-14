@@ -50,11 +50,15 @@ namespace subscribe_to_sendgrid
       sendGridKey = Environment.GetEnvironmentVariable("SENDGRID_KEY");
       sendGridListId = Environment.GetEnvironmentVariable("SENDGRID_LIST_ID");
 
+      String payload = Environment.GetEnvironmentVariable("APPWRITE_FUNCTION_DATA");
+
+      var splits = payload.Split(' ');
+
       // create a sendgrid api client
       client = new SendGridClient(sendGridKey);
 
       // call the function to add it to sendgrid for every arg passed
-      foreach(var arg in args){
+      foreach(var arg in splits){
         await addToSendgrid(arg);
       }
     }

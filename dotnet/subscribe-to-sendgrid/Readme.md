@@ -27,10 +27,18 @@ and you can specify certain build configurations like linux, windows
 E.g.
 
 ```
-dotnet run -c linux-x64
+dotnet subscribe-to-sendgrid.dll
 ```
+
+While executing you can pass in a string containing multiple email addresses and
+the function will split email address and add email addresses to list one by one
+writing result of every transaction in the console.
 
 ## 🎯 Trigger
 <!-- Clearly explain the triggers that this cloud function relies on to work correctly. Take a look at the below example: 
 Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
  --> 
+
+You can trigger this function as and when you wish to. Mostly it can be done when
+someone fills in a contact form and wishes to be in connect further along with
+the company giving out that form.
