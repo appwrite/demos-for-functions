@@ -35,11 +35,12 @@ $ cd ..
 $ tar -zcvf code.tar.gz generate-website-screenshot
 ```
 
-* Upload the tarfile to your Appwrite Console and use the following entrypoint command
-
-```bash
-python main.py
-```
+* Navigate to the Overview Tab of your Cloud Function > Deploy Tag
+* Input the command that will run your function (in this case "python main.py") as your entrypoint command
+* Upload your tarfile 
+* Click 'Activate'
 
 
 ## 🎯 Trigger
+
+Navigate to the Overview Tab of your Cloud Function > Execute Now or trigger it from SDK.
