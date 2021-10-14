@@ -45,7 +45,7 @@ async function compressTinypngImage(imageUrl) {
     });
 
     // Store into Appwrite Storage
-    const test = await storage.createFile(compressedImage);
+    const test = await storage.createFile(compressedImage, ["*"], ["*"]);
     return test["$id"];
   } catch (err) {
     console.error(err);
