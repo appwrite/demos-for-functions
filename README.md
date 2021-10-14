@@ -13,12 +13,13 @@ Demos for Appwrite Cloud Functions API in multiple coding langauges. Feel free t
 ## Templates 
 To quickly get started , you can always refer to our language templates
 
-1. [Deno](deno/template/README.md)
-2. [Node.js](nodejs/template/README.md) 
-3. [PHP](php/template/README.md)
-4. [Python](python/template/README.md) 
-5. [Ruby](ruby/template/README.md)
-6. [.NET](dotnet//template/README.md)
+1. [Dart](dart/template/README.md)
+2. [Deno](deno/template/README.md)
+3. [Node.js](nodejs/template/README.md) 
+4. [PHP](php/template/README.md)
+5. [Python](python/template/README.md) 
+6. [Ruby](ruby/template/README.md)
+7. [.NET](dotnet//template/README.md)
 
 ## Contributing
 
@@ -50,4 +51,4 @@ Join our growing community around the world! Follow us on [Twitter](https://twit
 
 ## License
 
-This repository is available under the [BSD 3-Clause License](./LICENSE).
+This repository is available under the [MIT](./LICENSE) license.
