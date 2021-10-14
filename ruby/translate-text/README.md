@@ -2,6 +2,10 @@
 
 A sample Ruby Cloud Function for translating text from one language to another using google translate.
 
+## 📝 Environment Variables
+
+No environment variables needed.
+
 ## 🚀 Building and Packaging
 
 To package this example as a cloud function, follow these steps.
