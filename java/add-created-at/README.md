@@ -1,4 +1,4 @@
-# Add created Timestamp when document created
+# Add createdAt Timestamp when document created
 
 A sample Java Cloud Function to add `createdAt` value to the document if the rule is specified in the collection.
 
@@ -50,9 +50,10 @@ Go to Database tab and follow these steps:
 - update the settings by clicking update button
 - Go to Documents tab and click add document
 - fill in the data needed and click create
+- the cloud function will be trigger adter document created
 
 PS: You can add as many rules as wanted, we just need `createdAt` key to see the cloud functions working
 
 ## 📓 Note
 
-- if `APPWRITE_ENDPOINT` is localhost, error will occur `Failure(java.net.ConnectException: Failed to connect to localhost/127.0.0.1:80)`, to test it locally try to use services like ngrok which provide tunneling to localhost.
+- if `APPWRITE_ENDPOINT` is localhost, error will occur `Failure(java.net.ConnectException: Failed to connect to localhost/127.0.0.1:80)`, It happend because 127.0.0.1 is not recognized, use you current network ip instead (by using `ipconfig` on windows, or see your network preferences on mac).
