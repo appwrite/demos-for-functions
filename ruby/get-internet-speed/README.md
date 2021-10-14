@@ -2,6 +2,10 @@
 
 A sample Ruby Cloud function to check your network's download and upload speed. 
 
+## 📝 Environment Variables
+
+No environment variables needed.
+
 ## 🚀 Building and Packaging
 
 To package this example as a cloud function, follow these steps.
