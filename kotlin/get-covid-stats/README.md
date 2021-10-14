@@ -24,7 +24,7 @@ To package this example as a cloud function, follow these steps.
 
 ```bash
 $ cd demos-for-functions/kotlin/get-covid-stats/build/libs/
-$ tar -zcvf code.tar.gz .\get-covid-stats-1.0-SNAPSHOT.jar
+$ tar -zcvf code.tar.gz ./get-covid-stats-1.0-SNAPSHOT.jar
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
