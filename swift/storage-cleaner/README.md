@@ -26,7 +26,7 @@ docker run --rm -it -v $(pwd):/app -w /app swift:5.5 swift build
 * Create a tarfile
 
 ```bash
-$ $ tar -zcvf code.tar.gz --strip-components=1 -C .build/x86_64-unknown-linux-gnu/ debug/StorageCleaner
+$ $ tar -zcvf code.tar.gz -C .build/x86_64-unknown-linux-gnu/ debug/StorageCleaner
 
 ```
 
