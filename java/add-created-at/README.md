@@ -1,4 +1,4 @@
-# Add Created At
+# Add created Timestamp when document created
 
 A sample Java Cloud Function to add `createdAt` value to the document if the rule is specified in the collection.
 
