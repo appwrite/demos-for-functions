@@ -20,16 +20,19 @@ func cleanStorage() throws -> Void {
 
     let storage = Storage(client)
 
-    storage.listFiles(limit: 100, orderType: "desc") { result in
+    var deletedFiles = 0
+    storage.listFiles(limit: 100, orderType: "DESC") { result in
         switch result {
             case .failure(let error):
                 print(error.message)
             case .success(let fileList):
-                var deletedFiles = 0
-                let timestamp = Calendar.current.date(byAdding: .day, value: -Int(daysToExpire!)!, to: Date())!.timeIntervalSince1970
+                let timestamp = Calendar.current.date(byAdding: .second, value: -Int(daysToExpire!)!, to: Date())!.timeIntervalSince1970
+                print("Timestamp: \(timestamp)")
                 for file in fileList.files {
                     let dateCreated = Double(file.dateCreated)
+                    print("dateCreated \(dateCreated)")
                     if dateCreated < timestamp {
+                        group.enter()
                         storage.deleteFile(fileId: file.id) { result in
                             switch result {
                                 case .failure(let error):
@@ -37,14 +40,15 @@ func cleanStorage() throws -> Void {
                                 case .success:
                                     deletedFiles += 1
                             }
+                            group.leave()
                         }
                     }
-                    //print total files deleted
-                    print("Total files deleted: \(deletedFiles)")
                 }
         }
+        group.leave()
     }
-    group.leave()
+    group.wait()
+    print("Total files deleted: \(deletedFiles)")
 }
 
 try!
