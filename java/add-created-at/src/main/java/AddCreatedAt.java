@@ -15,8 +15,8 @@ import java.util.HashMap;
 public class AddCreatedAt {
     public static void main(String[] args) throws AppwriteException {
         JSONObject payloadJSON = AddCreatedAt.getPayload();
-        String collectionId = payloadJSON.getString("collectionId");
-        String documentId = payloadJSON.getString("documentId");
+        String collectionId = payloadJSON.getString("$collection");
+        String documentId = payloadJSON.getString("$id");
         Database database = AddCreatedAt.initDatabase();
         HashMap<String, String> data = AddCreatedAt.generateCreatedAtTimestamp();
 
@@ -34,13 +34,12 @@ public class AddCreatedAt {
             }
         };
 
-
         database.updateDocument(collectionId,
                 documentId, data, continuation);
     }
 
     private static JSONObject getPayload() {
-        String payload = System.getenv("APPWRITE_FUNCTION_DATA");
+        String payload = System.getenv("APPWRITE_FUNCTION_EVENT_DATA");
 
         return new JSONObject(payload);
     }
