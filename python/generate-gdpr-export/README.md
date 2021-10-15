@@ -1,21 +1,44 @@
-# 📧  Your Function Name
-<!--  A brief descripption about your Cloud Function  -->
+# 📷 Object Detection using Cloudmersive Vision API
+A sample Python Cloud Function for exporting doctuments to csv format and saving it to the user storage. 
 
 ## 📝 Environment Variables
-<!-- Tell the users of your Cloud function, what Environment Variables your function uses. Use the following format -->
+Add the following environment variables in your Cloud Functions settings.
 
-* **VARIABLE 1** - <!-- Short Description --> 
-* **VARIABLE 2** - <!-- Short Description -->
+* **APPWRITE_API_KEY** - Create a key from the Appwrite console with the following scope (`collections.read, documents.read,files.write`)
+* **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
+
 
 ## 🚀 Building and Packaging
-<!-- 
-Highlight the steps required to build and deploy this cloud function. 
 
-Take a look at this example (https://github.com/appwrite/demos-for-functions/blob/master/nodejs/welcome-email/README.md) for more information.  
+To package this example as a cloud function, follow these steps.
 
-Make sure you mention the instructions clearly and also mention the entrypoint command for the function 
--->
+```bash
+$ cd demos-for-functions/python/generate-gdpr-export
+
+$ PIP_TARGET=./.appwrite pip install -r ./requirements.txt --upgrade --ignore-installed
+```
+
+* Ensure that your folder structure looks like this 
+```
+.
+├── .appwrite/
+├── main.py
+└── requirements.txt
+```
+
+* Create a tarfile
+
+```bash
+$ cd ..
+$ tar -zcvf code.tar.gz generate-gdpr-export
+```
+
+* Upload the tarfile to your Appwrite Console and use the following entrypoint command
+
+```bash
+python main.py
+```
+
 ## 🎯 Trigger
-<!-- Clearly explain the triggers that this cloud function relies on to work correctly. Take a look at the below example: 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
- --> 
+
+To trigger this function you will need to create an execution by means of the WebSDK in order to get the user context.
