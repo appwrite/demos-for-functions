@@ -11,6 +11,8 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 - **APPWRITE_API_KEY** - Appwrite project's API key
 - **CLOUD_CONVERT_API_KEY** - CloudConvert's API created through Authorization > API Keys on Dashboard
 
+You need to supply the id of the file (from your storage) as parameter to the function in this format- { "id": YOUR_FILE_ID }
+
 ## 🚀 Building and Packaging
 
 To package this example as a cloud function, follow these steps.
@@ -26,6 +28,7 @@ $ npm install
 ```
 .
 ├── index.js
+├── .env
 ├── node_modules/
 ├── package-lock.json
 └── package.json
