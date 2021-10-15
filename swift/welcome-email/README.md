@@ -15,25 +15,48 @@ To package this example as a cloud function, follow these steps.
 $ cd demos-for-functions/swift/welcome-email
 ```
 
-* Build the Swift binary 
+* Ensure that your project has the following structure
+```bash
+.
+├── Package.swift
+├── README.md
+└── Sources
+    └── WelcomeEmail
+        ├── File.swift
+        ├── main.swift
+        └── Utils.swift
+
+2 directories, 5 files
+```
+
+* Build the Swift binary using 
 
 ```bash
 $ docker run --rm -it -v $(pwd):/app -w /app swift:5.5 swift build
 ```
 
-At this point, it you wish to test the code, you can run it using
+* At this point, it you wish to test the code, you can run it using
 
 ```sh
-docker run -e MAILGUN_API_KEY=abcdefg -e MAILGUN_DOMAIN=example.com --rm -it -v $(pwd):/app -w /app appwrite/runtime-for-swift:5.5 .build/x86_64-unknown-linux-gnu/debug/WelcomeEmail
+docker run -e MAILGUN_API_KEY=abcdefg \
+-e MAILGUN_DOMAIN=example.com \
+-e APPWRITE_FUNCTION_EVENT_DATA="{ \"name\": \"John Doe\", \"email\": \"test@test.com\" }" \
+--rm -it -v $(pwd):/app -w /app appwrite/runtime-for-swift:5.5 \
+.build/x86_64-unknown-linux-gnu/debug/WelcomeEmail
 ```
 
-* Create a tar file 
+If you get the following message you're good to go! This error should go away once you use a valid `MAILGUN_API_KEY` and `MAILGUN_DOMAIN`.   
+```bash
+Error: unauthorized
+```
+
+* Package your code by creating a tar file 
 
 ```bash
 tar -zcvf code.tar.gz -C .build/x86_64-unknown-linux-gnu debug/WelcomeEmail
 ```
 
-* Navigate to the Overview Tab of your Cloud Function > Deploy Tag
+* Navigate to the **Overview Tab** of your Cloud Function in the Appwrite Console > Deploy Tag
 * Input the command that will run your function (in this case `./WelcomeEmail`) as your entry point command
 * Upload your `tarfile` 
 * Click 'Activate'
