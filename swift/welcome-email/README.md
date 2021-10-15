@@ -38,7 +38,8 @@ $ docker run --rm -it -v $(pwd):/app -w /app swift:5.5 swift build
 * At this point, it you wish to test the code, you can run it using
 
 ```sh
-docker run -e MAILGUN_API_KEY=abcdefg \
+docker run \
+-e MAILGUN_API_KEY=abcdefg \
 -e MAILGUN_DOMAIN=example.com \
 -e APPWRITE_FUNCTION_EVENT_DATA="{ \"name\": \"John Doe\", \"email\": \"test@test.com\" }" \
 --rm -it -v $(pwd):/app -w /app appwrite/runtime-for-swift:5.5 \
