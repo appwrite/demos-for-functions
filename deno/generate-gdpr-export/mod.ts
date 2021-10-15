@@ -9,7 +9,7 @@ client
   .setProject(Deno.env.get("APPWRITE_FUNCTION_PROJECT_ID"))
 ;
 
-const userId = `user:${Deno.env.get('APPWRITE_FUNCTION_DATA')}`;
+const userId: string = Deno.env.get('APPWRITE_FUNCTION_DATA');
 
 const database: any = new sdk.Database(client);
 const storage: any = new sdk.Storage(client);
