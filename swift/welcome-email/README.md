@@ -11,37 +11,30 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 
 To package this example as a cloud function, follow these steps.
 
-* Import the project into IntelliJ, Eclipse or any other IDE that has support for Java projects. 
+```bash
+$ cd demos-for-functions/swift/welcome-email
+```
 
-
-* Build a jar for the project. Here's a [Stack Overflow answer](https://stackoverflow.com/questions/1082580/how-to-build-jars-from-intellij-properly) to help you.
-
-* Create a tarfile
-
-If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/java/welcome-email/out/artifacts/welcome_email_jar/welcome_email.jar`
+* Build the Swift binary 
 
 ```bash
-$ cd demos-for-functions/java/welcome-email/out/artifacts/
-$ 
+$ docker run --rm -it -v $(pwd):/app -w /app swift:5.5 swift build
 ```
 
-
-Build id 
+At this point, it you wish to test the code, you can run it using
 
 ```sh
-
+docker run -e MAILGUN_API_KEY=abcdefg -e MAILGUN_DOMAIN=example.com --rm -it -v $(pwd):/app -w /app appwrite/runtime-for-swift:5.5 .build/x86_64-unknown-linux-gnu/debug/WelcomeEmail
 ```
 
+* Create a tar file 
 
-
-Run it 
-
-```sh
-docker run --rm -it -v $(pwd):/app -w /app appwrite/runtime-for-swift:5.5 .build/x86_64-unknown-linux-gnu/debug/WelcomeEmail
+```bash
+tar -zcvf code.tar.gz -C .build/x86_64-unknown-linux-gnu debug/WelcomeEmail
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-* Input the command that will run your function (in this case `java -jar welcome-email.jar`) as your entry point command
+* Input the command that will run your function (in this case `./WelcomeEmail`) as your entry point command
 * Upload your `tarfile` 
 * Click 'Activate'
 
