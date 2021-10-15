@@ -7,7 +7,7 @@ let package = Package(
     name: "StorageCleaner",
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/appwrite/sdk-for-swift", .branch("dev"))
+        .package(url: "https://github.com/appwrite/sdk-for-swift", from: "0.0.1")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -16,10 +16,7 @@ let package = Package(
             name: "StorageCleaner",
             dependencies: [
                 .product(name: "Appwrite", package: "sdk-for-swift"),
-            ]),
-        .testTarget(
-            name: "StorageCleanerTests",
-            dependencies: ["StorageCleaner"]),
+            ])
     ],
     swiftLanguageVersions: [.v5]
 )

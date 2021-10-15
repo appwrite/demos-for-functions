@@ -16,11 +16,12 @@ To package this example as a cloud function, follow these steps.
 $ cd demos-for-functions/swift/storage-cleaner
 docker run --rm -it -v $(pwd):/app -w /app swift:5.5 swift build
 ```
-// build package
 
 * Ensure that your folder structure looks like this 
 ```
-//not sure yet
+├── .build/x86_64-unknown-linux-gnu/debug/StorageCleaner
+├── Sources/
+└── Package.swift
 ```
 
 * Create a tarfile
