@@ -29,8 +29,6 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("io.ktor:ktor-client-core:1.6.4")
-    implementation("io.ktor:ktor-client-cio:1.6.4")
-    implementation("io.ktor:ktor-client-serialization:1.6.4")
+    implementation("com.messagebird:messagebird-api:3.1.4")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
 }
