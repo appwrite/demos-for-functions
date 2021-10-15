@@ -1,8 +1,6 @@
 .gradle
 .idea
 gradle
-src/main/resources
-src/test
 build
 out
 gradlew.bat
