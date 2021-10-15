@@ -45,8 +45,8 @@ func sendSimpleMessage(name: String, email: String) throws  {
     }
 }
 
-let MAILGUN_DOMAIN = ProcessInfo.processInfo.environment["MAILGUN_DOMAIN"]!
-let MAILGUN_API_KEY = ProcessInfo.processInfo.environment["MAILGUN_API_KEY"]!
+let MAILGUN_DOMAIN = ProcessInfo.processInfo.environment["MAILGUN_DOMAIN"] ?? "";
+let MAILGUN_API_KEY = ProcessInfo.processInfo.environment["MAILGUN_API_KEY"] ?? "";
 let APPWRITE_FUNCTION_EVENT_DATA = ProcessInfo.processInfo.environment["APPWRITE_FUNCTION_EVENT_DATA"] ?? "{}"
 
 let httpClient = HTTPClient(eventLoopGroupProvider: .createNew)

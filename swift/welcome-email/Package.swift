@@ -18,9 +18,6 @@ let package = Package(
             dependencies: [
                 .product(name: "AsyncHTTPClient", package: "async-http-client"),
                 // .product(name: "NIOWebSocket", package: "swift-nio")
-            ]),
-        .testTarget(
-            name: "WelcomeEmailTests",
-            dependencies: ["WelcomeEmail"]),
+            ])
     ]
 )
