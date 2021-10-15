@@ -20,8 +20,8 @@ public class AddUpdatedAt {
 
     public static void main(String[] args) throws AppwriteException {
         JSONObject payloadJSON = AddUpdatedAt.getPayload();
-        String collectionId = payloadJSON.getString("collectionId");
-        String documentId = payloadJSON.getString("documentId");
+        String collectionId = payloadJSON.getString("$collection");
+        String documentId = payloadJSON.getString("$id");
         Database database = AddUpdatedAt.initDatabase();
         HashMap<String, String> data = AddUpdatedAt.generateUpdatedAtTimestamp();
 
@@ -45,7 +45,7 @@ public class AddUpdatedAt {
     }
 
     private static JSONObject getPayload() {
-        String payload = System.getenv("APPWRITE_FUNCTION_DATA");
+        String payload = System.getenv("APPWRITE_FUNCTION_EVENT_DATA");
 
         return new JSONObject(payload);
     }
