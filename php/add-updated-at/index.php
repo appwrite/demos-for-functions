@@ -20,10 +20,10 @@ $database = new Database($client);
 
 $data = array("updatedAt" => date(DATE_ISO8601,time()));
 
-$payload = json_decode($_ENV['APPWRITE_FUNCTION_DATA']); 
+$payload = get_object_vars(json_decode($_ENV['APPWRITE_FUNCTION_EVENT_DATA'])); 
 
-$collectionId = $payload->collectionId;
-$documentId = $payload->documentId;
+$collectionId = $payload['$collection'];
+$documentId = $payload['$id'];
 
 $result = $database->updateDocument($collectionId, $documentId, $data);
 
