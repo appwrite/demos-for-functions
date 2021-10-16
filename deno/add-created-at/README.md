@@ -11,7 +11,7 @@ Define these in your .env file
 
 ## ✅ Permissions
 
-This script required the following permissions to run:
+This script requires the following permissions to run:
 
 - net
 - read
@@ -22,7 +22,6 @@ This script required the following permissions to run:
 ## 🚀 Building and Packaging
 
 To package this example as a cloud function, follow these steps.
-Duplicate the .env.example file and name it .env, fill in the endpoint and api key.
 
 ```bash
 $ cd demos-for-functions/deno/add-created-at
