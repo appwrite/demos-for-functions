@@ -14,8 +14,8 @@ namespace SendSMS
             {
                 string requestBody = Environment.GetEnvironmentVariable("APPWRITE_FUNCTION_DATA");
                 dynamic data = JsonConvert.DeserializeObject(requestBody);
-                string toPhoneNumber = data?.toPhoneNumber;
-                string messageBody = data?.messageBody;
+                string toPhoneNumber = data?.phoneNumber;
+                string messageBody = data?.text;
 
                 TwilioClient.Init(Environment.GetEnvironmentVariable("TWILIO_ACCOUNTSID"),Environment.GetEnvironmentVariable("TWILIO_AUTHTOKEN"));
 
@@ -25,7 +25,8 @@ namespace SendSMS
                     body: messageBody
                 );
 
-                Console.WriteLine(message.Sid);
+                var response = JsonConvert.SerializeObject(message);
+                Console.WriteLine(response);
             }
             catch(Exception ex)
             {
