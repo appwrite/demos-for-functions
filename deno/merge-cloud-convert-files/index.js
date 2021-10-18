@@ -93,6 +93,11 @@ const waitForJobToFinish = async (jobId) => {
   return parseRawTextResponse(response);
 };
 
+const downloadOptimizedFile = async (url) => {
+  const optimizedFileResponse = await fetch(url);
+  return await optimizedFileResponse.blob();
+};
+
 const jobs = {
   tasks: {
     "merge-files": {
@@ -123,3 +128,14 @@ const formDataArray = await createFormDataForUploadTasks(uploadTasks);
 
 await uploadFormDataArrayToCloudConvert(uploadTasks, formDataArray);
 const result = await waitForJobToFinish(jobId);
+
+const downloadTask = result.data.tasks.filter(
+  (task) => task.operation === "export/url"
+)[0];
+
+const downloadUrl = downloadTask.result.files[0].url;
+const filename = downloadTask.result.files[0].filename;
+
+const optimizedFileBlob = await downloadOptimizedFile(downloadUrl);
+const optimizedFile = new File([optimizedFileBlob], filename);
+console.log(await storage.createFile(optimizedFile));
