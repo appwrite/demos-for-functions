@@ -42,6 +42,28 @@ const postJobsToCloudConvert = async (jobs) => {
   return await parseRawTextResponse(rawResponse);
 };
 
+const createFormData = async (uploadTask, idx) => {
+  const formData = new FormData();
+
+  for (const parameter in uploadTask.result.form.parameters) {
+    formData.append(parameter, uploadTask.result.form.parameters[parameter]);
+  }
+
+  const fileMetadata = await storage.getFile(ids[idx]);
+  const file = await storage.getFileDownload(ids[idx]);
+  const reader = await file.blob();
+  formData.append("file", reader, fileMetadata.name);
+  return formData;
+};
+
+const createFormDataForUploadTasks = async (uploadTasks) => {
+  const formDataArray = [];
+  for (let idx = 0; idx < ids.length; idx++) {
+    formDataArray.push(await createFormData(uploadTasks[idx], idx));
+  }
+  return formDataArray;
+};
+
 const jobs = {
   tasks: {
     "merge-files": {
@@ -62,3 +84,10 @@ const jobs = {
 addUploadTasks(jobs);
 
 const response = await postJobsToCloudConvert(jobs);
+
+const uploadTasks = response.data.tasks.filter(
+  (task) => task.operation === "import/upload"
+)[0];
+
+const jobId = response.data.id;
+const formDataArray = await createFormDataForUploadTasks(uploadTasks);
