@@ -104,3 +104,5 @@ const downloadUrl = downloadTask.result.files[0].url;
 const filename = downloadTask.result.files[0].filename;
 
 const optimizedFileBlob = await downloadOptimizedFile(downloadUrl);
+const optimizedFile = new File([optimizedFileBlob], filename);
+console.log(await storage.createFile(optimizedFile));
