@@ -50,12 +50,16 @@ const uploadFormDataToCloudConvert = async (uploadTask, formData) => {
 };
 
 const waitForJobToFinish = async (jobId) => {
-  await fetch("https://api.cloudconvert.com/v2/jobs/" + jobId + "/wait", {
-    headers: {
-      Authorization: "Bearer " + Deno.env.get("CLOUDCONVERT_API_KEY"),
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    "https://api.cloudconvert.com/v2/jobs/" + jobId + "/wait",
+    {
+      headers: {
+        Authorization: "Bearer " + Deno.env.get("CLOUDCONVERT_API_KEY"),
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  return parseRawResponse(response);
 };
 
 const jobs = {
@@ -77,8 +81,18 @@ const jobs = {
 };
 
 const response = await postJobsToCloudConvert(jobs);
-const uploadTask = response.data.tasks[0]; // first task is the upload task
+
+const uploadTask = response.data.tasks.filter(
+  (task) => task.name === "upload-file"
+)[0];
+
 const jobId = response.data.id;
 const formData = await createFormData(uploadTask);
 await uploadFormDataToCloudConvert(uploadTask, formData);
-await waitForJobToFinish(jobId);
+const result = await waitForJobToFinish(jobId);
+
+const downloadTask = result.data.tasks.filter(
+  (task) => task.name === "optimized-file-url"
+)[0];
+
+const downloadUrl = downloadTask.result.files[0].url;
