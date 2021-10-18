@@ -27,3 +27,14 @@ const jobs = {
     },
   },
 };
+
+const rawResponse = await fetch("https://api.cloudconvert.com/v2/jobs", {
+  method: "POST",
+  headers: {
+    Authorization: "Bearer " + Deno.env.get("CLOUDCONVERT_API_KEY"),
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(jobs),
+});
+
+const response = JSON.parse(await rawResponse.text());
