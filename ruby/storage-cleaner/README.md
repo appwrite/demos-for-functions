@@ -1,21 +1,53 @@
-# 📧  Your Function Name
-<!--  A brief descripption about your Cloud Function  -->
+# 🚮 Clean up files in your storage older than XX days
+A sample Ruby Cloud Function for deleting files that are older than `XX` days on a schedule.
 
 ## 📝 Environment Variables
-<!-- Tell the users of your Cloud function, what Environment Variables your function uses. Use the following format -->
+Go to Settings tab of your Cloud Function. Add the following environment variables.
 
-* **VARIABLE 1** - <!-- Short Description --> 
-* **VARIABLE 2** - <!-- Short Description -->
+* **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
+* **APPWRITE_API_KEY** - Your Appwrite API key with `files.read` and `files.write` permissions
+* **DAYS_TO_EXPIRE** - Number of days after which files will expire
 
 ## 🚀 Building and Packaging
-<!-- 
-Highlight the steps required to build and deploy this cloud function. 
 
-Take a look at this example (https://github.com/appwrite/demos-for-functions/blob/master/nodejs/welcome-email/README.md) for more information.  
+To package this example as a cloud function, follow these steps.
 
-Make sure you mention the instructions clearly and also mention the entrypoint command for the function 
--->
-## 🎯 Trigger
-<!-- Clearly explain the triggers that this cloud function relies on to work correctly. Take a look at the below example: 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
- --> 
+```bash
+$ cd demos-for-functions/ruby/storage-cleaner
+
+$ docker run --rm -v $(pwd):/app -w /app --env GEM_HOME=./.appwrite appwrite/env-ruby-2.7:1.0.2 bundle install
+```
+
+* Ensure that your folder structure looks like this:
+
+```bash
+.
+├── .appwrite/
+├── Gemfile
+├── Gemfile.lock
+├── main.rb
+└── README.md
+```
+
+* Create a tarball
+
+```bash
+$ cd ..
+
+$ tar -zcvf code.tar.gz storage-cleaner
+```
+
+* Navigate to the Overview Tab of your Cloud Function > Deploy Tag
+* Input the command that will run your function (in this case `ruby main.rb`) as your entrypoint command
+* Upload your tarfile
+* Click 'Activate'
+
+## ⏰ Schedule
+
+Head over to your function in the Appwrite console and under the Settings Tab, enter a reasonable schedule time (cron syntax).
+
+For example:
+
+- `*/30 * * * *` every 30 minutes
+- `0 * * * *` every hour
+- `0 0 * * *` every day
