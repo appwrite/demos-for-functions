@@ -4,7 +4,9 @@ include './vendor/autoload.php';
 
 $sendgrid = new SendGrid($_ENV['SENDGRID_API_KEY']);
 
-$email = $argv[1];
+$funcData = json_decode($_ENV['APPWRITE_FUNCTION_DATA'], true);
+
+$email = $funcData['email'];
 $request = [
     "contacts" => [
         [
