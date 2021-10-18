@@ -12,6 +12,22 @@ client
   .setProject(Deno.env.get("APPWRITE_PROJECT_ID")) // Your project ID
   .setKey(Deno.env.get("APPWRITE_API_KEY")); // Your secret API key
 
+const parseRawResponse = async (rawResponse) => {
+  return JSON.parse(await rawResponse.text());
+};
+
+const postJobsToCloudConvert = async (jobs) => {
+  const rawResponse = await fetch("https://api.cloudconvert.com/v2/jobs", {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + Deno.env.get("CLOUDCONVERT_API_KEY"),
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(jobs),
+  });
+  return await parseRawResponse(rawResponse);
+};
+
 const jobs = {
   tasks: {
     "upload-file": {
@@ -30,16 +46,7 @@ const jobs = {
   },
 };
 
-const rawResponse = await fetch("https://api.cloudconvert.com/v2/jobs", {
-  method: "POST",
-  headers: {
-    Authorization: "Bearer " + Deno.env.get("CLOUDCONVERT_API_KEY"),
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(jobs),
-});
-
-const response = JSON.parse(await rawResponse.text());
+const response = await postJobsToCloudConvert(jobs);
 
 const formData = new FormData();
 
