@@ -26,6 +26,22 @@ const addUploadTasks = (jobs) => {
   return jobs;
 };
 
+const parseRawTextResponse = async (rawResponse) => {
+  return JSON.parse(await rawResponse.text());
+};
+
+const postJobsToCloudConvert = async (jobs) => {
+  const rawResponse = await fetch("https://api.cloudconvert.com/v2/jobs", {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + Deno.env.get("CLOUDCONVERT_API_KEY"),
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(jobs),
+  });
+  return await parseRawTextResponse(rawResponse);
+};
+
 const jobs = {
   tasks: {
     "merge-files": {
@@ -44,4 +60,5 @@ const jobs = {
 };
 
 addUploadTasks(jobs);
-console.log(jobs);
+
+const response = await postJobsToCloudConvert(jobs);
