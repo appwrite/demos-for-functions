@@ -43,11 +43,19 @@ const createFormData = async (uploadTask) => {
 };
 
 const uploadFormDataToCloudConvert = async (uploadTask, formData) => {
-  const res = await fetch(uploadTask.result.form.url, {
+  await fetch(uploadTask.result.form.url, {
     method: "POST",
     body: formData,
   });
-  return await res.text();
+};
+
+const waitForJobToFinish = async (jobId) => {
+  await fetch("https://api.cloudconvert.com/v2/jobs/" + jobId + "/wait", {
+    headers: {
+      Authorization: "Bearer " + Deno.env.get("CLOUDCONVERT_API_KEY"),
+      "Content-Type": "application/json",
+    },
+  });
 };
 
 const jobs = {
@@ -69,6 +77,8 @@ const jobs = {
 };
 
 const response = await postJobsToCloudConvert(jobs);
-const uploadTask = response.data.tasks[0];
+const uploadTask = response.data.tasks[0]; // first task is the upload task
+const jobId = response.data.id;
 const formData = await createFormData(uploadTask);
-const uploadResponse = await uploadFormDataToCloudConvert(uploadTask, formData);
+await uploadFormDataToCloudConvert(uploadTask, formData);
+await waitForJobToFinish(jobId);
