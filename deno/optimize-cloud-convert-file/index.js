@@ -12,7 +12,7 @@ client
   .setProject(Deno.env.get("APPWRITE_PROJECT_ID")) // Your project ID
   .setKey(Deno.env.get("APPWRITE_API_KEY")); // Your secret API key
 
-const { fileId } = JSON.parse(Deno.env.get("APPWRITE_FUNCTION_DATA"));
+const { id } = JSON.parse(Deno.env.get("APPWRITE_FUNCTION_DATA"));
 
 const parseRawTextResponse = async (rawResponse) => {
   return JSON.parse(await rawResponse.text());
@@ -37,8 +37,8 @@ const createFormData = async (uploadTask) => {
     formData.append(parameter, uploadTask.result.form.parameters[parameter]);
   }
 
-  const fileMetadata = await storage.getFile(fileId);
-  const file = await storage.getFileDownload(fileId);
+  const fileMetadata = await storage.getFile(id);
+  const file = await storage.getFileDownload(id);
   const reader = await file.blob();
   formData.append("file", reader, fileMetadata.name);
   return formData;
