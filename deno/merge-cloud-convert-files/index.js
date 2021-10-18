@@ -21,7 +21,7 @@ const addUploadTasks = (jobs) => {
       [uploadTaskName]: { operation: "import/upload" },
       ...jobs.tasks,
     };
-    jobs.tasks["merge-files"].input.push(uploadTaskName);
+    jobs.tasks["merge-files"].input.unshift(uploadTaskName);
   }
   return jobs;
 };
@@ -64,6 +64,22 @@ const createFormDataForUploadTasks = async (uploadTasks) => {
   return formDataArray;
 };
 
+const uploadFormDataToCloudConvert = async (uploadTask, formData) => {
+  await fetch(uploadTask.result.form.url, {
+    method: "POST",
+    body: formData,
+  });
+};
+
+const uploadFormDataArrayToCloudConvert = async (
+  uploadTasks,
+  formDataArray
+) => {
+  for (let idx = 0; idx < ids.length; idx++) {
+    await uploadFormDataToCloudConvert(uploadTasks[idx], formDataArray[idx]);
+  }
+};
+
 const jobs = {
   tasks: {
     "merge-files": {
@@ -91,3 +107,5 @@ const uploadTasks = response.data.tasks.filter(
 
 const jobId = response.data.id;
 const formDataArray = await createFormDataForUploadTasks(uploadTasks);
+
+await uploadFormDataArrayToCloudConvert(uploadTasks, formDataArray);
