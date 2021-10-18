@@ -42,6 +42,14 @@ const createFormData = async (uploadTask) => {
   return formData;
 };
 
+const uploadFormDataToCloudConvert = async (uploadTask, formData) => {
+  const res = await fetch(uploadTask.result.form.url, {
+    method: "POST",
+    body: formData,
+  });
+  return await res.text();
+};
+
 const jobs = {
   tasks: {
     "upload-file": {
@@ -63,3 +71,4 @@ const jobs = {
 const response = await postJobsToCloudConvert(jobs);
 const uploadTask = response.data.tasks[0];
 const formData = await createFormData(uploadTask);
+const uploadResponse = await uploadFormDataToCloudConvert(uploadTask, formData);
