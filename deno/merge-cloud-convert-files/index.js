@@ -80,6 +80,19 @@ const uploadFormDataArrayToCloudConvert = async (
   }
 };
 
+const waitForJobToFinish = async (jobId) => {
+  const response = await fetch(
+    "https://api.cloudconvert.com/v2/jobs/" + jobId + "/wait",
+    {
+      headers: {
+        Authorization: "Bearer " + Deno.env.get("CLOUDCONVERT_API_KEY"),
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  return parseRawTextResponse(response);
+};
+
 const jobs = {
   tasks: {
     "merge-files": {
@@ -109,3 +122,4 @@ const jobId = response.data.id;
 const formDataArray = await createFormDataForUploadTasks(uploadTasks);
 
 await uploadFormDataArrayToCloudConvert(uploadTasks, formDataArray);
+const result = await waitForJobToFinish(jobId);
