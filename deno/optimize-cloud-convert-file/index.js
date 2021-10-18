@@ -28,6 +28,20 @@ const postJobsToCloudConvert = async (jobs) => {
   return await parseRawResponse(rawResponse);
 };
 
+const createFormData = async (uploadTask) => {
+  const formData = new FormData();
+
+  for (const parameter in uploadTask.result.form.parameters) {
+    formData.append(parameter, uploadTask.result.form.parameters[parameter]);
+  }
+
+  const fileMetadata = await storage.getFile("615db46f9a051");
+  const file = await storage.getFileDownload("615db46f9a051");
+  const reader = await file.blob();
+  formData.append("file", reader, fileMetadata.name);
+  return formData;
+};
+
 const jobs = {
   tasks: {
     "upload-file": {
@@ -47,10 +61,5 @@ const jobs = {
 };
 
 const response = await postJobsToCloudConvert(jobs);
-
-const formData = new FormData();
-
 const uploadTask = response.data.tasks[0];
-for (const parameter in uploadTask.result.form.parameters) {
-  formData.append(parameter, uploadTask.result.form.parameters[parameter]);
-}
+const formData = await createFormData(uploadTask);
