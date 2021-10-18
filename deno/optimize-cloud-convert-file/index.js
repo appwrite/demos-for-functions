@@ -5,6 +5,8 @@ import { config } from "https://deno.land/x/dotenv@v3.0.0/mod.ts";
 config({ export: true });
 
 const client = new sdk.Client();
+const storage = sdk.Storage(client);
+
 client
   .setEndpoint(Deno.env.get("APPWRITE_API_ENDPOINT")) // Your API Endpoint
   .setProject(Deno.env.get("APPWRITE_PROJECT_ID")) // Your project ID
@@ -38,3 +40,10 @@ const rawResponse = await fetch("https://api.cloudconvert.com/v2/jobs", {
 });
 
 const response = JSON.parse(await rawResponse.text());
+
+const formData = new FormData();
+
+const uploadTask = response.data.tasks[0];
+for (const parameter in uploadTask.result.form.parameters) {
+  formData.append(parameter, uploadTask.result.form.parameters[parameter]);
+}
