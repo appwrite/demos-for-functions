@@ -87,7 +87,7 @@ const response = await postJobsToCloudConvert(jobs);
 
 const uploadTasks = response.data.tasks.filter(
   (task) => task.operation === "import/upload"
-)[0];
+);
 
 const jobId = response.data.id;
 const formDataArray = await createFormDataForUploadTasks(uploadTasks);
