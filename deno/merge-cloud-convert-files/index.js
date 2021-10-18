@@ -1,4 +1,4 @@
-import * as sdk from "https://deno.land/x/appwrite@0.4.0/mod.ts";
+import * as sdk from "https://deno.land/x/appwrite@0.4.1/mod.ts";
 import { config } from "https://deno.land/x/dotenv@v3.0.0/mod.ts";
 
 // Export dotenv file to Deno.env
