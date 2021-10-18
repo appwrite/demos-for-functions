@@ -5,7 +5,7 @@ import { config } from "https://deno.land/x/dotenv@v3.0.0/mod.ts";
 config({ export: true });
 
 const client = new sdk.Client();
-const storage = sdk.Storage(client);
+const storage = new sdk.Storage(client);
 
 client
   .setEndpoint(Deno.env.get("APPWRITE_API_ENDPOINT")) // Your API Endpoint
