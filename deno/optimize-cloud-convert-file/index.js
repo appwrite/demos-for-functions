@@ -12,7 +12,7 @@ client
   .setProject(Deno.env.get("APPWRITE_PROJECT_ID")) // Your project ID
   .setKey(Deno.env.get("APPWRITE_API_KEY")); // Your secret API key
 
-const parseRawResponse = async (rawResponse) => {
+const parseRawTextResponse = async (rawResponse) => {
   return JSON.parse(await rawResponse.text());
 };
 
@@ -25,7 +25,7 @@ const postJobsToCloudConvert = async (jobs) => {
     },
     body: JSON.stringify(jobs),
   });
-  return await parseRawResponse(rawResponse);
+  return await parseRawTextResponse(rawResponse);
 };
 
 const createFormData = async (uploadTask) => {
@@ -59,7 +59,12 @@ const waitForJobToFinish = async (jobId) => {
       },
     }
   );
-  return parseRawResponse(response);
+  return parseRawTextResponse(response);
+};
+
+const downloadOptimizedFile = async (url) => {
+  const optimizedFileResponse = await fetch(url);
+  return await optimizedFileResponse.blob();
 };
 
 const jobs = {
@@ -96,3 +101,6 @@ const downloadTask = result.data.tasks.filter(
 )[0];
 
 const downloadUrl = downloadTask.result.files[0].url;
+const filename = downloadTask.result.files[0].filename;
+
+const optimizedFileBlob = await downloadOptimizedFile(downloadUrl);
