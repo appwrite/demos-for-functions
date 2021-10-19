@@ -32,4 +32,4 @@ const response = await fetch("https://api.sendgrid.com/v3/marketing/contacts", {
   body: JSON.stringify(contactInfo),
 });
 
-const jobId = JSON.parse(await response.text())["job_id"];
+console.log(JSON.parse(await response.text())["job_id"]);
