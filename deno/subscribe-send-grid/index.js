@@ -12,3 +12,24 @@ client
   .setKey(Deno.env.get("APPWRITE_API_KEY")); // Your secret API key
 
 const { email } = JSON.parse(Deno.env.get("APPWRITE_FUNCTION_DATA"));
+
+const contactInfo = {
+  // deno-lint-ignore camelcase
+  list_ids: [Deno.env.get("SENDGRID_LIST_ID")],
+  contacts: [
+    {
+      email,
+    },
+  ],
+};
+
+const response = await fetch("https://api.sendgrid.com/v3/marketing/contacts", {
+  method: "PUT",
+  headers: {
+    Authorization: "Bearer " + Deno.env.get("SENDGRID_API_KEY"),
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(contactInfo),
+});
+
+const jobId = JSON.parse(await response.text())["job_id"];
