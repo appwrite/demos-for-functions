@@ -10,6 +10,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 - **APPWRITE_PROJECT_ID** - Appwrite project's ID
 - **APPWRITE_API_KEY** - Appwrite project's API key
 - **SENDGRID_API_KEY** - Sendgrid's API key
+- **SENDGRID_LIST_ID** - List to subscribe to
 
 You need to supply the email of user as parameter to the function in this format- { "email": EMAIL_ID }
 
@@ -25,7 +26,7 @@ $ tar -zcvf code.tar.gz .
 ```
 
 - Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-- Input the command that will run your function (in this case "deno run --allow-net --allow-env index.js") as your entrypoint command
+- Input the command that will run your function (in this case "deno run --allow-net --allow-read --allow-env index.js") as your entrypoint command
 - Upload your tarfile
 - Click 'Activate'
 
