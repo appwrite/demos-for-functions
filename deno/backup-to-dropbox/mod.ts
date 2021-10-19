@@ -77,7 +77,7 @@ for (let collection of collections){
   if (response['status'] === 200){
     console.log(`Success backup collection ${collectionId} to ${fileName}`);
   } else {
-    console.log(response['status']+response['statusText'])
+    console.log(response['statusText'])
   }
 
   data = "";
