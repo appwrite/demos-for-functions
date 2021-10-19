@@ -35,7 +35,7 @@ $ cd demos-for-functions/swift/welcome-email
 $ docker run --rm -it -v $(pwd):/app -w /app swift:5.5 swift build
 ```
 
-* At this point, it you wish to test the code, you can run it using
+* At this point, if you wish to test the code, you can run it using
 
 ```sh
 docker run \
