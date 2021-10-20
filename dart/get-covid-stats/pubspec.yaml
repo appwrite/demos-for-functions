@@ -1,0 +1,10 @@
+name: get_covid_stats
+version: 1.0.0
+description: "A sample Dart Cloud Function for fetching Covid data from a third party API"
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  dart_appwrite: ^0.6.1
+  http: ^0.13.3
