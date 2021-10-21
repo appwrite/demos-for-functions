@@ -29,7 +29,7 @@ $ dart pub get
 
 ```bash
 $ cd ..
-$ tar -zcvf get-internet-speed.tar.gz 
+$ tar -zcvf code.tar.gz get-internet-speed 
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
