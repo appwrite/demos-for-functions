@@ -40,6 +40,8 @@ $ tar -zcvf code.tar.gz object-detection
 * Upload your tarfile 
 * Click 'Activate'
 
-## Events
+##🎯 Trigger
 
 Head over to your function in the Appwrite console and under the Settings Tab, under the Events section select `storage.files.create`. This would enable this function to run everytime a new file is created/uploaded in Storage.
+
+Increase the timeout if the function fails with error code: 124.
