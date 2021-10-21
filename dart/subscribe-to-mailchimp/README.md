@@ -16,7 +16,7 @@ To package this example as a cloud function, follow these steps.
 ```bash
 $ cd demos-for-functions/dart/subscribe-to-mailchimp
 
-# If using Windows use "SET" instead of "EXPORT"
+# If using Windows use "SET" instead of "export"
 $ export PUB_CACHE=.appwrite/
 $ dart pub get
 ```
