@@ -40,7 +40,7 @@ data = {
 
 
 headers = {
-    'authorization': "Bearer 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",
+    'authorization': "Bearer "+os.environ.get('SENDGRID_API_KEY'),
     'content-type': "application/json"
 }
 
