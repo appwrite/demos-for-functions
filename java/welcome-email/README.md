@@ -18,11 +18,11 @@ To package this example as a cloud function, follow these steps.
 
 * Create a tarfile
 
-If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/java/welcome-email/out/artifacts/welcome_email_jar/welcome_email.jar`
+If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions\java\generate-bitly-url\out\artifacts\GenerateBitlyURL_jar\GenerateBitlyURL.jar`
 
 ```bash
-$ cd demos-for-functions/java/welcome-email/out/artifacts/
-$ tar -zcvf code.tar.gz welcome_email_jar
+$ cd demos-for-functions/java/generate-bitly-url/out/artifacts/
+$ tar -zcvf code.tar.gz GenerateBitlyURL_jar
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
