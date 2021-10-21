@@ -1,4 +1,5 @@
-# 📧 Generate shorter URL from Bitly
+# 🔗 Generate shorter URL from Bitly
+
 Function to generate shorter URL address from address via [Bitly](https://bitly.com)
 
 ## 📝 Environment Variables
@@ -26,10 +27,10 @@ $ tar -zcvf code.tar.gz target
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-* Input the command that will run your function (in this case `java -jar welcome-email.jar`) as your entry point command
+* Input the command that will run your function (in this case `java -jar GenerateBitlyURL-1.0-SNAPSHOT.jar`) as your entry point command
 * Upload your `tarfile` 
 * Click 'Activate'
 
 ## 🎯 Trigger
 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
+You trigger the function by manually executing it in the Appwrite console (Excetute Now) or by using SDK (excetuteFunction).
