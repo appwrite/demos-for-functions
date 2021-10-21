@@ -17,11 +17,13 @@ client = Client()
 sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY')) #Your Sendgrid API Key
 
 # Get the name and email of the new user from Appwrite's Environment variables
-payload = json.load(os.environ.get('APPWRITE_FUNCTION_EVENT_DATA'))
+payload = json.loads(os.environ.get('APPWRITE_FUNCTION_DATA'))
 recipient_id = payload['email']
+print('recipient id: ', recipient_id)
 
 
-list_id = os.environ.get('NEWSLETTER_LIST_ID') # The Newsletter ID to which the new user has to be added
+list_id = os.environ.get('SENDGRID_LIST_ID') # The Newsletter ID to which the new user has to be added
+print('list id: ', list_id)
 
 # Add a Single Recipient to a List #
 # POST /contactdb/lists/{list_id}/recipients/{recipient_id} #

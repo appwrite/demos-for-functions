@@ -1,15 +1,18 @@
 # 📧 Add an email to SendGrid list
 
-A sample Python Cloud Function for adding the given email address to a Sendgrid contact list.
+A sample Python Cloud Function for adding the given email address to a Sendgrid Newsletter.
 
 ## 📝 Environment Variables
 
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
 - **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
+- **APPWRITE_PROJECT_ID** - Appwrite project's ID
 - **APPWRITE_API_KEY** - Your Appwrite API key with `files.read` and `files.write` permissions
 - **SENDGRID_API_KEY** - Your Sendgrid API key
-- **NEWSLETTER_LIST_ID** - List ID of the list the email should be added to.
+- **SENDGRID_LIST_ID** - List ID of the list the email should be added to.
+
+You need to supply the email of user as parameter to the function in this format- { "email": EMAIL_ID }
 
 ## 🚀 Building and Packaging
 
