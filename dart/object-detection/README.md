@@ -1,4 +1,4 @@
-# 🚮 Clean up files in your storage older than XX days
+# Object Detection
 A Dart Cloud Function for detecting objects in an uploaded image.
 
 ## 📝 Environment Variables
