@@ -1,5 +1,5 @@
 # 🚮 Clean up files in your storage older than XX days
-A sample Dart Cloud Function for deleting files that are older than XX days on a schedule.
+A Dart Cloud Function for detecting objects in an uploaded image.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
