@@ -90,8 +90,6 @@ Example response:
       targetSchema: "targetSchema",
       schema: "schema"
     },
-    { ... },
-    { ... }
   ]
 }
 ```
