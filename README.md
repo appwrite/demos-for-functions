@@ -1,6 +1,6 @@
 # Demos for Functions
 
-Demos for Appwrite Cloud Functions API in multiple coding langauges. Feel free to submit your PR with more functions that other Appwriters could use in their projects.
+Demos for Appwrite Cloud Functions API in multiple coding languages. Feel free to submit your PR with more functions that other Appwriters could use in their projects.
 
 ## Getting Started
 
