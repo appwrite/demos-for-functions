@@ -54,7 +54,7 @@ You must pass an e-mail address String, e.g.:
 
 Example response:
 
-```json
+```
 {
   id: "id",
   email_address: "email_address",
