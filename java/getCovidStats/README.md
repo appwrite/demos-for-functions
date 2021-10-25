@@ -28,3 +28,8 @@ $ tar -zcvf code.tar.gz getCovidStats_jar
 * Input the command that will run your function (in this case `java -jar getCovidStats.jar`) as your entry point command
 * Upload your `tarfile`
 * Click 'Activate' and Execute the function.
+
+## 🎯 Trigger
+
+Trigger the cloud function using the SDK or the Appwrite Console after setting  the `COUNTRY_CODE` in the environment variables as mentioned above.
+
