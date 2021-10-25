@@ -8,7 +8,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 
 - **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
 - **APPWRITE_PROJECT_ID** - Appwrite project's ID
-- **APPWRITE_API_KEY** - Your Appwrite API key with `files.read` and `files.write` permissions
+- **APPWRITE_API_KEY** - Your Appwrite Project's API key
 - **SENDGRID_API_KEY** - Your Sendgrid API key
 - **SENDGRID_LIST_ID** - List ID of the list the email should be added to.
 
@@ -46,5 +46,4 @@ $ tar -zcvf code.tar.gz subscribe-to-sendgrid
 
 ## 🎯 Trigger
 
-Head over to your function in the Appwrite console and under the Settings tab, enable the `users.create` and `account.create` event.
-This will cause the function to triggered whenever any user is created on the app, and their email will be added to the list specified.
+Head over to your function in the Appwrite console and under the Overview Tab, click Execute Now and supply the JSON.
