@@ -4,6 +4,8 @@ dart/**/.dart_tool
 dart/**/.packages
 dart/**/pubspec.lock
 python/**/__pycache__
+python/**/.appwrite
+*.DS_Store
 **/.appwrite
 **/code.tar.gz
 *.DS_Store
