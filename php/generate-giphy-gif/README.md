@@ -2,7 +2,7 @@
 This is a demo PHP function to show how to get a GIF from the Giphy API through a search query.
 
 ## 📝 Environment Variables
-Go to the Settings tab of your Cloud Function. Add the following environment variables:
+Go to the Settings tab of your Cloud Function. Add the following environment variable:
 
 * **GIPHY_API_KEY** - Get your API key here: https://developers.giphy.com/docs/api#quick-start-guide
 
