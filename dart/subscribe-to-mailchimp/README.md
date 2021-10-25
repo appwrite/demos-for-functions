@@ -1,6 +1,6 @@
 # 📧 Subscribe to mailchimp newsletter using Mailchimp API V3
 
-A sample Dart Cloud Function for subscribe mailchimp newsletter
+A sample Dart Cloud Function to subscribe to Mailchimp newsletter
 
 ## 📝 Environment Variables
 
