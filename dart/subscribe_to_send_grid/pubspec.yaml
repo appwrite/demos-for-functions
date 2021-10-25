@@ -1,0 +1,9 @@
+name: subscribe_to_send_grid
+description: A demo application to showcase subscribing to sendgrid through an Appwrite function.
+
+environment:
+  sdk: '>=2.12.0 <2.13.0'
+
+dependencies:
+  dart_appwrite: ^1.0.1
+  http: ^0.13.3
