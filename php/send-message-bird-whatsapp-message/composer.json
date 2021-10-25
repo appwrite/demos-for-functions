@@ -1,0 +1,16 @@
+{
+    "name": "demos-for-functions/template",
+    "description": "Template Cloud Function for PHP",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Team Appwrite",
+            "email": "team@appwrite.io"
+        }
+    ],
+    "require": {
+        "appwrite/appwrite": "2.1.*",
+        "messagebird/php-rest-api": "^2.0"
+    }
+}
