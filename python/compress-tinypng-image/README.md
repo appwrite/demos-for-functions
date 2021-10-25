@@ -31,7 +31,7 @@ $ PIP_TARGET=./.appwrite pip install -r ./requirements.txt --upgrade --ignore-in
 
 ```bash
 $ cd ..
-$ tar -zcvf code.tar.gz compressed-image
+$ tar -zcvf code.tar.gz compress-tinypng-image
 ```
 
 * Upload the tarfile to your Appwrite Console and use the following entrypoint command
