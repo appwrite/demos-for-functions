@@ -1,0 +1,15 @@
+{
+  "name": "object-detection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cloudmersive-image-api-client": "^1.3.5",
+    "node-appwrite": "^2.5.0"
+  }
+}
