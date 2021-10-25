@@ -14,7 +14,7 @@ Add the following environment variables in your Cloud Function settings.
 To package this example as a cloud function, follow these steps.
 
 ```bash
-$ cd demos-for-functions/python/backup-to-storage
+$ cd demos-for-functions/python/compress-tinypng-image
 
 $ PIP_TARGET=./.appwrite pip install -r ./requirements.txt --upgrade --ignore-installed
 ```
