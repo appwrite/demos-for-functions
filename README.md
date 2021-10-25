@@ -39,7 +39,7 @@ For security issues, kindly email us [security@appwrite.io](mailto:security@appw
 | -------------        | --------| ---------| --------|-------- |------- |------|---------|------|--------|
 |hello-world           | ⚒       | ⚒        | ⚒       | ✅      | ⚒      |  ✅  | ❌      |✅    |✅      |
 |welcome-email         | ✅      | ✅       | ❌      | ✅      | ❌     |  ✅  | ✅      |✅    |✅      |
-|file-backup           | ❌      | ❌       | ❌      | ✅      | ❌     |  ❌  | ❌      |❌    |❌      |
+|file-backup           | ❌      | ✅       | ❌      | ✅      | ❌     |  ❌  | ❌      |❌    |❌      |
 |object-detection      | ❌      | ❌       | ✅      | ✅      | ❌     |  ❌  | ❌      |❌    |❌      |
 |storage-cleaner       | ❌      | ✅       | ✅      | ✅      | ❌     |  ✅  | ✅      |❌    |✅      |
 
