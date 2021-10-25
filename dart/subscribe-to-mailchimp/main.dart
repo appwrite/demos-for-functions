@@ -7,15 +7,15 @@ main(List<String> args) async {
 
   // Assert environment variables are set
   if (envVars["MAILCHIMP_API_KEY"] == null)
-    throw Exception("APPWRITE_MAILCHIMP_API_KEY is not defined.");
-  if (envVars["APPWRITE_MAILCHIMP_LIST_ID"] == null)
-    throw Exception("APPWRITE_MAILCHIMP_LIST_ID is not defined.");
+    throw Exception("MAILCHIMP_API_KEY is not defined.");
+  if (envVars["MAILCHIMP_LIST_ID"] == null)
+    throw Exception("MAILCHIMP_LIST_ID is not defined.");
   if (envVars["APPWRITE_FUNCTION_DATA"] == null)
     throw Exception("You need to pass an email.");
 
   // Get the API parameters from Appwrite's environment variable
-  final String apiKey = envVars['APPWRITE_MAILCHIMP_API_KEY']!;
-  final String listId = envVars['APPWRITE_MAILCHIMP_LIST_ID']!;
+  final String apiKey = envVars['MAILCHIMP_API_KEY']!;
+  final String listId = envVars['MAILCHIMP_LIST_ID']!;
   final String email = envVars['APPWRITE_FUNCTION_DATA']!;
   final String dc = apiKey.split('-').last;
 
