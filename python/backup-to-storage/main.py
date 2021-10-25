@@ -9,11 +9,6 @@ PATH1 = 'data_file.csv'
 PATH2 = 'data_file2.csv'
 BACKUPPATH = '/' + PATH1
 
-client = Client()
-client.set_endpoint("http://192.168.1.9/v1") 
-client.set_project("615d8b0e5f3f3") # this is available by default.
-client.set_key("98819b363864e759f998ad32d5c533c0790516b44bc65572511c7b57e6f6b6b7b0ed6387c323aa0d03b01a8d148f57712a72862471821d58f5da570d72139844ba8ef1792b6990d79f5185e989b2819ea85f3e8f0a2b81f181de3797c417d244447d0e6996624f31d3da13f0685272d6ca84a72515536a152b63cf391958f429") 
-
 
 # # Setup the appwrite SDK
 client = Client()
