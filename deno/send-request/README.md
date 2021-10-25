@@ -49,7 +49,7 @@ Example request:
 {
     "url": "https://http-echo.deno.dev",
     "method": "POST",
-    "body": "Hello World!",
+    "body": "Hello World!"
 }
 ```
 
@@ -62,7 +62,7 @@ and response:
     "status": "200 (OK)",
     "headers": {
         "date": "Tue, 05 Oct 2021 11:24:06 GMT",
-        "server": "deploy/asia-useast1-a",
+        "server": "deploy/us-east1-a",
         "transfer-encoding": "chunked"
     },
     "body": "Hello World!"
