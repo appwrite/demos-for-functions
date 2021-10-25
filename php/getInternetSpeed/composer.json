@@ -1,0 +1,15 @@
+{
+  "name": "demos-for-functions/getinternetspeed",
+  "description": "Template Cloud Function for PHP",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Team Appwrite",
+      "email": "team@appwrite.io"
+    }
+  ],
+  "require": {
+    "aln/speedtest-php": "^1.0"
+  }
+}
