@@ -29,7 +29,7 @@ $ PIP_TARGET=./.appwrite pip install -r ./requirements.txt --upgrade --ignore-in
 
 ```bash
 $ cd ..
-$ tar -zcvf code.tar.gz collection-backup
+$ tar -zcvf code.tar.gz backup-to-storage
 ```
 
 * Upload the tarfile to your Appwrite Console and use the following entrypoint command
