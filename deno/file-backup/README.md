@@ -38,4 +38,4 @@ $ tar -zcvf code.tar.gz file-backup
 * Click 'Activate'
 
 ## 🎯 Trigger
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `database.collections.update` event.
+You can trigger the function by clicking on "Execute now" in the Appwrite console or using `createExecution` function from one of our Client-side or Server-side SDKs.
