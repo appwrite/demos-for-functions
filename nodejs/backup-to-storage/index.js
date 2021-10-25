@@ -33,6 +33,7 @@ const documents = [];
 	fs.writeFile('data.csv', generatedCsv, function (err) {
 		if (err) console.log(err);
 	});
+	console.log('creating backup');
 	await storage.createFile(fs.createReadStream(__dirname + '/data.csv'));
 	console.log('backup created!');
 })();
