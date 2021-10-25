@@ -1,13 +1,11 @@
 vendor
-
-nodejs/**/node_modules
-nodejs/**/package-lock.json
-nodejs/code.tar.gz
 deno/code.tar.gz
 dart/**/.dart_tool
 dart/**/.packages
 dart/**/pubspec.lock
-dart/**/.appwrite
 python/**/__pycache__
-python/**/.appwrite
+**/.appwrite
+**/code.tar.gz
 *.DS_Store
+nodejs/**/node_modules
+nodejs/**/.env

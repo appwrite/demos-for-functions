@@ -1,0 +1,16 @@
+{
+  "name": "file-backup",
+  "version": "1.0.0",
+  "description": "A sample NodeJS Cloud Function that leverages Dropbox to create backups of important files uploaded to Appwrite.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dropbox": "^10.13.0",
+    "node-appwrite": "^2.5.0"
+  }
+}
