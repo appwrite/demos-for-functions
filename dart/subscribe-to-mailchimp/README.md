@@ -6,8 +6,8 @@ A sample Dart Cloud Function to subscribe to Mailchimp newsletter
 
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
-- **APPWRITE_MAILCHIMP_API_KEY** - Your Mailchimp API key
-- **APPWRITE_MAILCHIMP_LIST_ID** - Your Mailchimp List ID
+- **MAILCHIMP_API_KEY** - Your Mailchimp API key
+- **MAILCHIMP_LIST_ID** - Your Mailchimp List ID
 
 ## 🚀 Building and Packaging
 
