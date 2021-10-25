@@ -2,7 +2,7 @@
 try
 {
     $strApiKey = $_ENV['GIPHY_API_KEY'] ?? null;
-    $strQuery = trim($_ENV['APPWRITE_FUNCTION_DATA']) != '' ? $_ENV['APPWRITE_FUNCTION_DATA'] : ($_ENV['GIPHY_QUERY'] ?? null);
+    $strQuery = trim($_ENV['APPWRITE_FUNCTION_DATA']);
 
     if(!$strQuery)
         throw new Exception('Please provide a search query.');
