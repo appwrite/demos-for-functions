@@ -6,7 +6,7 @@ main(List<String> args) async {
   Map<String, String> envVars = Platform.environment;
 
   // Assert environment variables are set
-  if (envVars["APPWRITE_MAILCHIMP_API_KEY"] == null)
+  if (envVars["MAILCHIMP_API_KEY"] == null)
     throw Exception("APPWRITE_MAILCHIMP_API_KEY is not defined.");
   if (envVars["APPWRITE_MAILCHIMP_LIST_ID"] == null)
     throw Exception("APPWRITE_MAILCHIMP_LIST_ID is not defined.");
