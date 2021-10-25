@@ -17,7 +17,7 @@ client
 	.setKey(process.env.APPWRITE_API_KEY); // Your secret API key
 
 //retrieve all collections
-//for each collection, retrieve all documents and post to storage api
+//for each collection, retrieve all documents and post to the storage api
 
 const documents = [];
 
