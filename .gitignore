@@ -1,7 +1,5 @@
 vendor
-
-nodejs/**/node_modules
-nodejs/**/package-lock.json
+deno/code.tar.gz
 dart/**/.dart_tool
 dart/**/.packages
 dart/**/pubspec.lock
