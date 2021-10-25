@@ -1,0 +1,12 @@
+{
+    "name": "demos-for-functions/get-covid-stats",
+    "description": "A sample PHP Cloud Function for displaying daily Covid stats.",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Team Appwrite",
+            "email": "team@appwrite.io"
+        }
+    ]
+}
