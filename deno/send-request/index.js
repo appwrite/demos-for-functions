@@ -30,13 +30,13 @@ try {
         }
     }
 
-    console.log({
+    console.log(Deno.inspect({
         url: res.url.toString(),
         redirected: res.redirected,
         status: `${res.status} (${res.statusText})`,
         headers: Object.fromEntries(res.headers.entries()),
         body: resBody,
-    });
+    }));
 } catch(e) {
     console.error(e);
 }
