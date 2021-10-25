@@ -15,6 +15,7 @@ import models.TinypngResponse
 import utils.Env
 import java.io.File
 import java.util.*
+import kotlin.system.exitProcess
 
 private const val IMAGE_URL_KEY = "APPWRITE_FUNCTION_DATA"
 private const val TINYPNG_API_KEY = "TINYPNG_API_KEY"
@@ -47,12 +48,13 @@ suspend fun main() {
     )
 
     val compressedImage = appwriteStorage.createFromUrl(
-        filename = "compressed-$baseImageUrl",
+        filename = "compressed-tinypng-edition",
         url = compressedImageUrl,
         jsonParser
     )
 
     println(compressedImage.id)
+    exitProcess(0)
 }
 
 suspend fun compressImage(
