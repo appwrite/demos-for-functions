@@ -13,7 +13,7 @@ Add the following environment variables in your Cloud Function settings.
 To package this example as a cloud function, follow these steps.
 
 ```bash
-$ cd demos-for-functions/python/feat-implement-backup-to-dropbox-Python
+$ cd demos-for-functions/python/backup-to-dropbox
 
 $ PIP_TARGET=./.appwrite pip install -r ./requirements.txt --upgrade --ignore-installed
 ```
@@ -30,7 +30,7 @@ $ PIP_TARGET=./.appwrite pip install -r ./requirements.txt --upgrade --ignore-in
 
 ```bash
 $ cd ..
-$ tar -zcvf code.tar.gz collection-backup
+$ tar -zcvf code.tar.gz backup-to-dropbox
 ```
 
 * Upload the tarfile to your Appwrite Console and use the following entrypoint command
