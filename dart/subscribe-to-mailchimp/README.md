@@ -53,43 +53,6 @@ You must pass an e-mail address String, e.g.:
 ```
 
 Example response:
-
-```
-{
-  id: "id",
-  email_address: "email_address",
-  unique_email_id: "unique_email_id",
-  contact_id: "contact_id",
-  full_name: "",
-  web_id: "web_id",
-  email_type: "html",
-  status: "subscribed",
-  consents_to_one_to_one_messaging: true,
-  merge_fields: { FNAME: "", LNAME: "", ADDRESS: "", PHONE: "", BIRTHDAY: "" },
-  interests: {},
-  stats: { avg_open_rate: 0, avg_click_rate: 0 },
-  ip_signup: "",
-  timestamp_signup: "",
-  ip_opt: "ip_opt",
-"timestamp_opt":"2021-10-21T01:32:30+00:00",
-   "member_rating":2,
-   "last_changed":"2021-10-21T01:32:30+00:00",
-  language: "",
-  vip: false,
-  email_client: "",
-  location: { latitude: 0, longitude: 0, gmtoff: 0, dstoff: 0, country_code: "", timezone: "" },
-  source: "API - Generic",
-  tags_count: 0,
-  tags: [],
-  list_id: "list_id",
-  _links: [
-    {
-      rel: "parent",
-      href: "href",
-      method: "method",
-      targetSchema: "targetSchema",
-      schema: "schema"
-    },
-  ]
-}
+```json
+{"id":"id","email_address":"email","unique_email_id":"unique_email_id","contact_id":"contact_id","full_name":"","web_id":web_id,"email_type":"html","status":"subscribed","consents_to_one_to_one_messaging":true,"merge_fields":{"FNAME":"","LNAME":"","ADDRESS":"","PHONE":"","BIRTHDAY":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"ip_opt","timestamp_opt":"2021-10-21T01:32:30+00:00","member_rating":2,"last_changed":"2021-10-21T01:32:30+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"source":"API - Generic","tags_count":0,"tags":[],"list_id":"list_id","_links":[{"rel":"self","href":"href","method":"GET","targetSchema":"https://us5.api.mailchimp.com/schema/3.0/Definitions/Lists/Members/Response.json"},{"rel":"parent","href":"href","method":"GET","targetSchema":"https://us5.api.mailchimp.com/schema/3.0/Definitions/Lists/Members/CollectionResponse.json","schema":"https://us5.api.mailchimp.com/schema/3.0/Paths/Lists/Members/Collection.json"},{"rel":"update","href":"href","method":"PATCH","targetSchema":"https://us5.api.mailchimp.com/schema/3.0/Definitions/Lists/Members/Response.json","schema":"https://us5.api.mailchimp.com/schema/3.0/Definitions/Lists/Members/PATCH.json"},{"rel":"upsert","href":"href","method":"PUT","targetSchema":"https://us5.api.mailchimp.com/schema/3.0/Definitions/Lists/Members/Response.json","schema":"https://us5.api.mailchimp.com/schema/3.0/Definitions/Lists/Members/PUT.json"},{"rel":"delete","href":"href","method":"DELETE"},{"rel":"activity","href":"href","method":"GET","targetSchema":"https://us5.api.mailchimp.com/schema/3.0/Definitions/Lists/Members/Activity/Response.json"},{"rel":"goals","href":"href","method":"GET","targetSchema":"https://us5.api.mailchimp.com/schema/3.0/Definitions/Lists/Members/Goals/Response.json"},{"rel":"notes","href":"href","method":"GET","targetSchema":"https://us5.api.mailchimp.com/schema/3.0/Definitions/Lists/Members/Notes/CollectionResponse.json"},{"rel":"events","href":"href","method":"POST","targetSchema":"https://us5.api.mailchimp.com/schema/3.0/Definitions/Lists/Members/Events/POST.json"},{"rel":"delete_permanent","href":"href","method":"POST"}]}
 ```
