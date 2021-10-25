@@ -52,3 +52,5 @@ $ tar -zcvf code.tar.gz generateCloudConvertThumbnail
 - Click 'Activate'
 
 ## 🎯 Trigger
+
+To trigger this function, you can either click `Execute now` button in Appwrite console or use one of our Server-side/Client-side SDKs (`createExecution`)
