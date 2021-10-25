@@ -39,7 +39,3 @@ $ tar -zcvf code.tar.gz subscribe-to-sendgrid
 - Input the command that will run your function (in this case "php index.php") as your entrypoint command
 - Upload your tarfile
 - Click 'Activate'
-
-## 🎯 Trigger
-
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
