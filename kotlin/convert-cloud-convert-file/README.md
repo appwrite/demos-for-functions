@@ -37,12 +37,6 @@ $ tar -zcvf code.tar.gz convert_cloud_convert_file_jar
 * Upload your `tarfile`
 * Click 'Activate'
 
-## ⏰ Schedule
+## 🎯 Execution
 
-Head over to your function in the Appwrite console and under the Settings Tab, enter a reasonable schedule time (cron syntax).
-
-For example:
-
-- `*/30 * * * *` every 30 minutes
-- `0 * * * *` every hour
-- `0 0 * * *` every day
+You can execute this function using the "Execute now" button in Appwrite Console or using SDK's `createExecution` function.
