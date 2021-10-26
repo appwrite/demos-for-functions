@@ -7,6 +7,7 @@ Demo function to create a compressed version of an image using a provided link a
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
 - **APPWRITE_ENDPOINT** - Your Appwrite Endpoint.
+- **APPWRITE_FUNCTION_DATA** - The URL of the image you want to compress
 - **APPWRITE_API_KEY** - Your Appwrite API key with  `files.write` permission.
 - **TINYPNG_API_KEY** - Your TinyPNG API key.
 - **IMAGE_OUTPUT_NAME** - The name of the image output. *tinified_image.png* by default.
@@ -42,6 +43,3 @@ $ tar -zcvf code.tar.gz compress-tinypng-image
 - Input the command that will run your function (in this case "node index.js") as your entrypoint command
 - Upload your tarfile
 - Click 'Activate'
-
-## 🎯 Trigger
-Go to the Settings tab of your Cloud Function. Select the relevant event to fire this function or schedule it. You can also execute this function manually from the Overview tab.
