@@ -17,7 +17,7 @@ let offset = 0;
 while (true){
   let response: any = await database.listCollections(
     undefined,
-    10,
+    100,
     offset
   );
 
@@ -27,7 +27,7 @@ while (true){
     break
   }
 
-  offset += 10;
+  offset += 100;
 }
 offset = 0;
 
@@ -41,7 +41,7 @@ for (let collection of collections){
     let response: any = await database.listDocuments(
       collectionId,
       undefined,
-      10,
+      100,
       offset
     );
 
@@ -51,7 +51,7 @@ for (let collection of collections){
       break
     }
 
-    offset += 10;
+    offset += 100;
   }
   offset = 0;
 
