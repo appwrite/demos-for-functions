@@ -42,3 +42,13 @@ Head over to your function in the Appwrite console and under the Settings Tab, e
 You can trigger this function as and when you wish to. Mostly it can be done when
 someone fills in a contact form and wishes to be in connect further along with
 the company giving out that form.
+
+## 📸 Screenshots
+
+Executing the Function from web portal.
+
+![Execution Example](images/execution-example.png)
+
+Results after execution completed.
+
+![Success Message](images/success-message.png)
