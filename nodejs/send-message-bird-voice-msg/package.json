@@ -1,0 +1,14 @@
+{
+  "name": "cloud-functions-message-bird-voice-msg",
+  "version": "1.0.0",
+  "description": "A sample NodeJS Cloud Function for sending message bird voice message.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.0.0"
+  }
+}

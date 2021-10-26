@@ -1,0 +1,28 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    appwrite (2.4.0)
+    down (5.2.4)
+      addressable (~> 2.8)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2021.0901)
+    public_suffix (4.0.6)
+
+PLATFORMS
+  ruby
+  x86_64-darwin-19
+  x86_64-linux-musl
+
+DEPENDENCIES
+  appwrite (~> 2.1, >= 2.1.1)
+  down
+  mime-types
+
+RUBY VERSION
+   ruby 2.7.2p137
+
+BUNDLED WITH
+   2.2.29

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "appwrite/appwrite": "^2.3"
+    }
+}
