@@ -48,7 +48,9 @@ $ tar -zcvf app.tar.gz .
   ```
   ![Screen Shot 2021-10-06 at 14 45 47](https://user-images.githubusercontent.com/40946917/136161356-5b7512f5-25e5-4c27-b437-3dd6601be0d9.png)
 
+## Console Output Exam[le
 
+![Screen Shot 2021-10-26 at 22 38 05](https://user-images.githubusercontent.com/40946917/138913171-b140f916-065b-444d-9cd5-37ebb0664ce7.png)
 
 
 
