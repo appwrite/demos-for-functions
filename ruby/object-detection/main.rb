@@ -1,18 +1,15 @@
+require 'appwrite'
 require 'cloudmersive-image-recognition-api-client'
-require 'json'
-require 'faraday'
-require 'dotenv/load'
 
-def get_file(file_id)
-  response = Faraday.new(
-                          "#{ENV['APPWRITE_ENDPOINT']}/storage/files/#{file_id}/download",
-                          headers: 
-                            { 
-                              'x-appwrite-project' => ENV['APPWRITE_FUNCTION_PROJECT_ID'],
-                              'x-appwrite-key' => ENV['APPWRITE_API_KEY']
-                            } 
-                        ).get
-  response.body
+def get_file(client, file_id)
+	begin
+		storage = Appwrite::Storage.new(client)
+
+		response = storage.get_file_preview(file_id: file_id)
+		response
+	rescue => e
+		puts "Exception when calling Appwrite::Storage::get_file_preview: #{e}"
+	end
 end
 
 def object_detection(file)
@@ -33,7 +30,13 @@ end
 
 data = JSON.parse(ENV['APPWRITE_FUNCTION_EVENT_DATA'])
 file_id = data['$id']
-puts file_id
 
-file  = get_file(file_id)
+client = Appwrite::Client.new()
+
+client
+		.set_endpoint(ENV["APPWRITE_ENDPOINT"])
+		.set_project(ENV["APPWRITE_PROJECT"])
+		.set_key(ENV["APPWRITE_SECRET"])
+
+file  = get_file(client, file_id)
 object_detection(file)
