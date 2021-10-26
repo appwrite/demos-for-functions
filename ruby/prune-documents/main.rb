@@ -3,7 +3,7 @@ require 'date'
 
 class PruneStaleDocument
   YEARS_TO_KEEP = 5
-  DOCUMENTS_BATCH_SIZE = 100
+  BATCH_SIZE = 100
 
   attr_reader :deleted_count
 
@@ -24,25 +24,33 @@ class PruneStaleDocument
   private
 
   def collections
-    database.list_collections.fetch('collections', [])
+    action = -> (limit, offset) { database.list_collections(limit: limit, offset: offset)
+                             .fetch('collections', []) }
+    call_with_pagination(action)
   end
 
   def stale_documents(collection_id)
-    documents = []
+    action = -> (limit, offset) {
+      database.list_documents(collection_id: collection_id,
+                              filters: ["createdAt<#{min_time}"],
+                              limit: limit,
+                              offset: offset)
+              .fetch('documents', [])
+    }
+    call_with_pagination(action)
+  end
+
+  def call_with_pagination(action, limit = BATCH_SIZE)
+    collection = []
     offset = 0
     loop do
-      batch = database
-                .list_documents(collection_id: collection_id,
-                                filters: ["createdAt<#{min_time}"],
-                                limit: DOCUMENTS_BATCH_SIZE,
-                                offset: offset)
-                .fetch('documents', [])
+      batch = action.call(limit, offset)
       break if batch.empty?
 
-      documents += batch
-      offset += DOCUMENTS_BATCH_SIZE
+      collection += batch
+      offset += limit
     end
-    documents
+    collection
   end
 
   def delete_document(document)
