@@ -1,11 +1,11 @@
-# 📷 Create archive using Cloud Convert API
+# 📷 Compress Image using TinyPNG API
 A Kotlin Cloud Function that compresses image using [TinyPNG API](https://tinypng.com/developers)
 
 ## 📝 Environment Variables
 When running function, pass image url you want to compress and save as ***function data***.
 
 - **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
-- **APPWRITE_API_KEY** - Your Appwrite API key with `files.write` permissionsTINYPNG_API_KEY
+- **APPWRITE_API_KEY** - Your Appwrite API key with `files.write` permissions
 - **TINYPNG_API_KEY** - Your TinyPNG API key
 
 ## 🚀 Building and Packaging
@@ -20,7 +20,7 @@ To package this example as a cloud function, follow these steps.
 
 ```bash
 $ cd demos-for-functions/kotlin/compress-tinypng-image/build/libs/
-$ tar -zcvf code.tar.gz .\compress-tinypng-image-1.0-SNAPSHOT.jar
+$ tar -zcvf code.tar.gz ./compress-tinypng-image-1.0-SNAPSHOT.jar
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
