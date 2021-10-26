@@ -1,5 +1,4 @@
 import * as sdk from "https://deno.land/x/appwrite/mod.ts";
-// import { writeCSV } from "https://deno.land/x/csv/mod.ts";
 
 // Init SDK
 const client: any = new sdk.Client();
@@ -9,69 +8,88 @@ client
   .setProject(Deno.env.get("APPWRITE_FUNCTION_PROJECT_ID"))
 ;
 
-const userId: string = Deno.env.get('APPWRITE_FUNCTION_DATA');
-
+const userId = Deno.env.get("APPWRITE_FUNCTION_USER_ID");
 const database: any = new sdk.Database(client);
 const storage: any = new sdk.Storage(client);
 
-const getCollections = async (): Promise<any> =>{
-  let response: any = await database.listCollections();
-  return response.collections;
-} 
+const collections = [];
+let offset = 0;
+while (true){
+  let response: any = await database.listCollections(
+    undefined,
+    10,
+    offset
+  );
 
-const getDocuments = async (collectionId: string, userId: string): Promise<any> =>{
-  let output = "";
-  let response: any = await database.listDocuments(collectionId);
-  let documents: Array<any> = response.documents;
-  for (let document of documents){
+  collections.push(...response.collections);
 
-    if (document["$permissions"]["write"].find((user: string) => user == userId)){
-      document["$permissions"] = JSON.stringify(document["$permissions"])
-      
-      for (let data of Object.values(document)){
-        output += data + ",";
-      }
-
-      output += "\n"
-    }
+  if ((response.collections).length < 1){
+    break
   }
-  return output;
-} 
 
-const getDocumentsAttr = async (collectionId: string): Promise<any> => {
-  let output = "";
-  let response: any = await database.listDocuments(collectionId);
-  let document: Array<any> = response.documents[0];
-  for (let attr of Object.keys(document)){
-    output += attr + ",";
-  }
-  return output
-} 
+  offset += 10;
+}
+offset = 0;
 
 let data = "";
-let part = 0;
-const date = new Date().toISOString();
-const collections: any = await getCollections();
-
 for (let collection of collections){
-
   let collectionId = collection["$id"];
   let collectionName = collection["name"];
 
-  let fileName = `${date}-${userId}-${collectionName}-${part}.csv`;
+  const documents = [];
+  while (true){
+    let response: any = await database.listDocuments(
+      collectionId,
+      undefined,
+      10,
+      offset
+    );
 
-  data += await getDocumentsAttr(collectionId);
+    documents.push(...response.documents);
+    
+    if ((response.documents).length < 1){
+      break
+    }
+
+    offset += 10;
+  }
+  offset = 0;
+
+  if (documents.length < 1){
+    continue
+  }
+
+  for (let attr of Object.keys(documents[0])){
+    data += `${collectionName}.${attr},`;
+  }
   data += "\n"
-  data += await getDocuments(collectionId, userId);
-  console.log(await storage.createFile(
-      new File(
-        [data],
-        `${fileName}`
-      ),
-      ["*"],
-      [userId],
-  ));
 
-  part += 1
-  data = "";
+  for (let document of documents){
+    if (!document["$permissions"]["write"].find((user: string) => user == userId || user == "*")){
+      continue
+    }
+
+    // if this doesnt use json.stringify the value will be: [object object]
+    // and the comma replaced to dot because the value will be splited in csv
+    document["$permissions"] = JSON.stringify(document["$permissions"]).replace(',', '.')
+    
+    for (let item of Object.values(document)){
+      data += item + ",";
+    }
+
+    data += "\n"
+  }
+  data += "\n"
 }
+
+const date = Date.now();
+const fileName = `${Deno.env.get("APPWRITE_FUNCTION_USER_ID")}-${date}.csv`;
+
+console.log(await storage.createFile(
+  new File(
+    [data],
+    `${fileName}`
+  ),
+  ["*"],
+  [userId],
+));
