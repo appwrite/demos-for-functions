@@ -52,7 +52,6 @@ sdk
 
 let promise = sdk.functions.createExecution(
   '[FUNCTION_ID]', // Your Function ID
-  '[USER_ID]' // User ID who executed the function (ex, user:1234567890)
 );
 
 promise.then(function (response) {
