@@ -17,9 +17,9 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 
 
 ## Twilio Account
- - You can create Free Trial Account, and get $15 Credits [Free Trial Twilio](https://www.twilio.com/try-twilio?utm_source=google&utm_medium=cpc&utm_term=twilio&utm_campaign=Sitelink-G_S_Brand_Phrase_APAC_ID_EN_Brand)
-- Setup Your Development Sandbox refer to [Setup Sandbox]("https://www.twilio.com/docs/whatsapp/quickstart/curl")
-- For Production [Request to enable your Twilio numbers for WhatsApp]("https://www.twilio.com/whatsapp/request-access")
+ - You can create Free Trial Account, and get $15 Credits [Free Trial Twilio](https://www.twilio.com/try-twilio)
+- Setup Your Development Sandbox refer to [Setup Sandbox](https://www.twilio.com/docs/whatsapp/sandbox)
+- For Production [Request to enable your Twilio numbers for WhatsApp](https://www.twilio.com/whatsapp/request-access)
 
 ## 🚀 Building and Packaging
 
