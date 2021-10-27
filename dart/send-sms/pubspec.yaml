@@ -1,5 +1,5 @@
-name: generate_bitly_url
-description: A appwrite dart cloud function to shorten long urls using bitly api.
+name: send_sms
+description: A appwrite dart cloud function to send sms to a number using twilio api.
 
 version: 1.0.0
 
