@@ -24,7 +24,7 @@ void main(List<String> args) async {
       .setKey(envVars['APPWRITE_API_KEY']);
 
   Map<String, dynamic> payload =
-      jsonDecode(ensureEnvVariable('APPWRITE_FUNCTION_EVENT_DATA"'));
+      jsonDecode(ensureEnvVariable('APPWRITE_FUNCTION_EVENT_DATA'));
   var UPDATED_AT_KEY = "updatedAt";
   final collectionId = payload["\$collection"];
   final documentId = payload["\$id"];

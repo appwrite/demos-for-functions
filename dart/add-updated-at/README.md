@@ -15,7 +15,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 To package this example as a cloud function, follow these steps:
 
 ```bash
-$ cd demos-for-functions/python/add-updated-at
+$ cd demos-for-functions/dart/add-updated-at
 $ export PUB_CACHE=.appwrite/
 $ dart pub get
 ```
