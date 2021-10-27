@@ -10,9 +10,16 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromStream
+import kotlin.system.exitProcess
 
 fun main() {
-    Application.run()
+    try {
+        Application.run()
+    } catch (exception: Exception) {
+        exception.printStackTrace()
+        exitProcess(1)
+    }
+    exitProcess(0)
 }
 
 object Application {
