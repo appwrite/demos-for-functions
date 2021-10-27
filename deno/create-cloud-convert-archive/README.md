@@ -10,8 +10,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 - **APPWRITE_PROJECT_ID** - Appwrite project's ID
 - **APPWRITE_API_KEY** - Appwrite project's API key
 - **CLOUD_CONVERT_API_KEY** - CloudConvert's API created through Authorization > API Keys on Dashboard
-
-You need to supply the IDs of the files (from your storage) as parameter to the function in this format- { "ids": [FILE_ID_1, FILE_ID_2, ...] }
+- **APPWRITE_FUNCTION_DATA** - You need to supply the IDs of the files to archive (from your storage) as parameter to the function in this format- { "ids": [FILE_ID_1, FILE_ID_2, ...] }
 
 ## 🚀 Building and Packaging
 
