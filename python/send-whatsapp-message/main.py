@@ -1,11 +1,12 @@
 import os
 from twilio.rest import Client
+import json
 
 account_sid = os.environ['ACCOUNT_SID']
 auth_token = os.environ['AUTH_TOKEN']
 from_number = os.environ['FROM_NUMBER']
 
-data = os.environ.get("APPWRITE_FUNCTION_DATA")
+data = json.loads(os.environ["APPWRITE_FUNCTION_DATA"])
 
 try:
     client = Client(account_sid, auth_token)

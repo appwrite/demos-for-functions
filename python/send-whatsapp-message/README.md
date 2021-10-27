@@ -4,6 +4,7 @@ A Python Cloud Function to send a WhatsApp message to a number using Twilio API.
 
 ## 🚀 Result
 ![result](docs-images/result.png)
+![res](docs-images/result-log.png)
 <br>
 
 
