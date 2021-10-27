@@ -1,5 +1,5 @@
-# 🔗 LinkShortener
-A Python Cloud Function for generating a bitly short link from a given url.
+#  Send WhatsApp 
+A Python Cloud Function to send a WhatsApp message to a number using Twilio API.
 <br>
 
 ## 🚀 Result
@@ -10,50 +10,22 @@ A Python Cloud Function for generating a bitly short link from a given url.
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
-* **BITLY_TOKEN** -  API Key for Bitly
+* **ACCOUNT_SID** -  Your Twilio account sid
+* **AUTH_TOKEN** -  Your Twilio account Authorization Token
+* **FROM_NUMBER** -  Your Twilio phone number to send WhatsApp from (can be your sandbox number) (in international format)
 
 
-
-You can use both the `APPWRITE_FUNCTION_DATA` or `APPWRITE_FUNCTION_EVENT_DATA` default environment variables too depending on your use-case.<br>
-In each scenario, provide the `url` you want to shorten as a string
-<br><br>
-Consider the scenarios (more info [on Appwrite docs](https://appwrite.io/docs/functions#enviromentVariables))
-<br>
-<br>
-
-## Scenario 1: `APPWRITE_FUNCTION_DATA`
-This variable can be set only when triggering a function using the SDK or HTTP API and the Appwrite Dashboard. <br>
-
-<br>
-If using this from appwrite console, paste this example code on the popup as an example or any link you want to shorten<br>
-
-`https://appwrite.io/`
-<br>
-
-## Scenario 2: `APPWRITE_FUNCTION_EVENT_DATA`
-Your function event payload. This value is available only when your function trigger is 'event'. This variable value contains a string in JSON format with your specific event data.<br>
-
-## Bitly Account
-If you do not have an account already, [registere here](https://bitly.com/pages/pricing/v2) for free.
-<br>
-Once registered, login and go on your dashboard, from there click your account name on the top right corner and go to `settings`
-<br>
-Under `settings`, scroll to `Developer settings` and click on `API`
-<br>
-Under this tab, notice the `Access token` menu, enter your account password you used to login / register and client `Generate token`
-<br>
-After a success, copy the token and paste on your AW console variables as `BITLY_TOKEN`
-<br>
-![bitly.png](docs-images/bitly.png)
-<br>
-<br>
+## Twilio Account
+ - You can create Free Trial Account, and get $15 Credits [Free Trial Twilio](https://www.twilio.com/try-twilio?utm_source=google&utm_medium=cpc&utm_term=twilio&utm_campaign=Sitelink-G_S_Brand_Phrase_APAC_ID_EN_Brand)
+- Setup Your Development Sandbox refer to [Setup Sandbox]("https://www.twilio.com/docs/whatsapp/quickstart/curl")
+- For Production [Request to enable your Twilio numbers for WhatsApp]("https://www.twilio.com/whatsapp/request-access")
 
 ## 🚀 Building and Packaging
 
 To package this as a cloud function, follow these steps.
 
 ```bash
-$ cd demos-for-functions/python/generate-bitly-url
+$ cd demos-for-functions/python/send-whatsapp-message
 
 $ PIP_TARGET=./.appwrite pip install -r ./requirements.txt --upgrade --ignore-installed 
 ```
@@ -75,10 +47,23 @@ $ pip install -t ./.appwrite -r ./requirements.txt --upgrade --ignore-installed
 
 ```bash
 $ cd ..
-$ tar -zcvf code.tar.gz generate-bitly-url
+$ tar -zcvf code.tar.gz send-whatsapp-message
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-* Input the command that will run your function (in this case `python main.py`) as your entrypoint command
+* Input the command that will run your function (in this case `python main.py`) as your entry point command
 * Upload your tarfile 
 * Click 'Activate'
+
+## Trigger
+You can trigger the function using the SDK, HTTP API or the Appwrite Console
+
+Your data must include the following data and format:<br>
+**NB:** `phoneNumber` must be in international format e.g `+263772000999`
+```json
+{
+    "phoneNumber": "<receiver's phone number>",
+    "text": "<message body>"
+}
+
+```

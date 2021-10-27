@@ -1,75 +1,25 @@
 import os
-import requests
-import validators
-import sys
+from twilio.rest import Client
 
-import json
+account_sid = os.environ['ACCOUNT_SID']
+auth_token = os.environ['AUTH_TOKEN']
+from_number = os.environ['FROM_NUMBER']
 
-# grab the bitly developer account api token from env var
-BITLY_TOKEN = os.environ.get('BITLY_TOKEN')
-
-if BITLY_TOKEN is None:
-    print('please provide your Bitly Account token!')
-    sys.exit()
-
-
-def get_long_url() -> str:
-    '''
-        attempt to find provided long url from 
-        different env vars possible
-    '''
-
-    from_func_data  = os.environ.get("APPWRITE_FUNCTION_DATA")
-    from_event_data = os.environ.get("APPWRITE_FUNCTION_EVENT_DATA")
-
-    if from_func_data:
-        if len(from_func_data) > 0:
-            # assume, there is a valid long url to shorten
-            return from_func_data
-
-    elif from_event_data:
-        if len(from_event_data) > 0:
-            return from_event_data
-
-    return ''
-
-# save long url got from env vars if available
-long_url = get_long_url()
-
-
-def shorten_long_url():
-    '''
-        shorten a long url using bitly api
-    '''
-
-    headers = {
-        'Authorization': f'Bearer {BITLY_TOKEN}',
-        'Content-Type': 'application/json',
-    }
-
-    payload = { 
-        "long_url": long_url, 
-        "domain": "bit.ly", 
-        #"group_guid": "Ba1bc23dE4F" 
-    }
-
-    return requests.post('https://api-ssl.bitly.com/v4/shorten', headers=headers, data=json.dumps(payload))
+data = os.environ.get("APPWRITE_FUNCTION_DATA")
 
 try:
-    if long_url:
-        if not validators.url(long_url):
-            # not a valid url, abort
-            raise Exception(f'long url: {long_url}, provided is not a valid url')
-            
-    response = shorten_long_url()
+    client = Client(account_sid, auth_token)
 
-    if response.status_code == 200 or 201:
-        # grab the shortened link
-        print(response.json().get('link'))
-    
-    else:
-        # print the error message
-        print(response.json().get('description'))
+    phone_number = data['phoneNumber']
+    text = data['text']
+
+    message = client.messages.create(
+        body=text,
+        from_=f'whatsapp:{from_number}',
+        to=f'whatsapp:{phone_number}'
+    )
+
+    print(f'WhatsApp message successfully sent to: {phone_number}')
 
 except Exception as e:
     print(str(e))
