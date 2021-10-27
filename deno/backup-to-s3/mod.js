@@ -25,7 +25,7 @@ const getAllCollectionDocuments = async (collectionId) => {
   const returnArr = [];
   
   do {  
-    var documentsList = await database.listDocuments(collectionId, undefined, undefined, returnArr.length);
+    var documentsList = await database.listDocuments(collectionId, undefined, 100, returnArr.length);
     // Add documents to return array
     returnArr.push(...documentsList.documents);
   } while (returnArr.length < documentsList.sum);
@@ -37,7 +37,7 @@ const getAllCollections = async () => {
   const returnArr = [];
   
   do {
-    var collectionList = await database.listCollections(undefined, undefined, returnArr.length);
+    var collectionList = await database.listCollections(undefined, 100, returnArr.length);
     // Add collections to return array
     returnArr.push(...collectionList.collections);
   } while (returnArr.length < collectionList.sum);
