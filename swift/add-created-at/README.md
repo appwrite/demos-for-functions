@@ -1,12 +1,12 @@
 # ➕Add created Timestamp to document
 
-A sample Swift Cloud function to add `createdAt` (or other) value to the document if the rule is specified in the collection.
+A sample Swift Cloud function to add creation datetime value to the document if the rule is specified in the collection.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
 * **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
-* **APPWRITE_API_KEY** - Your Appwrite API key with `collections.read` and `documents.write` permissions
+* **APPWRITE_API_KEY** - Your Appwrite API key with `documents.write` permissions
 * **CREATED_AT_KEY** - The document key for the created at timestamp. Defaults to `createdAt`
 
 ## 🚀 Building and Packaging
@@ -36,4 +36,4 @@ $ tar -zcvf code.tar.gz -C .build/x86_64-unknown-linux-gnu/ release/AddCreatedAt
 * Click 'Activate'
 
 ## 🎯 Trigger
-In the function setting, check the database.document.create event. After that the function will automatically trigger when a new document is created.
+In the function setting, check the `database.document.create` event. After that the function will automatically trigger when a new document is created.
