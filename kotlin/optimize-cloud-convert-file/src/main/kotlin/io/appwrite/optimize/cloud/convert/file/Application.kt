@@ -35,7 +35,6 @@ object Application {
             .setEndpoint(getMandatoryEnv(ENV_APPWRITE_ENDPOINT))
             .setProject(getMandatoryEnv(ENV_APPWRITE_PROJECT))
             .setKey(getMandatoryEnv(ENV_APPWRITE_KEY))
-            .setSelfSigned(true)
         val storage = Storage(client)
 
         val functionData = System.getenv(ENV_APPWRITE_FUNCTION_DATA)
