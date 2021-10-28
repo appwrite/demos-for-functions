@@ -1,0 +1,12 @@
+name: add_created_at
+description: An appwrite cloud function, dart, which populates the createdAt field in a collection with the current time.
+
+version: 1.0.0
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+
+
+dependencies:
+  dart_appwrite: ^1.0.2
