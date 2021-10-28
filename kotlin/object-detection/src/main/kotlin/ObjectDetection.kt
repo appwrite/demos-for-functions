@@ -10,7 +10,6 @@ import com.google.gson.JsonParser
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
-import java.net.URL
 
 suspend fun main(args: Array<String>) {
     val client = Client()
@@ -34,8 +33,7 @@ suspend fun main(args: Array<String>) {
             val fileId = json.get("\$id").asString
             val result = storage.getFilePreview(fileId)
             val imageFile = File("yourFile.png")
-            val url = URL(result.toString())
-            val inStream: InputStream = url.openStream()
+            val inStream: InputStream = result.body!!.byteStream()
             val fos = FileOutputStream(imageFile)
 
             var length = -1
@@ -54,7 +52,7 @@ suspend fun main(args: Array<String>) {
                 e.printStackTrace()
             }
         } catch (e: Exception) {
-            print("[ERROR] There was an error")
+            println("[ERROR] There was an error")
             println(e.message)
         }
     } else {
