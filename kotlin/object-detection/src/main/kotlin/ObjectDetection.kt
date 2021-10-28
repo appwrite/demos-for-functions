@@ -6,6 +6,7 @@ import com.cloudmersive.client.invoker.Configuration
 import com.cloudmersive.client.invoker.auth.*
 import com.cloudmersive.client.RecognizeApi
 import com.cloudmersive.client.model.ObjectDetectionResult
+import com.google.gson.Gson
 import com.google.gson.JsonParser
 import java.io.File
 import java.io.FileOutputStream
@@ -46,7 +47,7 @@ suspend fun main(args: Array<String>) {
             inStream.close()
             try {
                 val result: ObjectDetectionResult = apiInstance.recognizeDetectObjects(imageFile)
-                println(result)
+                println(Gson().toJson(result))
             } catch (e: ApiException) {
                 System.err.println("Exception when calling RecognizeApi#recognizeDetectObjects")
                 e.printStackTrace()
