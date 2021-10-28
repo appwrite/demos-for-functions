@@ -1,0 +1,17 @@
+{
+  "name": "send-sms",
+  "version": "1.0.0",
+  "description": "A sample NodeJS Cloud Function for sending SMS using Twilio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "appwrite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "twilio": "^3.68.0"
+  }
+}

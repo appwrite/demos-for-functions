@@ -1,0 +1,14 @@
+{
+  "name": "cloud-functions-generate-hiphy-gif-nodejs",
+  "version": "1.0.0",
+  "description": "A sample NodeJS Cloud Function for getting a gif depending on the keyword.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.22.0"
+  }
+}
