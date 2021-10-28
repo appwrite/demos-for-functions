@@ -23,7 +23,7 @@ To package this example as a cloud function, follow these steps.
 If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/kotlin/backup-to-storage/out/artifacts/backup_to_storage_jar/backup-to-storage.jar`
 
 ```bash
-$ cd kotlin/storage-cleaner/out/artifacts
+$ cd kotlin/backup-to-storage/out/artifacts
 $ tar -zcvf code.tar.gz backup_to_storage_jar
 ```
 
