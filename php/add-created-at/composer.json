@@ -1,0 +1,15 @@
+{
+    "name": "demos-for-functions/add-created-at",
+    "description": "A sample PHP Cloud Function that fill createdAt attribute with current time",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+      {
+        "name": "Team Appwrite",
+        "email": "team@appwrite.io"
+      }
+    ],
+    "require": {
+      "appwrite/appwrite": "2.1.*"
+    }
+  }
