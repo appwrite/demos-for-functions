@@ -1,7 +1,7 @@
 # 🔗 Generate Unsplash Image
 A dart Cloud Function for searching image and author on unsplash from a keyword
 
-## Dart AW Setup
+## Dart Function Setup
 To setup dart cloud function, follow [this excellent tutorial on Dev.to](https://dev.to/appwrite/learn-how-to-create-and-run-appwrite-functions-with-dart-5668)
 
 Created using `dart-2.1.3`
@@ -13,7 +13,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 * **UNSPLASH_ACCESS_KEY** -  API Key for Unsplash
 
 ## Sample Input
-If running locally, add this when prompted for input on your `AW Console` 
+If running locally, add this when prompted for input on your `Appwrite Console` 
 
 **input** : `cookies`
 
