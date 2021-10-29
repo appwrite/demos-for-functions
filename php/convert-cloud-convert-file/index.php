@@ -12,6 +12,7 @@ $client = new Client();
 
 // Code cleanup
 // Readme
+// test .tar packaging and upload
 // Test with input from function on platform
 // change everything to env variables
 // PR 🎉

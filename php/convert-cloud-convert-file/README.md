@@ -1,21 +1,40 @@
-# 📧 Convert Image in Cloud with php
-<!--  A brief descripption about your Cloud Function  -->
+# 📧 Converting image file from X format to JPG/PNG format using CloudConvert API
+A sample PHP Cloud Function for converting a given image in Appwrite storage to .jpg/.png format.
 
+**Make sure your Appwrite instance file size limit is set according to your needs. The default is 10 MB.**
 ## 📝 Environment Variables
-<!-- Tell the users of your Cloud function, what Environment Variables your function uses. Use the following format -->
+Go to the Settings tab of your Cloud Function. Add the following environment variables.
+- **APPWRITE_API_ENDPOINT** - Appwrite API endpoint
+- **APPWRITE_API_KEY** - Appwrite project's API key
+- **CLOUDCONVERT_API_KEY** - CloudConvert's API key created through Authorization > API Keys on Dashboard
 
-* **VARIABLE 1** - <!-- Short Description --> 
-* **VARIABLE 2** - <!-- Short Description -->
-
+You need to supply the ID of the file (from your app storage) and output format ("png" or "jpg") as parameters to the function in this format- { "file_id": "YOUR_FILE_ID", "output_format": "YOUR_FORMAT" }
 ## 🚀 Building and Packaging
-<!-- 
-Highlight the steps required to build and deploy this cloud function. 
+To package this example as a cloud function, create a .tar file of the code and deploy it on the Appwrite dashboard.
 
-Take a look at this example (https://github.com/appwrite/demos-for-functions/blob/master/nodejs/welcome-email/README.md) for more information.  
+#### Create .tar file
+```bash
+$ cd php/convert-cloud-convert-file
+$ tar -zcvf code.tar.gz . 
+```
+#### Deploy on Appwrite dashboard
+* Navigate to the Overview Tab of your Cloud Function > Deploy Tag
+* Input the command that will run your function (in this case `php -f index.php`) as your entry point command
+* Upload your `tarfile`
+* Click 'Activate'
+#### Deploy with Appwrite CLI
+If you want to use the Appwrite CLI no .tar packaging is needed and you can use the createTag command. Use 
+```bash
+appwrite functions createTag help
+```
+to learn more about the command. You have to install the Appwrite CLI first.
 
-Make sure you mention the instructions clearly and also mention the entrypoint command for the function 
--->
-## 🎯 Trigger
-<!-- Clearly explain the triggers that this cloud function relies on to work correctly. Take a look at the below example: 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `users.create` and `account.create` event.
- --> 
+
+## 🎯 Schedule
+Head over to your function in the Appwrite console and under the Settings Tab, enter a reasonable schedule time (cron syntax).
+
+For example:
+
+- `*/30 * * * *` every 30 minutes
+- `0 * * * *` every hour
+- `0 0 * * *` every day
