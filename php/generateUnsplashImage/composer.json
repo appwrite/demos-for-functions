@@ -1,0 +1,15 @@
+{
+  "name": "demos-for-functions/generateunsplashimage",
+  "description": "A sample PHP Cloud Function for deleting files that are older than XX days on a schedule.",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Team Appwrite",
+      "email": "team@appwrite.io"
+    }
+  ],
+  "require": {
+    "unsplash/unsplash": "^3.1"
+  }
+}
