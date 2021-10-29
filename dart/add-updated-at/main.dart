@@ -9,7 +9,7 @@ String ensureEnvVariable(String key) {
         'Could not find environment variable $key. Please set it following the instructions in the readme file.');
     exit(1);
   }
-
+  //print('Value for $key is $value!!');
   return value;
 }
 
@@ -23,23 +23,25 @@ void main(List<String> args) async {
           'APPWRITE_FUNCTION_PROJECT_ID']) // this is available by default
       .setKey(envVars['APPWRITE_API_KEY']);
 
-  Map<String, dynamic> payload =
-      jsonDecode(ensureEnvVariable('APPWRITE_FUNCTION_EVENT_DATA'));
-  var UPDATED_AT_KEY = "updatedAt";
+  String functionData = envVars['APPWRITE_FUNCTION_EVENT_DATA'].toString();
+  Map<String, dynamic> payload = json.decode(functionData);
+  String UPDATED_AT_KEY = "updatedAt";
   final collectionId = payload["\$collection"];
   final documentId = payload["\$id"];
-  final currentTimeStamp = DateTime.now();
-
+  print('Collection ID: $collectionId, Document ID: $documentId');
+  final currentTimeStamp = DateTime.now().toString();
+  print('Current Time Stamp: $currentTimeStamp');
   if (!payload.containsKey(UPDATED_AT_KEY)) {
+    print("Collection doesn't contain \"updatedAt\" key!");
     return;
   }
 
-  final Database database = Database(client);
-  database.updateDocument(
+  Database database = new Database(client);
+  Response response = await database.updateDocument(
     collectionId: collectionId,
     documentId: documentId,
     data: {UPDATED_AT_KEY: currentTimeStamp},
   );
-
+  print(response.data);
   print("Updated the field updatedAt with current timestamp successfully!");
 }
