@@ -6,8 +6,11 @@ use Appwrite\Services\Storage;
 use \CloudConvert\CloudConvert;
 use \CloudConvert\Models\Job;
 use \CloudConvert\Models\Task;
-$files = $argv;
-unset($files[0]);
+$files = explode(' ', getenv('APPWRITE_FUNCTION_DATA'));
+
+if(empty($files)){
+	throw new Exception('Please enter file ids.');
+}
 $client = new Client();
 $client
 	->setEndpoint(getenv('APPWRITE_ENDPOINT'))
@@ -53,7 +56,8 @@ while($job->getStatus() != 'finished')
 foreach ($job->getTasks() as $task) {
 	if ($task->getName() == 'export-1') {
 		file_put_contents($task->getResult()->files[0]->filename, file_get_contents($task->getResult()->files[0]->url));
-		$storage->createFile(new \CURLFile($task->getResult()->files[0]->filename, 'application/zip', $task->getResult()->files[0]->filename));
+		$res = $storage->createFile(new \CURLFile($task->getResult()->files[0]->filename, 'application/zip', $task->getResult()->files[0]->filename));
 		unlink($task->getResult()->files[0]->filename);
+		echo $res['$id'];
 	}
 }
