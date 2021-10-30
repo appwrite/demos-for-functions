@@ -1,13 +1,20 @@
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.S3ClientOptions;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.PutObjectResult;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import io.appwrite.exceptions.AppwriteException;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-class BackupToStorage {
+class BackupToS3 {
     public static void main(String[] args) throws IOException, AppwriteException {
         FileWriter collectionsCsv = null;
         String headers = "collection_id, permissions, name, date_created, date_updated, rules";
@@ -24,6 +31,9 @@ class BackupToStorage {
                             .header("X-Appwrite-key", System.getenv("APPWRITE_API_KEY"))
                             .asJson();
 
+            AmazonS3Client s3 = new AmazonS3Client(new BasicAWSCredentials(
+                    System.getenv("AWS_API_KEY"),
+                    System.getenv("AWS_API_SECRET")));
 
             JSONObject responeJson = response.getBody().getObject();
             JSONArray collections = responeJson.getJSONArray("collections");
@@ -45,14 +55,9 @@ class BackupToStorage {
                 collectionsCsv.append("\n");
             }
 
-            HttpResponse<JsonNode> storageResponse =
-                    Unirest.get(String.format("%s/storage/files", System.getenv("APPWRITE_ENDPOINT")))
-                            .header("X-Appwrite-Project", System.getenv("APPWRITE_FUNCTION_PROJECT_ID"))
-                            .header("X-Appwrite-key", System.getenv("APPWRITE_API_KEY"))
-                            .asJson();
+            PutObjectResult s3Response = s3.putObject(new PutObjectRequest(System.getProperty("bucket_name"), "collections", new File(System.getProperty("user.dir") + "/collections.csv")));
 
-
-            if (storageResponse.getStatus() >= 200) {
+            if (s3Response != null) {
                 System.out.println("Successfully uploaded collections.csv to storage");
             }
 
