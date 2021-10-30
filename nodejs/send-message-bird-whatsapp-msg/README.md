@@ -6,9 +6,6 @@ A sample Node.js Cloud Function for sending custom Whatsapp Message to a given p
 
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
-- **APPWRITE_API_ENDPOINT** - Appwrite API endpoint
-- **APPWRITE_PROJECT_ID** - Appwrite project's ID
-- **APPWRITE_API_KEY** - Appwrite project's API key
 - **MESSAGEBIRD_API_KEY** - Messagebird's API key
 - **WHATSAPP_CHANNEL_ID** - Your Whatsapp channel ID
 
