@@ -10,7 +10,7 @@ client
 .setProject(environmentVariables['APPWRITE_PROJECT_ID'])
 .setKey(environmentVariables['API_KEY']);
 
-final db = Database(client); //initialising database
+Database db = Database(client); //initialising database
 
 // Get the collectionID and also the ID of the newly created document from Appwrite's environment variable
   final payload = jsonDecode(environmentVariables['APPWRITE_FUNCTION_EVENT_DATA']);
@@ -20,6 +20,13 @@ final db = Database(client); //initialising database
   final String collectionId = payload['\$collection'];
   var timestamp = DateTime.now().millisecondsSinceEpoch;
 
+  Map<String, dynamic> variables = {
+    'collectionId': collectionId,
+    'documentId' : documentId,
+    'createdAt': timestamp
+  };
+
+
   try{
     var documentUpdateResult = await db.updateDocument(
     collectionId: collectionId,
@@ -28,7 +35,7 @@ final db = Database(client); //initialising database
       'createdAt': timestamp
     },
   );
-  print('Updated document successfully. $documentUpdateResult');
+  print('Updated document successfully. $variables');
   }catch(error){
     print('Error updating document $error');
   }
