@@ -1,5 +1,5 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-ruby "~> 2.6.3"
+ruby '~> 3.0'
 
-gem 'appwrite', '~> 2.1', '>= 2.1.1'
+gem 'appwrite', '~> 2.4'
