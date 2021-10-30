@@ -1,0 +1,17 @@
+{
+  "name": "demos-for-functions/template",
+  "description": "Template Cloud Function for PHP",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Team Appwrite",
+      "email": "team@appwrite.io"
+    }
+  ],
+  "require": {
+    "mailgun/mailgun-php": "^3.5",
+    "symfony/http-client": "^5.3",
+    "nyholm/psr7": "^1.4"
+  }
+}

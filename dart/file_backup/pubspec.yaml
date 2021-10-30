@@ -1,0 +1,9 @@
+name: file_backup
+description: Demo for backing up files to Dropbox in an Appwrite function.
+
+environment:
+  sdk: '>=2.12.0 <2.13.0'
+
+dependencies:
+  dart_appwrite: ^1.0.1
+  path: ^1.7.0

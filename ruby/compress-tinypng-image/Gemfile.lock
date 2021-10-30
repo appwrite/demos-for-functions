@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    appwrite (2.4.0)
+    httpclient (2.8.3)
+    tinify (1.5.1)
+      httpclient (~> 2.6)
+
+PLATFORMS
+  x86_64-darwin-20
+  x86_64-linux-musl
+
+DEPENDENCIES
+  appwrite (~> 2.4)
+  tinify
+
+RUBY VERSION
+   ruby 3.0.0p0
+
+BUNDLED WITH
+   2.2.15
