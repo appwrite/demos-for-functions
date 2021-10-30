@@ -1,0 +1,12 @@
+name: get_stripe_payment_status
+description: An appwrite cloud function, dart, which takes stripePaymentId as an input, checks the status of the payment and responds with the payment status.
+
+version: 1.0.0
+
+environment:
+  sdk: ">=2.7.0 <2.15.0"
+
+
+dependencies:
+  dart_appwrite: ^1.0.2
+  http: ^0.13.3
