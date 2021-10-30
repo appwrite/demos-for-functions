@@ -8,5 +8,5 @@ environment:
 
 
 dependencies:
-  dart_appwrite: ^1.0.2
-  http: ^0.13.3
+  dio: ^4.0.1
+  
