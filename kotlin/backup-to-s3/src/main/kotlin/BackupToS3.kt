@@ -73,7 +73,7 @@ class BackupToS3 {
                 val file = File("${System.getProperty("user.dir")}/collections.csv")
 
                 val s3response = s3.putObject(PutObjectRequest(
-                    "awhacktoberfest",
+                    System.getenv("BUCKET_NAME")
                     "collections",
                     file
                 ))
