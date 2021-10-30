@@ -19,38 +19,23 @@ class BackupToS3 {
         @JvmStatic
         fun main(args: Array<String>) {
             try {
-//                val appWriteclient = Client()
-//                    .setEndpoint(System.getenv("APPWRITE_ENDPOINT"))
-//                    .setProject(System.getenv("APPWRITE_FUNCTION_PROJECT_ID"))
-//                    .setKey(System.getenv("APPWRITE_API_KEY"))
-
                 val appWriteclient = Client()
-                    .setEndpoint("http://localhost:90/v1")
-                    .setProject("6162ef5ab6c11")
-                    .setKey("5b3a9d2401f6648ca3535a2d89be5dd941758479f29e515ed4958978b232b5f2b78af430eab443dcfd58db90c1c134e6b97f626795f6de346923c513b392cd7b23b0b4edbcafd1522055cae7670ffe1bfe97cbc6a235aeaf7a829b7d93acc1ceb293c5d753393060ed2e4f0778d6901edde97fa0b326beb91e9159d25c49afd5")
+                    .setEndpoint(System.getenv("APPWRITE_ENDPOINT"))
+                    .setProject(System.getenv("APPWRITE_FUNCTION_PROJECT_ID"))
+                    .setKey(System.getenv("APPWRITE_API_KEY"))
 
-//                val s3 = AmazonS3Client(BasicAWSCredentials(
-//                    System.getenv("AWS_API_KEY"),
-//                    System.getenv("AWS_API_SECRET"))).apply {
-//                        setEndpoint("s3.amazonaws.com").apply {
-//                            println("S3 endpoint is s3.amazonaws.com")
-//                        }
-//                        setS3ClientOptions(
-//                            S3ClientOptions.builder()
-//                                .setPathStyleAccess(true).build()
-//                        )
-//                    }
                 val s3 = AmazonS3Client(BasicAWSCredentials(
-                    "AKIAUZ7FHRINECJWRA3Y",
-                    "kZpa51dGsa4BVo6W0+18LscmM5MRl/q2oGmhxgLj")
-                ).apply {
-                    setEndpoint("s3.amazonaws.com")
-                    setS3ClientOptions(
-                        S3ClientOptions.builder()
-                            .setPathStyleAccess(true).build()
-                    )
-                }
-
+                    System.getenv("AWS_API_KEY"),
+                    System.getenv("AWS_API_SECRET"))).apply {
+                        setEndpoint("s3.amazonaws.com").apply {
+                            println("S3 endpoint is s3.amazonaws.com")
+                        }
+                        setS3ClientOptions(
+                            S3ClientOptions.builder()
+                                .setPathStyleAccess(true).build()
+                        )
+                    }
+                
                 collectionsCsv = FileWriter("${System.getProperty("user.dir")}/collections.csv")
                 if (collectionsCsv == null) {
                     throw Exception("Error in creating file")
