@@ -21,16 +21,3 @@ $ tar -zcvf code.tar.gz .
 
 ## 🎯 Trigger
 You can trigger this function manually from the Overview tab tab of your Cloud Function or by using `executeFunction` from SDK.
-
-## 👀 Preview
-Set Giphy API key
-![gif1](https://user-images.githubusercontent.com/13732765/138771400-0558f630-4bfd-470c-97dc-fdefef0c1e89.png)
-
-Trigger function manually, 'custom data' is your search query
-![gif2](https://user-images.githubusercontent.com/13732765/138771532-2e6b9076-e935-45c4-9044-b7cf460b1e95.png)
-
-Success logs
-![gif3](https://user-images.githubusercontent.com/13732765/136447737-70da6cc9-7779-4486-9eec-d9324c211f0e.png)
-
-Output example
-![gif4](https://user-images.githubusercontent.com/13732765/136447744-cff36c5d-6844-44c7-9f47-2f62f721a121.png)
