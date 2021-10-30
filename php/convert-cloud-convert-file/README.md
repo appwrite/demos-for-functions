@@ -15,6 +15,7 @@ To package this example as a cloud function, create a .tar file of the code and 
 #### Create .tar file
 ```bash
 $ cd php/convert-cloud-convert-file
+$ composer install
 $ tar -zcvf code.tar.gz . 
 ```
 #### Deploy on Appwrite dashboard
@@ -25,7 +26,7 @@ $ tar -zcvf code.tar.gz .
 #### Deploy with Appwrite CLI
 If you want to use the Appwrite CLI no .tar packaging is needed and you can use the createTag command. Use 
 ```bash
-appwrite functions createTag help
+$ appwrite functions createTag help
 ```
 to learn more about the command. You have to install the Appwrite CLI first.
 
