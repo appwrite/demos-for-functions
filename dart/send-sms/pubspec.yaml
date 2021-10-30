@@ -1,0 +1,12 @@
+name: send_sms
+description: A appwrite dart cloud function to send sms to a number using twilio api.
+
+version: 1.0.0
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+  http: ^0.13.3
+
+dev_dependencies:
+  lints: ^1.0.0
