@@ -55,7 +55,7 @@ class BackupToS3 {
                 collectionsCsv.append("\n");
             }
 
-            PutObjectResult s3Response = s3.putObject(new PutObjectRequest(System.getProperty("bucket_name"), "collections", new File(System.getProperty("user.dir") + "/collections.csv")));
+            PutObjectResult s3Response = s3.putObject(new PutObjectRequest(System.getenv("BUCKET_NAME"), "collections", new File(System.getProperty("user.dir") + "/collections.csv")));
 
             if (s3Response != null) {
                 System.out.println("Successfully uploaded collections.csv to storage");
