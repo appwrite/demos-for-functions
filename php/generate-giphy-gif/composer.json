@@ -1,0 +1,12 @@
+{
+    "name": "demos-for-functions/generate-giphy-gif",
+    "description": "Generate Giphy GIF Cloud Function for PHP",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Team Appwrite",
+            "email": "team@appwrite.io"
+        }
+    ]
+}

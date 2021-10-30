@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+ruby '~> 3.0'
+
+gem 'tinify'
+gem 'appwrite', '~> 2.4'

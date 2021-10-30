@@ -1,6 +1,6 @@
 # Demos for Functions
 
-Demos for Appwrite Cloud Functions API in multiple coding langauges. Feel free to submit your PR with more functions that other Appwriters could use in their projects.
+Demos for Appwrite Cloud Functions API in multiple coding languages. Feel free to submit your PR with more functions that other Appwriters could use in their projects.
 
 ## Getting Started
 
@@ -10,15 +10,17 @@ Demos for Appwrite Cloud Functions API in multiple coding langauges. Feel free t
 4. Trigger your new Cloud Function manually from the Appwrite dashboard using the execute button, listen to system events, or use the Appwrite API to execute your new function.
 5. Read Appwrite Cloud Functions docs to learn more about the different capabilities you can use.
 
-## Templates 
+## Templates
+
 To quickly get started , you can always refer to our language templates
 
-1. [Deno](deno/template/README.md)
-2. [Node.js](nodejs/template/README.md) 
-3. [PHP](php/template/README.md)
-4. [Python](python/template/README.md) 
-5. [Ruby](ruby/template/README.md)
-6. [.NET](dotnet//template/README.md)
+1. [Dart](dart/template/README.md)
+2. [Deno](deno/template/README.md)
+3. [Node.js](nodejs/template/README.md)
+4. [PHP](php/template/README.md)
+5. [Python](python/template/README.md)
+6. [Ruby](ruby/template/README.md)
+7. [.NET](dotnet//template/README.md)
 
 ## Contributing
 
@@ -31,18 +33,18 @@ We truly ❤️ pull requests! If you wish to help, you can use the templates in
 For security issues, kindly email us [security@appwrite.io](mailto:security@appwrite.io) instead of posting a public issue in GitHub.
 
 ## Progress
+
 ✅ = Done - You can still submit PRs with fixes or improvements.  
-⚒  = In progress - This function is currently being worked on.  
-❌ =  Missing - This function is missing. Contributions are welcomed.
+⚒ = In progress - This function is currently being worked on.  
+❌ = Missing - This function is missing. Contributions are welcomed.
 
-| Function / Language  | Deno    | NodeJS   | PHP     | Python  | Ruby   | Dart | .NET    | Java | Kotlin |
-| -------------        | --------| ---------| --------|-------- |------- |------|---------|------|--------|
-|hello-world           | ⚒       | ⚒        | ⚒       | ✅      | ⚒      |  ✅  | ❌      |✅    |✅      |
-|welcome-email         | ✅      | ✅       | ❌      | ✅      | ❌     |  ✅  | ✅      |✅    |✅      |
-|file-backup           | ❌      | ❌       | ❌      | ✅      | ❌     |  ❌  | ❌      |❌    |❌      |
-|object-detection      | ❌      | ❌       | ✅      | ✅      | ❌     |  ❌  | ❌      |❌    |❌      |
-|storage-cleaner       | ❌      | ✅       | ✅      | ✅      | ❌     |  ✅  | ✅      |❌    |✅      |
-
+| Function / Language | Deno | NodeJS | PHP | Python | Ruby | Dart | .NET | Java | Kotlin |
+| ------------------- | ---- | ------ | --- | ------ | ---- | ---- | ---- | ---- | ------ |
+| hello-world         | ⚒    | ⚒      | ⚒   | ✅     | ⚒    | ✅   | ❌   | ✅   | ✅     |
+| welcome-email       | ✅   | ✅     | ❌  | ✅     | ❌   | ✅   | ✅   | ✅   | ✅     |
+| file-backup         | ❌   | ✅     | ❌  | ✅     | ❌   | ✅   | ❌   | ❌   | ❌     |
+| object-detection    | ❌   | ✅     | ✅  | ✅     | ❌   | ❌   | ❌   | ❌   | ✅     |
+| storage-cleaner     | ❌   | ✅     | ✅  | ✅     | ❌   | ✅   | ✅   | ❌   | ✅     |
 
 ## Follow Us
 
@@ -50,4 +52,4 @@ Join our growing community around the world! Follow us on [Twitter](https://twit
 
 ## License
 
-This repository is available under the [BSD 3-Clause License](./LICENSE).
+This repository is available under the [MIT](./LICENSE) license.

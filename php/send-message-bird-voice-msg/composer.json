@@ -1,0 +1,15 @@
+{
+    "name": "demos-for-functions/send-message-bird-voice-msg",
+    "description": "A sample PHP cloud function for sending voice message using messagebird",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Ayodeji Afolabi",
+            "email": "afolabiayodejia@gmail.com"
+        }
+    ],
+    "require": {
+        "messagebird/php-rest-api": "^2.1"
+    }
+}
