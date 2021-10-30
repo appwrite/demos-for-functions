@@ -1,5 +1,5 @@
 # Get image from unsplash
-A sample python Cloud Function for getting image url from unsplash based on keyword search.
+A sample python Cloud Function for getting image url and image author from unsplash based on keyword search.
 
 ## 📝 Environment Variables
 Go to Settings tab of your Cloud Function. Add the following environment variables.
@@ -11,7 +11,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 To package this example as a cloud function, follow these steps.
 
 ```bash
-$ cd demos-for-functions/python/generateUnsplashImage
+$ cd demos-for-functions/python/generate-unsplash-image
 
 $ PIP_TARGET=./.appwrite pip install -r ./requirements.txt --upgrade --ignore-installed
 ```
@@ -28,7 +28,7 @@ $ PIP_TARGET=./.appwrite pip install -r ./requirements.txt --upgrade --ignore-in
 
 ```bash
 $ cd ..
-$ tar -zcvf code.tar.gz generateUnsplashImage
+$ tar -zcvf code.tar.gz generate-unsplash-image
 ```
 
 * Navigate to the Overview Tab of your Cloud Function > Deploy Tag
@@ -37,3 +37,4 @@ $ tar -zcvf code.tar.gz generateUnsplashImage
 * Click 'Activate'
 
 ## Trigger
+You can manually trigger function in the Appwrite console by clicking on execute and providing a keyword for querying or you can use an appwrite SDK.
