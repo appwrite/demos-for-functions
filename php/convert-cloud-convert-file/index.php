@@ -8,6 +8,20 @@ use CloudConvert\CloudConvert;
 use CloudConvert\Models\Job;
 use CloudConvert\Models\Task;
 
+// Validate function input
+$input = json_decode($_ENV['APPWRITE_FUNCTION_DATA'], flags: JSON_THROW_ON_ERROR);
+
+if (!isset($input->file_id) || !isset($input->output_format)) {
+    throw new Exception('File ID ("file_id") and output format ("output_format") are required function input, but not provided.');
+}
+
+if (!in_array($input->output_format, ['png', 'jpg'])) {
+    throw new Exception(
+        sprintf('Only allowed output types are png and jpg (you provided "%s")', $input->output_format)
+    );
+}
+
+// Create API clients
 $client = new Client();
 
 $client
@@ -23,16 +37,7 @@ $cloudconvert = new CloudConvert([
     'sandbox' => false
 ]);
 
-$input = json_decode($_ENV['APPWRITE_FUNCTION_DATA'], flags: JSON_THROW_ON_ERROR);
-
-if (!isset($input->file_id) || !isset($input->output_format)) {
-    throw new Exception('File ID ("file_id") and output format ("output_format") are required function input, but not provided.');
-}
-
-if (!in_array($input->output_format, ['png', 'jpg'])) {
-    throw new Exception(sprintf('Only allowed output types are png and jpg (you provided "%s")', $input->output_format));
-}
-
+// Fetch file information
 try {
     $fileInfo = $storage->getFile($input->file_id);
     $img = $storage->getFileView($input->file_id);
@@ -41,6 +46,7 @@ try {
     throw $e;
 }
 
+// Register a CloudConvert job
 try {
     $job = (new Job())
         ->addTask(new Task('import/upload', 'upload-my-file'))
@@ -59,16 +65,22 @@ try {
     throw $e;
 }
 
+// Upload the file to CloudConvert
 try {
+    $newFilename = sprintf(
+        '%s_converted.%s',
+        pathinfo($fileInfo['name'], PATHINFO_FILENAME),
+        strtolower($input->output_format)
+    );
     $uploadTask = $job->getTasks()->whereName('upload-my-file')[0];
-    $newFilename = sprintf('%s_converted.%s', pathinfo($fileInfo['name'], PATHINFO_FILENAME), strtolower($input->output_format));
     $cloudconvert->tasks()->upload($uploadTask, $img, $newFilename);
 } catch (Throwable $e) {
     echo sprintf("Unable to upload file \"%s\":\n", $fileInfo['name']);
     throw $e;
 }
 
-$cloudconvert->jobs()->wait($job); // Wait for job completion
+// Wait for the conversion to finish
+$cloudconvert->jobs()->wait($job);
 
 if ($job->getStatus() !== Job::STATUS_FINISHED) {
     echo sprintf("Unable to finish image conversion job for file \"%s\":\n", $fileInfo['name']);
@@ -76,11 +88,18 @@ if ($job->getStatus() !== Job::STATUS_FINISHED) {
 
 foreach ($job->getExportUrls() as $file) {
 
-    $source = $cloudconvert->getHttpTransport()->download($file->url)->detach();
-    $dest = fopen($file->filename, 'w');
+    // Get the converted file from CloudConvert...
+    try {
+        $source = $cloudconvert->getHttpTransport()->download($file->url)->detach();
+        $dest = fopen($file->filename, 'w');
 
-    stream_copy_to_stream($source, $dest);
+        stream_copy_to_stream($source, $dest);
+    } catch (Throwable $e) {
+        echo sprintf("Unable to download converted file \"%s\":\n", $file->filename);
+        throw $e;
+    }
 
+    // ... and upload it to Appwrite Storage
     try {
         $result = $storage->createFile(
             new \CURLFile(
@@ -89,13 +108,18 @@ foreach ($job->getExportUrls() as $file) {
                 $file->filename
             )
         );
-    } catch (Throwable $e){
+    } catch (Throwable $e) {
         echo sprintf("Unable to create file in storage \"%s\":\n", $file->filename);
         throw $e;
+    } finally {
+        unlink($file->filename);
     }
 
-    unlink($file->filename);
-
-    echo sprintf("Successfully converted file \"%s\" to \"%s\" (format %s)\n", $fileInfo['name'], $file->filename, strtolower($input->output_format));
+    echo sprintf(
+        "Successfully converted file \"%s\" to \"%s\" (format %s)\n",
+        $fileInfo['name'],
+        $file->filename,
+        strtolower($input->output_format)
+    );
 }
 
