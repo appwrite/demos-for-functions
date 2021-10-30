@@ -8,5 +8,5 @@ environment:
 
 
 dependencies:
-  dio: ^4.0.1
+  http: ^0.13.4
   
