@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+
+gem 'appwrite', '~> 2.4.0'
+gem 'json'
+gem 'httparty'
