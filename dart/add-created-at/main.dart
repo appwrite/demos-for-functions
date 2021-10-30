@@ -18,5 +18,19 @@ final db = Database(client); //initialising database
 
   final String documentId = payload['\$id'];
   final String collectionId = payload['\$collection'];
+  var timestamp = DateTime.now().millisecondsSinceEpoch;
+
+  try{
+    var documentUpdateResult = await db.updateDocument(
+    collectionId: collectionId,
+    documentId: documentId,
+    data: {
+      'createdAt': timestamp
+    },
+  );
+  print('Updated document successfully. $documentUpdateResult');
+  }catch(error){
+    print('Error updating document $error');
+  }
 
 }
