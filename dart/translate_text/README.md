@@ -8,7 +8,7 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 * **PROJECT_ID** - Your google cloud project id
 
 ### 📝 Input Format
-Add the following to APPWRITE_FUNCTION_EVENT_DATA
+Add the following to APPWRITE_FUNCTION_DATA as JSON
 * **text** - text to be translated
 * **sourceLanguage** - source language from which text is to be translated in **BCP-47** format
 * **destinationLanguage** - target language to which text is to be in **BCP-47** formattranslated
