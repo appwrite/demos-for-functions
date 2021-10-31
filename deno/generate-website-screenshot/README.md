@@ -13,6 +13,17 @@ Go to Settings tab of your Cloud Function. Add the following environment variabl
 * **APPWRITE_API_KEY** - API Key to interact with Appwrite
 * **CLOUDCONVERT_API_KEY** - API Key to interact with CloudConvert API
 
+## 📩 Input
+
+Input should be a stringified JSON in the following format:
+
+```json
+{
+  "url": "https://appwrite.io",
+  "format": "png" // Could be JPG, PDF, etc...
+}
+```
+
 ## 🚀 Building and Packaging
 To package this example as a cloud function, follow these steps.
 
