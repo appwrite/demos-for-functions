@@ -1,0 +1,15 @@
+{
+    "name": "demos-for-functions/backup-collections",
+    "description": "Template Cloud Function for PHP",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Gergo Juhasz",
+            "email": "geryjuhasz@gmail.com"
+        }
+    ],
+    "require": {
+        "appwrite/appwrite": "*"
+    }
+}

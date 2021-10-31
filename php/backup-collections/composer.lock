@@ -1,0 +1,60 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e8cb01b61eb55897b9da7b2a203e9a86",
+    "packages": [
+        {
+            "name": "appwrite/appwrite",
+            "version": "2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appwrite/sdk-for-php.git",
+                "reference": "f82424efd65f738a26dec606659231013195bf7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/appwrite/sdk-for-php/zipball/f82424efd65f738a26dec606659231013195bf7e",
+                "reference": "f82424efd65f738a26dec606659231013195bf7e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.35"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Appwrite\\": "src/Appwrite"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Appwrite is an open-source self-hosted backend server that abstract and simplify complex and repetitive development tasks behind a very simple REST API",
+            "support": {
+                "email": "team@appwrite.io",
+                "issues": "https://github.com/appwrite/sdk-for-php/issues",
+                "source": "https://github.com/appwrite/sdk-for-php/tree/2.3.2",
+                "url": "https://appwrite.io/support"
+            },
+            "time": "2021-10-18T07:11:19+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
+}
