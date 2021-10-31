@@ -34,7 +34,7 @@ async function generateWebsiteScreenshot(url, format = "jpg") {
       new File(await Deno.readFile(`./${file.filename}`), file.filename)
     );
 
-    console.log(`Stored screenshot with id: ${storedFile["$id"]}`);
+    console.log(storedFile["$id"]);
   } catch (error) {
     console.error(error);
   }
