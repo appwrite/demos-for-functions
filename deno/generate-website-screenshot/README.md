@@ -37,3 +37,6 @@ $ tar -zcvf code.tar.gz generate-website-screenshot
 * Input the command that will run your function (in this case "deno --unstable run --allow-net --allow-env --allow-read --allow-write index.js") as your entrypoint command
 * Upload your tarfile 
 * Click 'Activate'
+
+## 🎯 Trigger
+You can trigger the function by clicking on "Execute now" in the Appwrite console or using `createExecution` function from one of our Client-side or Server-side SDKs. 
