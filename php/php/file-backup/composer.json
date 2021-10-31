@@ -1,0 +1,16 @@
+{
+    "name": "demos-for-functions/file-backup",
+    "description": "A sample PHP Cloud Function for uploading a list of files to dropbox.",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Gergo Juhasz",
+            "email": "geryjuhasz@gmail.com"
+        }
+    ],
+    "require": {
+        "appwrite/appwrite": "*",
+        "spatie/dropbox-api": "^1.19"
+    }
+}
