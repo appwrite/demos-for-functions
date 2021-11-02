@@ -3,3 +3,4 @@ source 'https://rubygems.org'
 ruby '~> 3.0'
 
 gem 'appwrite', '~> 2.4'
+gem 'mime-types', '~> 3.3', '>= 3.3.1'
