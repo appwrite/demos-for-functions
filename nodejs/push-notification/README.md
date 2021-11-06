@@ -1,5 +1,5 @@
-# 📧 Sending Push Notifications using Firebase
-A sample Node.js Cloud Function for sending a simple push notification over firebase to a mobile device
+# 🔔 Sending Push Notifications using Firebase
+A sample Node.js Cloud Function for sending a simple push notification through firebase to a mobile device
 
 ## 🚀 Building and Packaging
 
