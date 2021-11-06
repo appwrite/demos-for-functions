@@ -1,6 +1,9 @@
 # 🔔 Sending Push Notifications using Firebase
 A sample Node.js Cloud Function for sending a simple push notification through firebase to a mobile device
 
+## 📝 Environment
+Grab your serviceAccountKey.json from Firebase console -> settings and place it in your cloud function folder.
+
 ## 🚀 Building and Packaging
 
 To package this example as a cloud function, follow these steps.
