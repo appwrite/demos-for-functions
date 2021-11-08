@@ -25,7 +25,7 @@ def main():
     client = init_client()
     database = Database(client)
 
-    database.create_document(user_collection_id, {'user_id': userId, 'user_name': userName, 'email': email}, read=['*'], write=['*'])
+    database.create_document(user_collection_id, {'user_id': userId, 'user_name': userName, 'email': email}, read=['*'])
 
 if __name__ == "__main__":
     main()
