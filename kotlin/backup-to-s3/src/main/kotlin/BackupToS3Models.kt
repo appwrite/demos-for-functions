@@ -1,33 +1,20 @@
-import com.fasterxml.jackson.annotation.JsonProperty
-
 data class Collections(
     val sum: Int,
     val collections: List<Collection>
 )
 
 data class Collection(
-    @JsonProperty("\$id")
-    val id: String,
-
-    @JsonProperty("\$permissions")
-    val permissions: List<Permission>,
+    val `$id`: String,
+    val `$permissions`: Permissions,
     val name: String,
     val dateCreated: Long,
     val dateUpdated: Long,
     val rules: List<Rule>
 )
 
-data class Permission(
-    val read: List<String>,
-    val write: List<String>
-)
-
 data class Rule(
-    @JsonProperty("\$id")
-    val id: String,
-
-    @JsonProperty("\$collection")
-    val collection: String,
+    val `$id`: String,
+    val `$collection`: String,
     val type: String,
     val key: String,
     val label: String,
@@ -35,4 +22,22 @@ data class Rule(
     val array: Boolean,
     val required: Boolean,
     val list: List<String>
+)
+
+data class Permissions(
+    val read: List<String>,
+    val write: List<String>,
+)
+
+data class Document(
+    val `$id`: String,
+    val `$collection`: String,
+    val `$permissions`: Permissions,
+    val name: String?,
+    val age: String?,
+)
+
+data class Documents(
+    val sum: Int,
+    val documents: List<Document>
 )
