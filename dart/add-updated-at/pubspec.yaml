@@ -1,0 +1,8 @@
+name: add_updated_at
+description: This function should trigger on `database.documents.update` event and fill `updatedAt` attribute with the current time, if this rule for updatedAt is configured on a specific collection.
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  dart_appwrite: ^1.0.1

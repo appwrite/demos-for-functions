@@ -1,0 +1,15 @@
+{
+  "name": "demos-for-functions/backup-to-dropbox",
+  "description": "A sample PHP Cloud Function for backing up all collections to Dropbox",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Team Appwrite",
+      "email": "team@appwrite.io"
+    }
+  ],
+  "require": {
+    "appwrite/appwrite": "^2.3"
+  }
+}

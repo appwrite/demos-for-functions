@@ -1,0 +1,12 @@
+name: generate_unsplash_image
+description: A appwrite dart cloud function to generate unsplash image from keyboard
+version: 1.0.0
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  http: ^0.13.3
+
+dev_dependencies:
+  lints: ^1.0.0
