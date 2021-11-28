@@ -8,7 +8,6 @@ Go to Settngs tab of your Cloud Function. Add the following enviromnent variable
 
 - **APPWRITE_ENDPOINT** - Your Appwrite Endpoint
 - **APPWRITE_API_KEY** - Your Appwrite API key with `collections.read`, `files.write`, `documents.read` permissions
-- **APPWRITE_FUNCTION_PROJECT_ID** - Your Appwrite Project ID
 
 ## 🚀 Building and Packaging
 
@@ -16,7 +15,6 @@ To package this example as a cloud function, follow these steps
 
 ```bash
 $ cd demos-for-functions/nodejs/backup-to-storage
-
 $npm install
 ```
 
