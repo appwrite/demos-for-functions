@@ -10,9 +10,16 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromStream
+import kotlin.system.exitProcess
 
 fun main() {
-    Application.run()
+    try {
+        Application.run()
+    } catch (exception: Exception) {
+        exception.printStackTrace()
+        exitProcess(1)
+    }
+    exitProcess(0)
 }
 
 object Application {
@@ -28,7 +35,6 @@ object Application {
             .setEndpoint(getMandatoryEnv(ENV_APPWRITE_ENDPOINT))
             .setProject(getMandatoryEnv(ENV_APPWRITE_PROJECT))
             .setKey(getMandatoryEnv(ENV_APPWRITE_KEY))
-            .setSelfSigned(true)
         val storage = Storage(client)
 
         val functionData = System.getenv(ENV_APPWRITE_FUNCTION_DATA)
