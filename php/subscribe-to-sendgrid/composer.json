@@ -1,0 +1,16 @@
+{
+    "name": "demos-for-functions/subscribe-to-sendgrid",
+    "description": "A sample PHP Cloud Function to subscribe to Sendgrid Newsletter",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Team Appwrite",
+            "email": "team@appwrite.io"
+        }
+    ],
+    "require": {
+        "appwrite/appwrite": "2.1.*",
+        "sendgrid/sendgrid": "~7"
+    }
+}
