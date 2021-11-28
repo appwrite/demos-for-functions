@@ -1,6 +1,6 @@
 # 📧 Backup to Storage
 
-A sample NodeJS Cloud Function for creating a backup of every document in every collecion of your database in Cloud Storage.
+A sample NodeJS Cloud Function for creating a backup of every document in every collection of your database in Cloud Storage.
 
 ## 📝 Environment Variables
 
