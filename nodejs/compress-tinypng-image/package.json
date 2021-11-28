@@ -1,0 +1,15 @@
+{
+  "name": "compress-tinypng-image-nodejs",
+  "version": "1.0.0",
+  "description": "A sample NodeJS Cloud Function for deleting files that are older than XX days on a schedule.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-appwrite": "^2.5.0",
+    "tinify": "^1.6.1"
+  }
+}
