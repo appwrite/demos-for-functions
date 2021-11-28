@@ -5,7 +5,6 @@ This function should export all data from all collections, generate an in-memory
 
 - **APPWRITE_ENDPOINT** - Your Appwrite Project Endpoint ( can be found at `settings` tab on your Appwrite console)
 - **APPWRITE_API_KEY** - Your Appwrite Project API Keys ( can be found at `API Keys` tab on your Appwrite console, it needs `collections.read`, `documents.read` permissions)
-- **APPWRITE_FUNCTION_PROJECT_ID** - Your Appwrite Project Id ( can be found at `settings` tab on your Appwrite console)
 - **DROPBOX_ACCESS_TOKEN** - Your Dropbox app access token (can be found in Drobox app console)
 
 ## 🚀 Building and Packaging
