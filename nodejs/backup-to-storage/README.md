@@ -29,15 +29,14 @@ $npm install
 └── package.json
 ```
 
-- create a tarfile using the command below:
+- Create a tarfile using the command below:
 
 ```bash
 $ cd ..
-
 $ tar -zcvf code.tar.gz backup-to-storage
 ```
 
-- Navigate to the Overview Tab of your Cloud Function > Deploy Tab(scroll down a bit)
+- Navigate to the Overview Tab of your Cloud Function > Deploy Tab (scroll down a bit)
 - Input the command that will run when function is executed (in this case, "node index.js") as entrypoint command
 - Switch to the manual tab and upload the tarfile
 - Finally, click 'Activate'
