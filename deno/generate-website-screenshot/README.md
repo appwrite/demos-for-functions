@@ -9,7 +9,6 @@ Use 'Deno 1.5' environment.
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
 * **APPWRITE_ENDPOINT** - Appwrite Endpoint to use 
-* **APPWRITE_PROJECT_ID** - Project ID of the Appwrite Project
 * **APPWRITE_API_KEY** - API Key to interact with Appwrite
 * **CLOUDCONVERT_API_KEY** - API Key to interact with CloudConvert API
 
