@@ -45,9 +45,9 @@ $ appwrite functions createTag help
 to learn more about the command. You have to install the Appwrite CLI first.
 
 
-## 🎯 Trigger
+## 🎯 Schedule
 
-Head over to your function in the Appwrite console and under the Settings Tab, enter a reasonable schedule time (cron syntax).
+This function is triggered by a CRON schedule. Head over to your function in the Appwrite console and under the Settings Tab, enter a reasonable schedule time in cron syntax.
 
 For example:
 
