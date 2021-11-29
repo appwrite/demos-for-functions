@@ -25,7 +25,8 @@ To package this example as a cloud function, create a .tar file of the code and 
 ```bash
 $ cd php/convert-cloud-convert-file
 $ composer install
-$ tar -zcvf code.tar.gz . 
+$ cd ..
+$ tar -zcvf code.tar.gz  convert-cloud-convert-file
 ```
 #### Deploy on Appwrite dashboard
 
