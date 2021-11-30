@@ -1,14 +1,16 @@
-# 🚮 Backup to Storage
+# 🚮 Backup to S3
 
-A sample Java Cloud Function to create a backup of collections and store it as csv in Appwrite Storage.
+A sample Java Cloud Function to create a backup of collections and store it as csv in AWS S3.
 
 ## 📝 Environment Variables
 
 Go to Settings tab of your Cloud Function. Add the following environment variables.
 
--- **APPWRITE_ENDPOINT** - Appwrite Endpoint
--- **APPWRITE_FUNCTION_PROJECT_ID** - Appwrite Project Id
--- **APPWRITE_API_KEY** - Appwrite API Key
+- **APPWRITE_ENDPOINT** - Appwrite Endpoint
+- **APPWRITE_API_KEY** - Appwrite API Key
+- **AWS_API_KEY** - AWS API Key
+- **AWS_API_SECRET** - AWS API Secret
+- **BUCKET_NAME** - AWS S3 Bucket Name
 
 ## 🚀 Building and Packaging
 
@@ -20,15 +22,15 @@ To package this example as a cloud function, follow these steps.
 
 - Create a tarfile
 
-If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/java/backup-to-storage/out/artifacts/backup_to_storage_jar/backup-to-storage.jar`
+If you followed the steps correctly, our output jar file would mostly be created at `demos-for-functions/java/backup-to-s3/out/artifacts/backup_to_s3_jar/backup-to-s3.jar`
 
 ```bash
-$ cd java/backup_to_storage/out/artifacts
-$ tar -zcvf code.tar.gz backup_to_storage_jar
+$ cd java/backup-to-s3/out/artifacts
+$ tar -zcvf code.tar.gz backup_to_s3_jar
 ```
 
 - Navigate to the Overview Tab of your Cloud Function > Deploy Tag
-- Input the command that will run your function (in this case `java -jar backup-to-storage.jar`) as your entry point command
+- Input the command that will run your function (in this case `java -jar backup-to-s3.jar`) as your entry point command
 - Upload your `tarfile`
 - Click 'Activate'
 
