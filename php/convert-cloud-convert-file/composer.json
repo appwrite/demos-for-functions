@@ -1,0 +1,17 @@
+{
+    "name": "demos-for-functions/convert-cloud-convert-file",
+    "description": "Convert Cloud Convert File Cloud Function for PHP",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Team Appwrite",
+            "email": "team@appwrite.io"
+        }
+    ],
+    "require": {
+        "appwrite/appwrite": "2.1.*",
+        "cloudconvert/cloudconvert-php": "^3.2",
+        "php-http/guzzle7-adapter": "^1.0"
+    }
+}
