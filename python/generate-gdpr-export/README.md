@@ -1,5 +1,5 @@
-# 📷 Object Detection using Cloudmersive Vision API
-A sample Python Cloud Function for exporting doctuments to csv format and saving it to the user storage. 
+# 📷 GDPR Export Function 
+A sample Python Function for exporting documents to csv format and saving it to the user storage. 
 
 ## 📝 Environment Variables
 Add the following environment variables in your Cloud Functions settings.

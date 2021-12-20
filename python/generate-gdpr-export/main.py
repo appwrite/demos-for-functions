@@ -54,3 +54,4 @@ with open(file_name, 'w', newline='') as f:
 storage = Storage(client)
 result = storage.create_file(open(file_name, 'rb'), [user])
 os.remove(file_name)
+print('File {} created for user {}'.format(file_name, user_id))
