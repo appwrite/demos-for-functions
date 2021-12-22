@@ -1,4 +1,4 @@
-## 📧 Function for getting internet speed
+## 📡 Function for getting internet speed
 A sample Python Cloud Function to check the download and upload speed (and related statistics) of the server.
 
 ## 📝 Environment Variables
