@@ -39,5 +39,11 @@ python main.py
 
 ## 🎯 Trigger
 
-Head over to your function in the Appwrite console and under the Settings Tab, enable the `storage.files.create` event. 
-Or, Just press Excecute
+Head over to your function in the Appwrite console and after clicking the `Execute Now` button, enter a JSON object in the form of
+```json
+{
+  "latitude": 37.7822403,
+  "longitude": -122.3910414
+}
+```
+with your respective coordinates.
