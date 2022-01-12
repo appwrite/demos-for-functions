@@ -4,7 +4,7 @@ A dart Cloud Function for searching image and author on unsplash from a keyword
 ## Dart Function Setup
 To setup dart cloud function, follow [this excellent tutorial on Dev.to](https://dev.to/appwrite/learn-how-to-create-and-run-appwrite-functions-with-dart-5668)
 
-Created using `dart-2.1.3`
+Created using `dart-2.13`
 
 
 ## 📝 Environment Variables
