@@ -1,7 +1,6 @@
 import 'package:dart_appwrite/dart_appwrite.dart' hide Response;
-import 'package:function_types/function_types.dart';
 
-Future<void> start(Request request, Response response) async {
+Future<void> start(final request, final response) async {
   // Initialise the client SDK
   Map<String, dynamic> envVars = request.env;
   print(envVars);
