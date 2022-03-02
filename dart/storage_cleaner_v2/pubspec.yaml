@@ -7,5 +7,7 @@ environment:
 
 dependencies:
   dart_appwrite: ^3.0.2
-  function_types:
-    git: https://github.com/lohanidamodar/function_types
+
+dependency_overrides:
+  dart_appwrite:
+    git: https://github.com/aw-tests/sdk-for-dart
