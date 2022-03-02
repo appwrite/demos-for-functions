@@ -34,7 +34,7 @@ Future<void> start(final request, final response) async {
   var deletedFiles = 0;
   for (final file in files) {
     if (file.dateCreated * 1000 < timestamp) {
-      await storage.deleteFile(fileId: file.$id);
+      await storage.deleteFile(bucketId: bucketId, fileId: file.$id);
       print("Deleted ${file.$id}");
       deletedFiles++;
     }
