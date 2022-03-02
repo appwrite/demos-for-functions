@@ -6,6 +6,14 @@ Future<void> start(final request, final response) async {
   Map<String, dynamic> envVars = request.env;
   print(envVars);
   final Client client = Client();
+  if(
+    envVars['APPWRITE_ENDPOINT'] == null
+    || envVars['APPWRITE_API_KEY'] == null
+    || envVars['APPWRITE_PROJECT'] == null
+    || envVars['DAYS_TO_EXPIRE'] == null
+    ) {
+    response.send("Missing environment variables", status: 400);
+    }
   client
       .setEndpoint(envVars['APPWRITE_ENDPOINT'] ??
           'http://192.168.10.4/v1') // This is manually set
@@ -15,10 +23,10 @@ Future<void> start(final request, final response) async {
 
   // Initialise the storage SDK
   final storage = new Storage(client);
-
+  String bucketId = envVars['APPWRITE_BUCKET'];
   int daysToExpire = int.parse(envVars['DAYS_TO_EXPIRE']!);
 
-  final res = await storage.listFiles(orderType: 'DESC', limit: 100);
+  final res = await storage.listFiles(bucketId: bucketId, orderType: 'DESC', limit: 100);
   final files = res.files;
   var timestamp = DateTime.now()
       .subtract(Duration(days: daysToExpire))
