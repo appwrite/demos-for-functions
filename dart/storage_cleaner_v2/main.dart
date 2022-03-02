@@ -9,10 +9,10 @@ Future<void> start(final request, final response) async {
   if(
     envVars['APPWRITE_ENDPOINT'] == null
     || envVars['APPWRITE_API_KEY'] == null
-    || envVars['APPWRITE_PROJECT'] == null
+    || envVars['APPWRITE_BUCKET'] == null
     || envVars['DAYS_TO_EXPIRE'] == null
     ) {
-    response.send("Missing environment variables", status: 400);
+      throw("Environment variables not found: " + envVars.toString());
     }
   client
       .setEndpoint(envVars['APPWRITE_ENDPOINT'] ??
@@ -23,8 +23,8 @@ Future<void> start(final request, final response) async {
 
   // Initialise the storage SDK
   final storage = new Storage(client);
-  String bucketId = envVars['APPWRITE_BUCKET'];
-  int daysToExpire = int.parse(envVars['DAYS_TO_EXPIRE']!);
+  String bucketId = envVars['APPWRITE_BUCKET'].toString();
+  int daysToExpire = int.parse(envVars['DAYS_TO_EXPIRE'].toString());
 
   final res = await storage.listFiles(bucketId: bucketId, orderType: 'DESC', limit: 100);
   final files = res.files;
@@ -39,5 +39,5 @@ Future<void> start(final request, final response) async {
       deletedFiles++;
     }
   }
-  print("Total files deleted: $deletedFiles");
+  response.send("Total files deleted: $deletedFiles");
 }
