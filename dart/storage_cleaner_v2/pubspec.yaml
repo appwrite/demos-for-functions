@@ -6,8 +6,5 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  dart_appwrite: ^3.0.2
-
-dependency_overrides:
   dart_appwrite:
     git: https://github.com/aw-tests/sdk-for-dart
