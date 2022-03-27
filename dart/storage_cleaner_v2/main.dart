@@ -3,7 +3,6 @@ import 'package:dart_appwrite/dart_appwrite.dart' hide Response;
 Future<void> start(final request, final response) async {
   // Initialise the client SDK
   Map<String, dynamic> envVars = request.env;
-  print(envVars);
   final Client client = Client();
   if(
     envVars['APPWRITE_ENDPOINT'] == null
