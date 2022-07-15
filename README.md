@@ -1,10 +1,12 @@
+**⚠️ Warning - the functions in this repo were designed for Appwrite versions 0.7.0 to 0.12.4. For Appwrite version 0.13.0 and above, please refer to the [Open Runtimes Function Examples](https://github.com/open-runtimes/examples).**
+
 # Demos for Functions
 
 Demos for Appwrite Cloud Functions API in multiple coding languages. Feel free to submit your PR with more functions that other Appwriters could use in their projects.
 
 ## Getting Started
 
-1. Make sure you have a working instance of Appwrite (>=0.7), or [install](https://appwrite.io/docs/installation) one.
+1. Make sure you have a working instance of Appwrite (>=0.7 and <= 0.12.4).
 2. Go to your Appwrite dashboard and create a new Cloud Function (Functions -> Add Function).
 3. Once your function has been created, you can deploy one of the examples `.tar.gz` file in this repo. Each of these files contains a packaged demo Cloud Function, ready for usage.
 4. Trigger your new Cloud Function manually from the Appwrite dashboard using the execute button, listen to system events, or use the Appwrite API to execute your new function.
