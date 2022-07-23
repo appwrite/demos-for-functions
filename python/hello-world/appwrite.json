@@ -1,0 +1,17 @@
+{
+    "projectId": "6104f1a3cffa3",
+    "projectName": "Test",
+    "functions": [
+        {
+            "$id": "hello-world",
+            "name": "Hello World",
+            "runtime": "python-3.10",
+            "path": ".",
+            "entrypoint": "src/index.py",
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15
+        }
+    ]
+}
