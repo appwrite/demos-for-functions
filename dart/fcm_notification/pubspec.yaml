@@ -1,0 +1,9 @@
+name: fcm_notification
+version: 1.0.0
+description: This function should trigger on 'database.documents.create' event. It allows to send a notification to an FCM topic when a new document is created.
+
+environment:
+  sdk: ">=2.14.0 <3.0.0"
+
+dependencies:
+  http: ^0.13.4
