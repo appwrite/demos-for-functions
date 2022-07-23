@@ -1,0 +1,10 @@
+name: giphy
+description: A simple command-line application.
+version: 1.0.0
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+
+dependencies:
+  http: ^0.13.4

@@ -1,0 +1,10 @@
+name: generate_open_street_map
+description: An example implementation of saving an OpenStreetMaps tile to Storage given latitude and longitude
+version: 1.0.0
+
+environment:
+  sdk: '>=2.12.0 <2.13.0'
+
+dependencies:
+  dart_appwrite: ^5.0.1
+  vector_math: ^2.1.2
